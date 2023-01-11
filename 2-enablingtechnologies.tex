@@ -1,0 +1,119 @@
+\chapter{Tecnologías habilitantes}
+\label{chap:enabling_technologies}
+
+% Javascript, Reactjs, Docker, traefik, WebAssembly, WebApp, Regex, Git, Open Source Software, Linux
+
+\section{Tecnologías en el cliente}
+\label{tec_hab:client}
+
+\subsection{React}
+\label{tec_hab:react}
+
+% https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe
+
+Para el desarrollo del cliente web se ha elegido el framework React. React es una librería para el desarrollo de front-end en JavaScript. Es de código libre y permite construir interfaces de usuario mediante la definición de componentes reutilizables. Es impulsado y mantenido por Meta, así como una gran comunidad de individuos y compañías.
+
+Cuenta con la mayor comunidad de desarrolladores frente a sus competidores: AngularJS, VueJS, NextJS. Esto facilita el desarrollo, con mayor cantidad de librerías disponibles y mayor facilidad para solventar errores debido a la cantidad de usuarios.
+
+React y JSX forman un stack tecnológico que nos permite sustituir completamente el stack conformado por HTML, JavaScript y CSS, ganando modularidad durante el desarrollo.
+
+Para modificar el contenido que se muestra al usuario, cuenta con acceso al \acrshort{dom}, que representa la página web como un árbol de nodos, que pueden ser modificados con JavaScript.
+
+\section{Progressive Web App}
+\label{tec_hab:PWA}
+
+El mercado de las aplicaciones está segmentado en función a las distintas tiendas de aplicaciones de cada plataforma. Esto hace que el desarrollo multiplataforma sea complejo. Recientemente han ido surgiendo frameworks como Flutter, aunque la comunidad de desarrollo es todavía pequeña.
+
+Es por ello que para este proyecto nos hemos acogido a las \acrshort{pwa}, cuyo soporte ha sido desarrollado para navegadores basados en Chromium, así como Safari; mientras Firefox ha decidido no acoger el estándar de la Web abierta. \cite{firefoxNoPWA}
+
+Mediante un archivo de manifiesto, se detalla el título, descripción, imágenes y acciones que la aplicación puede ejecutar o intervenir una vez instalada, permitiendo interacción con el sistema operativo.
+
+Con ello, nos permite mantener una sola fuente de código mientras podemos ejecutar nuestra aplicación en la mayoría de los clientes web.
+
+Además, en noviembre de 2016 el tráfico web móvil superó al tráfico web de escritorio. Desde entonces, se ha mantenido la distancia ligeramente, por lo que tendría sentido optimizar la aplicación hacia clientes móviles. \cite{movilTraficoMayor}
+
+\subsection{WebAssembly}
+\label{tec_hab:wam}
+
+WebAssembly define un formato de código binario portable e instrucciones correspondientes a modo de interfaz para facilitar interacciones entre programas y el entorno del host. Se trata de un estándar abierto que apunta a soportar la ejecución de cualquier lenguaje en cualquier sistema operativo.
+
+Para ello, requiere de la integración del soporte de WebAssembly por los navegadores. Los navegadores principales (Chrome, Firefox, Safari y Edge) ya soportan la versión 1.0 de WebAssembly.
+
+WebAssembly nos permite ejecutar programas desde nuestra página web en el host con alto rendimiento, puesto que las instrucciones son precompiladas, tarda menos en cargar al ser un binario y permite ejecutar órdenes a bajo nivel, obteniendo un rendimiento más cercano al nativo del sistema en el que se ejecuta (con menor número de capas intermediarias).
+
+\subsection{Expresiones regulares}
+\label{tec_hab:regex}
+
+Las expresiones regulares son una secuencia de caracteres y operadores especiales que definen y controlan una búsqueda de patrones y filtros en un texto de destino.
+
+Haremos uso de las mismas para segmentar los mensajes recibidos en texto plano, obteniendo así diferentes grupos de texto que conformarán la fecha del mensaje, la hora, el nombre del contacto y el cuerpo del mensaje. Pese a ser conocidos por ser un problema más que una solución, con el correcto uso de la tecnología, puede simplificar mucho el desarrollo. Esto se debe a que podríamos obtener resultados similares mediante el uso de funciones que separen la cadena de caracteres en los lugares adecuados, eliminen caracteres innecesarios y formen los grupos anteriormente descritos, cosa que aumentaría la complejidad del desarrollo y añadiría unidades lógicas a la lógica de negocio.
+
+
+\section{Tecnologías en el servidor}
+\label{tec_hab:server}
+
+\begin{comment}
+	Debido a la sencillez de nuestra lógica de negocio, no contamos con un back-end en el servidor, dado que únicamente servimos la aplicación al cliente. Una vez servida la aplicación, todas las operaciones se ejecutan en el cliente.
+\end{comment}
+
+
+
+\subsection{GNU/Linux}
+\label{tec_hab:linux}
+
+Pese a no haber dominado el mercado de los escritorios, Linux se encuentra en el $96.3\%$ de los servidores del mundo \cite{linuxMarketShare}. Se trata de un kernel de código libre, por lo que se alinea con este trabajo perfectamente. Junto con los programas asociados y necesarios para un servidor, como puede ser \acrshort{ssh}, nos permite operar y administrar el sistema para ejecutar programas y servicios a ofrecer.
+
+
+\subsection{Traefik}
+\label{tec_hab:traefik}
+
+Un proxy inverso nos permite interceptar peticiones a nuestro servidor y redirigir el tráfico al servicio back-end adecuado. Además, permite la implementación de certificados \acrshort{ssl}, que facilita el tráfico seguro en las conexiones externas.
+
+Hemos elegido Traefik frente a alternativas como Nginx o Apache, que, pese a ser contendientes más establecidos, no ofrecen una integración sencilla con Docker. Además, Traefik ofrece integración nativa con Let's Encrypt, autoridad de certificados sin ánimo de lucro que, mediante una prueba, expide certificados para los dominios bajo nuestra propiedad.
+
+
+\section{Herramientas de desarrollo}
+\label{tec_hab:project}
+
+A lo largo del desarrollo del proyecto, hemos hecho uso de las siguientes tecnologías para facilitar el control y versionamiento del código, propiedad intelectual, despliegue de infraestructura y comprobación de errores.
+
+\subsection{Git}
+\label{tec_hab:git}
+
+Git es un sistema de control de versiones distribuido, de código libre y gratuito, diseñado para manejar proyectos de cualquier tamaño, independientemente del número de contribuidores, de forma rápida y eficiente. Nos permite versionar cambios de nuestro código, así como recuperar versiones anteriores y desarrollar nuevas funciones en paralelo en diferentes ramas, entre otros.
+
+Además, se trata de un sistema distribuido, por lo que evitamos la centralización del código; lo que nos permite mantener el control de versiones sin necesidad de estar conectados a Internet, ya que contamos con nuestro propio nodo local. Una vez tengamos acceso a Internet, podemos sincronizar nuestro trabajo con el nodo origen u otros.
+
+
+\subsection{Docker}
+\label{tec_hab:docker}
+
+Para servir el cliente desarrollado en React, se ha utilizado Docker como tecnología de contenerización y virtualización ligera. Esto nos permitirá aislar nuestra aplicación en una capa superior al sistema operativo, permitiendo ejecutar la misma en cualquier sistema operativo basado en Linux, independientemente de las dependencias que este tenga instalado; siempre y cuando cuente con Docker.
+
+Hemos optado por virtualización ligera para reducir el impacto en el servidor, permitiendo que este varíe sus recursos ocupados en función a la demanda dentro de las capacidades de nuestro servidor.
+
+
+\subsection{Software Libre}
+\label{tec_hab:foss}
+
+Durante las fase de desarrollo, se usará Git como sistema de control de versiones, unido a la publicación total del código en repositorios de acceso libre y gratuito, pudiendo definirlo como ``Open Source Software'' bajo la licencia GNU General Public License v3.0 \cite{GPLv3}. Esta licencia nos permite, en resumen:
+
+\begin{enumerate}
+	\item Cualquiera puede copiar, modificar y distribuir este software.
+	\item Se debe incluir la licencia con todas y cada distribución de este código.
+	\item Se permite el uso privado de este software.
+	\item Se permite el uso de este software con fines comerciales.
+	\item En caso de construir un negocio únicamente de este código, se arriesga a publicar la fuente del resto del código derivado.
+	\item En caso de modificación, se deben indicar los cambios realizados al código.
+	\item Cualquier modificación de este código debe ser distribuida con la misma licencia, GPLv3.
+	\item Este software se provee sin ningún tipo de garantía.
+	\item Ni el autor del código ni la licencia pueden ser marcadas como responsables de daños producidos por el software.
+\end{enumerate}
+
+El código fuente está disponible en Codeberg para consulta, contribuciones y seguimiento de errores. Se ha elegido Codeberg como alternativa de código abierto a otras plataformas como GitHub, ya que está basada en Gitea.
+
+
+\subsection{Tests unitarios}
+\label{tec_hab:tests}
+
+A lo largo del desarrollo se han implementado numerosos tests unitarios para comprobar el funcionamiento de las diferentes unidades lógicas que componen la aplicación. Se ha utilizado Jest como librería para estas pruebas, y se ha implementado una cobertura del $85\%$ de las unidades lógicas de la lógica de negocio. La decisión de utilizar esta librería tiene en cuenta su compatibilidad con React y las facilidades que ofrece durante el desarrollo.

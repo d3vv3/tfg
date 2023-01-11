@@ -1,0 +1,53 @@
+\chapter{Expresiones regulares} \label{chap:regex}
+
+\section{Grupos de captura}
+
+Como se decribe en el \autoref{chap:architecture}, poder separar cada mensaje se ha llegado a la siguiente expresión regular, cuyos grupos se explicaran a continuación:
+
+\begin{lstlisting}
+	/(\d{2}\/\d{2}\/\d{4}),\s(\d(?:\d)?:\d{2})\s-\s([^:]*):\s(.*?)(?=\s*\d{2}\/\d{2}\/\d{4},\s|$)/ug
+\end{lstlisting}
+
+Se denotan los distintos grupos de captura por las agrupaciones realizadas con los paréntesis. Se exponen:
+
+\paragraph{Grupo de captura 1: fecha}\mbox{}\\
+
+\begin{lstlisting}
+	(\d{2}\/\d{2}\/\d{4})
+\end{lstlisting}
+
+Se encarga de la fecha en formato \textit{dd/mm/YYYY}, denotado con ``$\backslash d\{X\}$'' que indica que se buscan $X$ dígitos de $0$ a $9$ seguidos, separados por un ``$/$''. En las expresiones regulares hay que escapar los ``$/$'' o \textit{slash} con un ``$\backslash$'' o \textit{backslash}.
+
+Durante numerosas pruebas se ha observado que la fecha siempre sigue este formato, independientemente del sistema operativo. No hay consistencia entre los ajustes del parámetro \textit{locale} de \textit{en\_US} y \textit{es\_ES}, siendo \textit{mm/dd/YYY} y \textit{dd/mm/YYYY} respectivamente. Para ello, el cliente accederá al \textit{locale} para actuar en consecuencia más adelante. No se ha probado para otras configuraciones.
+
+\paragraph{Grupo de captura 2: hora}\mbox{}\\
+
+\begin{lstlisting}
+	(\d(?:\d)?:\d{2})
+\end{lstlisting}
+
+Se encarga de la la hora en formato \textit{hh:MM}, aunque en alguna ocasión se ha observado que no hay consistencia si la hora es de un solo dígito, pudiendo aparecer 01:00 o 1:00 en función del dispositivo y la versión de WhatsApp que ejecuta. Es por ello que la expresión regular es algo más compleja y se buscan dígitos a la izquierda del carácter ``\textit{:}'' independientemente del número de repeticiones del mismo. Los minutos si han mostrado consistencia, por lo que se utiliza ``$\backslash d\{2\}$''.
+
+\paragraph{Grupo de captura 3: contacto}\mbox{}\\
+
+\begin{lstlisting}
+	([^:]*)
+\end{lstlisting}
+
+Se encarga del nombre del contacto. Busca la repetición de caracteres ilimitados a excepción del carácter ``\textit{:}'', ya que éste es un separador.
+
+\paragraph{Grupo de captura 4: mensaje}\mbox{}\\
+
+\begin{lstlisting}
+	(.*?)
+\end{lstlisting}
+
+Se encarga del cuerpo del mensaje. Busca la repetición de caracteres ilimitados, incluyendo caracteres unicode para tener los emoticonos en cuenta. Esta búsqueda de caracteres se realiza de manera perezosa, expandiendo las coincidencias en caso posible, siempre que no coincida con el siguiente grupo de captura (\textit{lookahead}).
+
+\paragraph{Look ahead o mirada hacia delante}\mbox{}\\
+
+\begin{lstlisting}
+	(?=\s*\d{2}\/\d{2}\/\d{4},\s|$)
+\end{lstlisting}
+
+Si únicamente contáramos con el grupo de captura 4, solo se reconocería el primer mensaje, puesto que se reconocería el resto del texto como cuerpo del primer mensaje. Para solucionarlo, en el grupo de captura 4 se intentan reconocer el menor número posible de coincidencias, hasta el siguiente patrón reconocido. Este patrón es una mirada hacia delante conformada por la misma expresión regular que en el grupo de captura 1, acompañada seguida de una coma ``\textit{,}'' y un espacio.

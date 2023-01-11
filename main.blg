@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2022 - Flatpak)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: 0-preamble.aux
+A level-1 auxiliary file: A-resumen.aux
+A level-1 auxiliary file: B-abstract.aux
+A level-1 auxiliary file: C-agradecimientos.aux
+A level-1 auxiliary file: E-contents.aux
+A level-1 auxiliary file: F-glossary.aux
+A level-1 auxiliary file: 1-introduction.aux
+A level-1 auxiliary file: 2-enablingtechnologies.aux
+A level-1 auxiliary file: 3-requirements.aux
+A level-1 auxiliary file: 4-architecture.aux
+A level-1 auxiliary file: 5-case-study.aux
+A level-1 auxiliary file: 6-conclusions.aux
+A level-1 auxiliary file: 7-impact.aux
+A level-1 auxiliary file: 8-budget.aux
+The style file: unsrt.bst
+Illegal, another \bibstyle command---line 51 of file main.aux
+ : \bibstyle
+ :          {plain}
+I'm skipping whatever remains of this command
+Database file #1: biblio/ref.bib
+Warning--I didn't find a database entry for "oaraque"
+Warning--I didn't find a database entry for "jfernando"
+You've used 4 entries,
+            1791 wiz_defined-function locations,
+            489 strings with 4673 characters,
+and the built_in function-call counts, 560 in all, are:
+= -- 49
+> -- 16
+< -- 0
++ -- 8
+- -- 4
+* -- 3
+:= -- 94
+add.period$ -- 16
+call.type$ -- 4
+change.case$ -- 4
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 20
+empty$ -- 73
+format.name$ -- 4
+if$ -- 130
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 0
+newline$ -- 27
+num.names$ -- 4
+pop$ -- 27
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 8
+stack$ -- 0
+substring$ -- 0
+swap$ -- 4
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 4
+width$ -- 5
+write$ -- 47
+(There was 1 error message)

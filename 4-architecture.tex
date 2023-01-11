@@ -1,0 +1,276 @@
+\chapter{Arquitectura}
+\label{chap:architecture}
+
+
+\section{Introducción}
+\label{sec:introduction}
+
+En este capítulo trataremos la fase de diseño de este proyecto, así como los detalles de implementación de dicha arquitectura. Primero, presentaremos una vista general del proyecto, dividido en módulos. Con ello tenemos la intención de facilitar al lector una vista general de la arquitectura del proyecto. Posteriormente, presentaremos cada módulo de forma separada y en mayor profundidad.
+
+Finalmente, también cubriremos la arquitectura del lado del servidor, así como la del cliente.
+
+\section{Arquitectura de procesamiento}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{img/architecture_processing.png}
+	\caption{Arquitectura de procesamiento}
+	\label{fig:chap4:architecture_processing}
+\end{figure}
+
+\subsection{Input}
+
+Se trata de un conjunto de funciones que acceden y leen el archivo de entrada que el usuario ha proporcionado. Este archivo puede ser en texto plano o comprimido, como se explica en el siguiente módulo.
+
+\subsection{Descompresor (Opcional)}
+
+Mientras que en los sistemas operativos Android, la aplicación WhatsApp exporta los chats en texto plano, en los sistemas operativos iOS se exportan en un archivo comprimido en formato \textit{zip}. En este último caso, dentro del archivo se encuentra un fichero denominado \textit{\_chat.txt}, junto con el resto de contenido multimedia (fotos, vídeos y documentos) en caso de haber optado por exportarlos.
+
+\subsection{Parser}
+
+Este módulo se compone de diferentes submódulos para parsear los diferentes tipos de objetos contenidos en cada grupo de la cadena de texto.
+
+Todo comienza por encontrar una expresión regular que pueda encontrar coincidencias en el archivo de texto, así como dividir estas coincidencias en los grupos correspondientes. Analizamos a continuación un mensaje de ejemplo:
+
+\begin{lstlisting}
+	17/07/2022, 01:28 - Juan Pedro: Este es un mensaje de prueba
+\end{lstlisting}
+
+Podemos observar que un mensaje se compone de la fecha, la hora, el nombre del contacto y el propio cuerpo del mensaje.
+
+Para poder separar cada mensaje se ha llegado a la siguiente expresión regular:
+
+\begin{lstlisting}
+	/(\d{2}\/\d{2}\/\d{4}),\s(\d(?:\d)?:\d{2})\s-\s([^:]*):\s(.*?)(?=\s*\d{2}\/\d{2}\/\d{4},\s|$)/ug
+\end{lstlisting}
+
+Los grupos de captura que lo componen se describen en detalle en el \autoref{chap:regex}.
+
+
+\subsubsection{Parser de cadenas de caracteres de tiempo}
+
+Este submódulo recoge las coincidencias del grupo de captura 1 y 2, devolviendo un objeto de tipo \textit{Date}, lo cual nos permitirá operar con el fácilmente. Este módulo considera el \textit{locale} del cliente, invirtiendo mes y día para el caso \textit{en\_US}.
+
+\subsubsection{Parser de archivos multimedia}
+
+Existen dos opciones para exportar un chat: con contenido multimedia o sin él.
+
+\paragraph{Con contenido multimedia}\mbox{}\\
+En el primer caso, WhatsApp exporta el fichero de texto plano, además de todas las imágenes, vídeos, música, notas de voz o documentos del chat. En caso de iOS, todos los archivos se agrupan en un archivo comprimido en \textit{zip}, mientras que en Android se exportan todos los archivos como individuales, permitiendo al usuario compartirlos con la aplicación deseada (o guardarlos).
+
+En un mensaje con contenido multimedia, observaremos que el cuerpo incluirá el nombre del fichero que se ha exportado con la extensión del formato del mismo. Por ello, categorizamos como \textit{voice\_message}, \textit{video\_file}, \textit{sticker} o \textit{image} en función a la extensión; \textit{.opus}, \textit{.mp4}, \textit{.webp} o \textit{.jpg}, respectivamente.
+
+Se indican a continuación dos mensajes de ejemplo:
+
+\begin{lstlisting}
+	17/10/2022, 21:11 - Juan Pedro: PTT-20221017-WA0078.opus (file attached)
+	20/10/2022, 10:37 - Juan Pedro: IMG-20221020-WA0013.jpg (file attached)
+	14/11/2022, 18:58 - Juan Pedro: VID-20221114-WA0039.mp4 (file attached)
+	24/11/2022, 19:13 - Jaime Conde: STK-20220717-WA0090.webp (file attached)
+\end{lstlisting}
+
+\paragraph{Sin contenido multimedia}\mbox{}\\
+Para el segundo caso, cada vez que un mensaje sea contenido multimedia, aparecerá \textit{<Media omitted>} (multimedia omitido). Estos pueden ser fotos, vídeos, música, notas de voz o documentos. Se definirán como \textit{undefined} o indefinidos, ignorándose en las visualizaciones y módulos posteriores.
+
+\begin{lstlisting}
+	17/07/2022, 01:33 - Juan Pedro: <Media omitted>
+\end{lstlisting}
+
+\subsubsection{Parser de mensajes}
+
+Este módulo convierte las cadenas de textos en un objeto \acrshort{json} con la siguiente estructura:
+
+\begin{lstlisting}
+	{
+		date: new Date("2022-10-17T10:37:00"),
+		from: "Juan Pedro",
+		text: "IMG-20221020-WA0013.jpg",
+		type: "message",
+		media_type: "image"
+	}
+\end{lstlisting}
+
+En caso de tratarse de un mensaje de texto (no multimedia), el ``\textit{media\_type}'' será \textit{undefined} (indefinido) y ``\textit{text}'' contendrá el cuerpo del mensaje.
+
+Serán estos los objetos que se utilizarán más adelante para calcular las estadísticas y las estructuras de datos de visualización.
+
+\subsection{Agregadores}
+
+Los mensajes se encuentran segregados en una lista, por lo que a continuación, el módulo de agregador se encargará de agregar los mensajes en diferentes grupos. En el código los hemos llamado polarizadores. Se describen los distintos submódulos a continuación:
+
+\subsubsection{Agregador por contacto}
+
+\textit{ChatStats} se encarga de calcular las estadísticas de cada contacto para visualizarlas y mostrarlas en comparación con el resto de contactos. Hablamos de numerosos contactos, puesto que es compatible con chats individuales y grupales.
+
+El resultado de este submódulo será un objeto \acrshort{json} con una clave por cada contacto (su nombre), que contendrá un array de los mensajes enviados por este. Se indica un ejemplo:
+
+\begin{lstlisting}
+	{
+		"Jaime": [...messagesByJaime],
+		"Juan Pedro": [...messagesByJuanPedro],
+		...
+	}
+\end{lstlisting}
+
+donde los array de mensajes contienen objetos definidos en el \textit{Parser de mensajes}.
+
+\subsubsection{Agregador por día}
+
+Este agregador toma como entrada la salida del submódulo anterior: los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por día de la semana: de lunes a domingo. Se usará el nombre del día de la semana como subclave.
+
+El resultado son objetos con la siguiente estructura:
+
+\begin{lstlisting}
+	{
+		"Jaime": {
+			"monday": [...messagesByJaimeOnMonday],
+			"tuesday": [...messagesByJaimeOnTuesday],
+			...,
+			"sunday": [...messagesByJaimeOnSunday]
+			},
+		"Juan Pedro": {
+			"monday": [...messagesByJuanPedroOnMonday],
+			"tuesday": [...messagesByJuanPedroOnTuesday],
+			...,
+			"sunday": [...messagesByJuanPedroOnSunday]
+		},
+		...
+	}
+\end{lstlisting}
+
+El objetivo de esta estructura de datos es visualizar la distribución de los mensajes a lo largo de la semana, en media.
+
+\begin{comment}
+	Se deja para futuras líneas un gráfico en el que se pueda elegir el año a analizar, o un scroll vertical por años.
+\end{comment}
+
+\subsubsection{Agregador por hora}
+
+Este agregador toma también como entrada los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por hora del día, usando la hora en formato 24 horas como subclave de agregación: de 00 a 23 horas.
+
+El resultado son objetos con la siguiente estructura:
+
+\begin{lstlisting}
+	{
+		"Jaime": {
+			"00": [...messagesByJaimeAt00],
+			"01": [...messagesByJaimeAt01],
+			...,
+			"23": [...messagesByJaimeAt23]
+		},
+		"Juan Pedro": {
+			"00": [...messagesByJuanPedroAt00],
+			"01": [...messagesByJuanPedroAt01],
+			...,
+			"23": [...messagesByJuanPedroAt23]
+		},
+		...
+	}
+\end{lstlisting}
+
+El objetivo de esta estructura de datos es visualizar la distribución de los mensajes a lo largo del día, en media.
+
+\subsubsection{Agregador por mes}
+
+Este agregador toma también como entrada los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por mm/YYYY, por lo que deja de tratarse de un agregador acotado: pueden haber tantos meses como se haya hablado.
+
+El resultado son objetos con la siguiente estructura:
+
+\begin{lstlisting}
+	{
+		"Jaime": {
+			"10/2022": [...messagesByJaimeOnOctober2022],
+			"11/2022": [...messagesByJaimeOnNovember2022],
+			...
+		},
+		"Juan Pedro": {
+			"10/2022": [...messagesByJuanPedroOnOctober2022],
+			"11/2022": [...messagesByJuanPedroOnNovember2022],
+			...
+		},
+		...
+	}
+\end{lstlisting}
+
+El objetivo de esta estructura de datos es visualizar la distribución de los mensajes a lo largo del tiempo, con una agregación mensual.
+
+\subsection{Visualizador}
+
+Este módulo prepara los datos para ser representados por la librería de visualización elegida: \textit{ChartJS}. Además, también se procesan datos para otras librerías de visualización, como las nubes de palabras o \textit{word clouds}.
+
+\subsubsection{Contador de palabras}
+
+Este submódulo cuenta las palabras que hay en los mensajes de cada contacto y calcula la suma total de las mismas, obteniendo el número de palabras totales enviadas por cada contacto.
+
+\subsubsection{Contador de caracteres}
+
+Este submódulo cuenta los caracteres que hay en los mensajes de cada contacto y calcula la suma total de los mismos, obteniendo el número de caracteres totales enviados por cada contacto.
+
+\subsubsection{Media de palabras por mensaje}
+
+Este submódulo devuelve el número medio de palabras por mensaje para cada contacto.
+
+\subsubsection{Media de caracteres por mensaje}
+
+Este submódulo devuelve el número medio de caracteres por mensaje para cada contacto.
+
+Tanto el número de caracteres como el número de palabras suelen indicar la misma información respecto a qué contacto escribe más.
+
+\subsubsection{Contador de multimedia}
+
+En caso de que existan objetos \acrshort{json} con el campo ``\textit{media\_type}'' distinto de \textit{undefined}, este módulo contará cuántos archivos multimedia de cada tipo ha mandado cada contacto.
+
+\subsubsection{Contador de palabras más repetidas}
+
+Este módulo elimina las palabras más comunes del español y el inglés, así como otros mensajes que WhatsApp añade, como \textit{Media ommited} o \textit{This message has been deleted}.
+
+Las listas de palabras más comunes del español e inglés se han recopilado de distintas fuentes, combinado y eliminado repeticiones.
+
+A la salida de este módulo, se entrega un diccionario con las palabras más repetidas y el número de veces que aparece cada una.
+
+% Contar que es para hacer un word cloud y que se eliminan las palabras más comunes del lenguaje inglés y español. También se deben eliminar enlaces, Media ommitted y This message has been deleted. Añadir fuzzywuzzy a la arquitectura del sistema (esquema) y al código.
+
+% Contar de dónde se han recopilado las listas de palabras más comunes y anexar en C, junto con el código.
+
+% Añadir fuzzy-wuzzy a las tecnologías habilitantes?
+
+\subsubsection{Generador de estructuras de datos por día, hora y mes}
+
+Para el gráfico de barras con el número de mensajes en el tiempo, \textit{ChartJS} necesita una estructura de datos para mensajes por día, siendo los días la variable independiente y el número de mensajes la variable dependiente.
+
+
+\section{Arquitectura en el servidor}
+
+Se muestra a continuación una grafo de la arquitectura en el servidor, donde se muestran las capas que lo componen.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/server.png}
+	\caption{Arquitectura en el servidor}
+	\label{fig:chap4:architecture_server}
+\end{figure}
+
+Se ha decidido no instalar el software directamente sobre el sistema operativo, evitando problemas de dependencias y distintas versiones de las mismas para los componentes del sistema operativo. Asimismo, se evitan problemas de seguridad que puedan venir por vulnerabilidades en el código fuente y sus dependencias.
+
+Hemos elegido virtualización ligera para ejecutar nuestro código en contenedores, por las razones que se exponen:
+
+\begin{itemize}
+	\item Se contienen las dependencias de terceros en una imagen.
+	\item En caso de vulnerabilidad, solo se expone el contenedor y no el sistema completo.
+	\item Los recursos se ocupan dinámicamente en función a las necesidades, al contrario que con la virtualización completa.
+	\item Permite el despliegue en cualquier sistema operativo compatible con Linux, salvo arquitecturas ARM (que no es típica en servidores).
+\end{itemize}
+
+\subsection{ChatStats React Server}
+
+Se trata del servidor de React que sirve el contenido. Tras construir la versión de producción con el código fuente, este contenedor sirve el contenido estático final, que enviará al cliente completamente cuando este solicite la aplicación web.
+
+\subsection{Traefik}
+
+Se ha decidido usar Traefik como \textit{proxy} inverso, que se sitúa frente al servidor de ChatStats para redirigir las peticiones realizadas a su contenedor correspondiente en el puerto adecuado.
+
+Además, Traefik gestiona los certificados \acrshort{ssl} haciendo uso de \textit{Let's Encrypt}: autoridad sin ánimo de lucro que provee certificados para la capa \acrshort{tls} sin coste alguno.
+
+
+
+\newpage

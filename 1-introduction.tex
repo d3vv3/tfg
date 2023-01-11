@@ -1,0 +1,63 @@
+\chapter{Introducción}
+\label{chap:introduction}
+
+\section{Contexto y motivación}
+\label{sec:context}
+
+Con 14 años compré mi primer teléfono inteligente. Con ello, gran parte de las interacciones con las personas de mi entorno más cercano, tenían lugar a través de aplicaciones de mensajería instantánea: principalmente WhatsApp. Por entonces no era consciente de la información que se perdía por estas vías, pero con el tiempo me he dado cuenta de la importancia de la información no verbal que se manifiesta en gestos, emociones, entonación y; finalmente, con la acumulación de todos estos factores, puede llegar a deteriorar una relación si no se reacciona correctamente.
+
+Han sido numerosas las ocasiones en las que he sentido la necesidad de comprobar si mi relación con alguna persona cercana estaba decayendo, o se trataba únicamente de un sentimiento sin fundamentos. Es por ello que, en 2019, comencé el desarrollo de una herramienta de código libre para el análisis de conversaciones exportadas por aplicaciones de mensajería instantánea. Al tratar información tan personal, la arquitectura estaba clara: todo el procesamiento debe hacerse en el cliente y evitar enviar información a servidores salvo la autorización del usuario final.
+
+\section{Objetivos}
+\label{sec:project-goals}
+
+
+Con este trabajo se pretende diseñar una aplicación web que analice datos de conversaciones de WhatsApp y ofrezca al usuario una visualización de datos relevantes de la misma, tanto generales como de la evolución en el tiempo.
+
+Podemos segregar los objetivos en los siguientes:
+
+\begin{itemize}
+
+
+\item Creación de una aplicación web.
+\item Compatibilidad con \acrfull{pwa}.
+\item Compatibilidad con datos de conversaciones grupales e individuales.
+\item Compatibilidad con datos de conversaciones con y sin contenido multimedia.
+\item Compatibilidad con todos los formatos de exportación de la aplicación WhatsApp para distintos sistemas operativos.
+\item Cálculo de estadísticas generales de los datos.
+\item Visualizaciones gráficas para los distintos estadísticos.
+\item Posibilidad de interacción con los gráficos.
+\item Posibilidad de exportar los resultados.
+\item Implementación de tests para estabilidad y comprobación del código fuente.
+\item Documentación del proyecto para desarrolladores.
+
+\end{itemize}
+
+\section{Estructura del documento}
+\label{sec:structure-of-document}
+
+En esta sección describiremos la estructura de este documento, así como una breve descripción de los capítulos. La estructura es la siguiente:
+
+\textbf{\textit{Capítulo 1. Introducción.}}
+
+Se introduce la motivación que ha llevado al desarrollo del proyecto, así como los objetivos que busca alcanzar y resolver. Todo esto son ingredientes para la adecuada resolución de un problema. Asimismo, se busca explicar la estructura del documento.
+
+\textbf{\textit{Capítulo 2. Tecnologías habilitantes.}}
+
+En este capítulo se explicarán las tecnologías utilizadas que permiten la realización del proyecto, fundamentando la elección de las mismas de manera segregada en cliente, servidor y desarrollo.
+
+\textbf{\textit{Capítulo 3. Análisis de requisitos.}}
+
+Se detallan el análisis de requisitos, casos de uso.
+
+\textbf{\textit{Capítulo 4. Arquitectura.}}
+
+Se introducirá la arquitectura general, entrando en detalle en decisiones de diseño, módulos y unidades lógicas en las que se divide, así como la  implementación de las mismas.
+
+\textbf{\textit{Capítulo 5. Caso de estudio.}}
+
+Se ha escogido un caso de uso para analizar en detalle. Se explica el funcionamiento completo desde el punto de vista del usuario.
+
+\textbf{\textit{Capítulo 6. Conclusiones y futuras líneas de trabajo.}}
+
+En este capítulo se extraen las conclusiones del proyecto, así como posibles formas de continuar el desarrollo del proyecto tras esta memoria.

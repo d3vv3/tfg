@@ -1,0 +1,67 @@
+\chapter{Conclusiones y futuras líneas de trabajo}
+\label{chap:conclusions}
+
+En este capítulo se exponen las conclusiones extraídas del proyecto, así como recomendaciones y posibles futuras líneas de trabajo.
+
+\section{Conclusiones}
+\label{sec:conclusions}
+
+Académicamente, este proyecto ha desarrollado una doble función: la de proyecto personal y, la de trabajo de fin de grado.
+
+La motivación principal del proyecto era desarrollar una aplicación web para ayudar a analizar conversaciones de WhatsApp, permitiendo detectar y mejorar los problemas encontrados; y este pro
+
+\begin{comment}
+	
+Academically, this Project served a double purpose: learning about statistics and machine learning and developing a method for improving the accuracy of an existing system.
+
+The initial motivation for the Project was to develop better estimations for the bus \acrshort{eta}s, and this main objective has been satisfactorily accomplished. Precisely, both of the goals proposed in the introduction (characterizing the \acrshort{crtm} \acrshort{api} estimations and developing alternative estimators) have been fullfilled.
+
+The first step was to review the existing bibliography and check the available data and data sources from the \acrshort{crtm}. Then, we addressed the first challenge: obtaining as much data about the buses mobility as possible without saturating the \acrshort{crtm} \acrshort{api} server. After several tests, the server behaviour was characterized and decisions for an optimal data gathering were taken. Furthermore, the Python package \textbf{crtm\_poll} was developed for automating the server polling process. As a conclusion, the optimization of the data acquisition procedures is crucial in this type of scenarios.
+
+Once the data was available, a data analysis environment was set up for its processing. An algorithm for estimating the bus passing time from the \acrshort{api} provided \acrshort{eta}s was designed, which involved filtering the raw data obtained from the \acrshort{crtm} \acrshort{api}. Knowing the arrival times of past trips, the running time between stops could be obtained and a web visualization tool was developed for displaying them. The developed tools allowed to visually detect some fundamental behavior patterns in the mobility of the buses.
+
+Next, alternative estimators for the running times between stops and for the bus \acrshort{eta} to a stop were designed. For that purpose different statistical tools and machine learning models were employed. Our experience indicates that although the available software for machine learning model design is very powerful, a clear understanding of the addressed problem and of the training schemes is required to be able to correctly interpret the results.
+
+Concerning the developed tools, the running time between stops estimators developed in Section \ref{running_time_between_two_stops} could be used to improve the accuracy of the estimations made by the \acrshort{crtm} \acrshort{api} or by other source of estimators; in general, they can also be applied to any scenario where we want to estimate the running time between two points of a vehicle following a fixed route.
+
+The relevant idea behind the estimator developed in Section \ref{reamining_time_at_anytime} is that it can be understood as a system that corrects the estimations provided by another system. This could be an easy to implement solution for improving the accuracy of the estimations made by more complex systems just by setting it prior to them.
+
+The main limitation for implementing the proposed online estimator is the bottleneck produced by the \acrshort{crtm} \acrshort{api} server, which would not be able to handle all the needed requests for sampling all the bus stops at the same time. Nevertheless, the computational cost of each of the used models was calculated in case that the processing capacity requirements were to be consider for a future implementation.
+
+In general, the developed methods in this Project are built in a way that allows the usability for other similar use cases. The hyperparameters of the estimators are chosen based on the data and the available input features, so they can be easily adapted for different system behaviors.
+\end{comment}
+
+\section{Objetivos conseguidos}
+\label{sec:achieved-goals}
+\begin{description}
+	
+\item Creación de una aplicación web.
+\item Compatibilidad con \acrfull{pwa}.
+\item Compatibilidad con datos de conversaciones grupales e individuales.
+\item Compatibilidad con datos de conversaciones con y sin contenido multimedia.
+\item Compatibilidad con todos los formatos de exportación de la aplicación WhatsApp para distintos sistemas operativos.
+\item Cálculo de estadísticas generales de los datos.
+\item Visualizaciones gráficas para los distintos estadísticos.
+\item Posibilidad de interacción con los gráficos.
+\item Implementación de tests para estabilidad y comprobación del código fuente.
+
+\end{description}
+
+\section{Futuras líneas de trabajo}
+\label{sec:future-work}
+
+\begin{itemize}
+
+\item Migración de los módulos con mayor carga de trabajo a \acrfull{wasm}, permitiendo obtener un rendimiento mayor y cercano al nativo del cliente que ejecuta la aplicación.
+
+\item Mayor facilidad para añadir módulos, mediante un sistema de carpetas y plugins.
+
+\item Inclusión de visualizaciones para el análisis de sentimientos y su evolución en el tiempo.
+
+\item Añadir soporte para otras plataformas de mensajería como Telegram.
+
+\item Implementación de \textit{cache} en la \acrfull{pwa} para poder ejecutar la aplicación sin necesidad de acceso a Internet (una vez instalada).
+
+\item Mejora de la documentación para futuros contribuyentes al proyecto.
+
+\end{itemize}
