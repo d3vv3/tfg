@@ -5,11 +5,22 @@
 \section{Introducción}
 \label{sec:introduction}
 
-En este capítulo trataremos la fase de diseño de este proyecto, así como los detalles de implementación de dicha arquitectura. Primero, presentaremos una vista general del proyecto, dividido en módulos. Con ello tenemos la intención de facilitar al lector una vista general de la arquitectura del proyecto. Posteriormente, presentaremos cada módulo de forma separada y en mayor profundidad.
-
-Finalmente, también cubriremos la arquitectura del lado del servidor, así como la del cliente.
+En este capítulo trataremos la fase de diseño de este proyecto, así como los detalles de implementación de dicha arquitectura. Primero, presentaremos una vista general del proyecto, dividido en módulos. Con ello tenemos la intención de facilitar al lector una vista general de la arquitectura del proyecto. Posteriormente, presentaremos cada módulo de forma separada y en mayor profundidad. Finalmente, describirá también la arquitectura del cliente y del servidor; así como el rol que desempeña cada uno.
 
 \section{Arquitectura de procesamiento}
+\label{chap:architecture:processing}
+
+Para mantener la privacidad de los datos del usuario, se han planteado las siguientes opciones de diseño:
+
+La primera, y más segura, es que los datos nunca salgan del dispositivo de ninguna forma. Esto supondrá coste computacional en el cliente para realizar las operaciones necesarias, por lo que el código deberá ser altamente eficiente. En este caso, el cliente descargaría toda la aplicación web en una petición (y sus consecuentes). Tras ello, ningún dato se enviaría al servidor.
+
+La segunda forma implica el desarrollo de lógica de negocio en un servidor, también de código libre, que no almacene datos en el disco duro, realizando todas las operaciones en la memoria volátil. Este servidor no debería tener ningún tipo de trazas de las operaciones y debería usar un protocolo de comunicación seguro como \acrfull{https}. Como punto positivo, el servidor contaría con mayor capacidad de computación que el cliente, permitiendo mayor velocidad en las operaciones o una mayor complejidad de las mismas.
+
+Se plantea también una tercera opción, que consiste en el híbrido de las primeras dos opciones. En este caso, el cliente puede realizar todas las operaciones en local y, activando un interruptor en la aplicación, puede optar a mandar sus datos a un servidor externo para realizar funciones más avanzadas y obtener más información.
+
+Por el momento, hemos comenzado con la primera implementación, puesto que se considera fácilmente extensible hacia la tercera opción, con un modelo de ejecución en cliente con opción a realizar procesamiento de algunas funciones en un servidor.
+
+A continuación se muestra la arquitectura de la lógica de negocio:
 
 \begin{figure}[H]
 	\centering
@@ -17,6 +28,8 @@ Finalmente, también cubriremos la arquitectura del lado del servidor, así como
 	\caption{Arquitectura de procesamiento}
 	\label{fig:chap4:architecture_processing}
 \end{figure}
+
+\todi{Corregir Analyser a Aggregators}
 
 \subsection{Input}
 
@@ -26,41 +39,56 @@ Se trata de un conjunto de funciones que acceden y leen el archivo de entrada qu
 
 Mientras que en los sistemas operativos Android, la aplicación WhatsApp exporta los chats en texto plano, en los sistemas operativos iOS se exportan en un archivo comprimido en formato \textit{zip}. En este último caso, dentro del archivo se encuentra un fichero denominado \textit{\_chat.txt}, junto con el resto de contenido multimedia (fotos, vídeos y documentos) en caso de haber optado por exportarlos.
 
+Este módulo descomprime el archivo en el cliente y se queda únicamente con el fichero \textit{\_chat.txt}, que contiene toda la información necesaria para el análisis.
+
 \subsection{Parser}
 
 Este módulo se compone de diferentes submódulos para parsear los diferentes tipos de objetos contenidos en cada grupo de la cadena de texto.
 
-Todo comienza por encontrar una expresión regular que pueda encontrar coincidencias en el archivo de texto, así como dividir estas coincidencias en los grupos correspondientes. Analizamos a continuación un mensaje de ejemplo:
+Todo comienza por encontrar una expresión regular que pueda buscar coincidencias en el archivo de texto, así como dividir estas coincidencias en los grupos correspondientes. Tras analizar varias fuentes de datos con distintos dispositivos, hemos detectado que existen dos formatos de mensaje: uno para Android y otro para dispositivos iOS.
+
+A continuación se muestra un mensaje en el formato de los dispositivos Android como ejemplo:
 
 \begin{lstlisting}
-	17/07/2022, 01:28 - Juan Pedro: Este es un mensaje de prueba
+	17/07/2022, 01:28 - Alice: Este es un mensaje de prueba
 \end{lstlisting}
 
-Podemos observar que un mensaje se compone de la fecha, la hora, el nombre del contacto y el propio cuerpo del mensaje.
+También se muestra un mensaje exportado por un dispositivo iOS:
+
+\begin{lstlisting}
+	[29/12/22, 0:14:55] Bob: Te escribo desde mi iPhone.
+\end{lstlisting}
+
+Podemos observar que ambos mensajes se componen de la fecha, la hora, el nombre del contacto y el propio cuerpo del mensaje, aunque con distinto formato.
 
 Para poder separar cada mensaje se ha llegado a la siguiente expresión regular:
 
 \begin{lstlisting}
-	/(\d{2}\/\d{2}\/\d{4}),\s(\d(?:\d)?:\d{2})\s-\s([^:]*):\s(.*?)(?=\s*\d{2}\/\d{2}\/\d{4},\s|$)/ug
+	/\[*(\d{1,2}\/\d{1,2}\/\d{2,4}),\s(\d{1,2}:\d{2}:*\d*)\]*\s(?:-\s)*(.*?):{1}\s(.*?)(?=\s\[*\d{1,2}\/\d{1,2}\/\d{2,4}|$)/gum
 \end{lstlisting}
 
 Los grupos de captura que lo componen se describen en detalle en el \autoref{chap:regex}.
+
+\todi{Actualizar grupos de captura con los de iPhone}
 
 
 \subsubsection{Parser de cadenas de caracteres de tiempo}
 
 Este submódulo recoge las coincidencias del grupo de captura 1 y 2, devolviendo un objeto de tipo \textit{Date}, lo cual nos permitirá operar con el fácilmente. Este módulo considera el \textit{locale} del cliente, invirtiendo mes y día para el caso \textit{en\_US}.
 
+Asimismo, el módulo considera los posibles formatos de fecha y hora, puesto que en iOS se incluyen los segundos y se usan los días, meses y horas sin cero a la izquierda; contrario a Android.
+
 \subsubsection{Parser de archivos multimedia}
 
 Existen dos opciones para exportar un chat: con contenido multimedia o sin él.
 
 \paragraph{Con contenido multimedia}\mbox{}\\
+
 En el primer caso, WhatsApp exporta el fichero de texto plano, además de todas las imágenes, vídeos, música, notas de voz o documentos del chat. En caso de iOS, todos los archivos se agrupan en un archivo comprimido en \textit{zip}, mientras que en Android se exportan todos los archivos como individuales, permitiendo al usuario compartirlos con la aplicación deseada (o guardarlos).
 
 En un mensaje con contenido multimedia, observaremos que el cuerpo incluirá el nombre del fichero que se ha exportado con la extensión del formato del mismo. Por ello, categorizamos como \textit{voice\_message}, \textit{video\_file}, \textit{sticker} o \textit{image} en función a la extensión; \textit{.opus}, \textit{.mp4}, \textit{.webp} o \textit{.jpg}, respectivamente.
 
-Se indican a continuación dos mensajes de ejemplo:
+Se indican a continuación mensajes de ejemplo para cada tipo de archivo adjunto, únicamente para Android:
 
 \begin{lstlisting}
 	17/10/2022, 21:11 - Juan Pedro: PTT-20221017-WA0078.opus (file attached)
@@ -70,6 +98,7 @@ Se indican a continuación dos mensajes de ejemplo:
 \end{lstlisting}
 
 \paragraph{Sin contenido multimedia}\mbox{}\\
+
 Para el segundo caso, cada vez que un mensaje sea contenido multimedia, aparecerá \textit{<Media omitted>} (multimedia omitido). Estos pueden ser fotos, vídeos, música, notas de voz o documentos. Se definirán como \textit{undefined} o indefinidos, ignorándose en las visualizaciones y módulos posteriores.
 
 \begin{lstlisting}
@@ -80,7 +109,7 @@ Para el segundo caso, cada vez que un mensaje sea contenido multimedia, aparecer
 
 Este módulo convierte las cadenas de textos en un objeto \acrshort{json} con la siguiente estructura:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=JavaScript]
 	{
 		date: new Date("2022-10-17T10:37:00"),
 		from: "Juan Pedro",
@@ -104,7 +133,7 @@ Los mensajes se encuentran segregados en una lista, por lo que a continuación, 
 
 El resultado de este submódulo será un objeto \acrshort{json} con una clave por cada contacto (su nombre), que contendrá un array de los mensajes enviados por este. Se indica un ejemplo:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=JavaScript]
 	{
 		"Jaime": [...messagesByJaime],
 		"Juan Pedro": [...messagesByJuanPedro],
@@ -116,11 +145,11 @@ donde los array de mensajes contienen objetos definidos en el \textit{Parser de 
 
 \subsubsection{Agregador por día}
 
-Este agregador toma como entrada la salida del submódulo anterior: los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por día de la semana: de lunes a domingo. Se usará el nombre del día de la semana como subclave.
+Este agregador toma como entrada la salida del submódulo anterior: los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por día de la semana: de lunes a domingo. Se usará el nombre del día de la semana como clave anidada.
 
 El resultado son objetos con la siguiente estructura:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=JavaScript]
 	{
 		"Jaime": {
 			"monday": [...messagesByJaimeOnMonday],
@@ -146,11 +175,11 @@ El objetivo de esta estructura de datos es visualizar la distribución de los me
 
 \subsubsection{Agregador por hora}
 
-Este agregador toma también como entrada los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por hora del día, usando la hora en formato 24 horas como subclave de agregación: de 00 a 23 horas.
+Este agregador toma también como entrada los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por hora del día, usando la hora en formato 24 horas como clave anidada de agregación: de 00 a 23 horas.
 
 El resultado son objetos con la siguiente estructura:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=JavaScript]
 	{
 		"Jaime": {
 			"00": [...messagesByJaimeAt00],
@@ -172,11 +201,11 @@ El objetivo de esta estructura de datos es visualizar la distribución de los me
 
 \subsubsection{Agregador por mes}
 
-Este agregador toma también como entrada los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por mm/YYYY, por lo que deja de tratarse de un agregador acotado: pueden haber tantos meses como se haya hablado.
+Este agregador toma también como entrada los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por MM/YYYY, por lo que deja de tratarse de un agregador acotado: pueden haber tantas claves anidadas como meses se haya hablado.
 
 El resultado son objetos con la siguiente estructura:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=JavaScript]
 	{
 		"Jaime": {
 			"10/2022": [...messagesByJaimeOnOctober2022],
@@ -195,6 +224,8 @@ El resultado son objetos con la siguiente estructura:
 El objetivo de esta estructura de datos es visualizar la distribución de los mensajes a lo largo del tiempo, con una agregación mensual.
 
 \subsection{Visualizador}
+
+\todi{Añadir descripción emoji regex y emoji cloud}
 
 Este módulo prepara los datos para ser representados por la librería de visualización elegida: \textit{ChartJS}. Además, también se procesan datos para otras librerías de visualización, como las nubes de palabras o \textit{word clouds}.
 
@@ -226,13 +257,21 @@ Este módulo elimina las palabras más comunes del español y el inglés, así c
 
 Las listas de palabras más comunes del español e inglés se han recopilado de distintas fuentes, combinado y eliminado repeticiones.
 
-A la salida de este módulo, se entrega un diccionario con las palabras más repetidas y el número de veces que aparece cada una.
+A la salida de este módulo, se entrega un diccionario con las palabras más repetidas y el número de veces que aparece cada una; información de la que hará uso la nube de palabras.
+
+\todi{Añadir fuzzy-wuzzy (se ha usado fuzzball)... Debería añadirlo a las tecnologías habilitantes?}
+
+\todi{Anexar enlace a listas de palabras más comunes en anexo C}
 
 % Contar que es para hacer un word cloud y que se eliminan las palabras más comunes del lenguaje inglés y español. También se deben eliminar enlaces, Media ommitted y This message has been deleted. Añadir fuzzywuzzy a la arquitectura del sistema (esquema) y al código.
 
 % Contar de dónde se han recopilado las listas de palabras más comunes y anexar en C, junto con el código.
 
 % Añadir fuzzy-wuzzy a las tecnologías habilitantes?
+
+\subsubsection{Contador de emoticonos más usados}
+
+Este módulo aplica una expresión regular unicode a todos los mensajes, seleccionando los emoticonos y contando el número de veces que aparecen. Posteriormente otra nube de palabras hará uso de esta información.
 
 \subsubsection{Generador de estructuras de datos por día, hora y mes}
 
@@ -271,6 +310,48 @@ Se ha decidido usar Traefik como \textit{proxy} inverso, que se sitúa frente al
 
 Además, Traefik gestiona los certificados \acrshort{ssl} haciendo uso de \textit{Let's Encrypt}: autoridad sin ánimo de lucro que provee certificados para la capa \acrshort{tls} sin coste alguno.
 
+\vspace{8mm}
+
+Con todo, si en un futuro se quiere extender la arquitectura propuesta a un modelo de cliente-servidor; como en la tercera opción que se propone al comienzo de este capítulo, siempre se puede añadir un tercer contenedor en la última capa que implemente lógica adicional. Sería también necesaria cierta modificación en el código del cliente para implementar peticiones a este nuevo servicio.
+
+
+
+\section{Arquitectura en el cliente}
+
+A continuación se presenta la arquitectura que podemos encontrar en un cliente cualquiera.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/client.png}
+	\caption{Arquitectura en el cliente}
+	\label{fig:chap4:architecture_client}
+\end{figure}
+
+\todi{Hacer esquinas del rectángulo menos redondeadas}
+
+\subsection{Navegador}
+
+El navegador juega un papel fundamental para el acceso y ejecución de cualquier aplicación web. Aunque no se entra en detalle en su estructura interna, sí que vamos a detallar la integración con \acrfull{pwa}. Esta integración que ofrecen algunos navegadores como los basados en Chromium, permite instalar aplicaciones web, con ventajas como:
+
+\begin{itemize}
+	\item La aplicación saldrá en el escritorio en teléfonos Android e iOS, así como en el cajón de aplicaciones del navegador.
+	\item Posibilidad de acceso a notificaciones \textit{push} para el sistema (que no utilizaremos).
+	\item Posibilidad de guardar en \textit{cache} el código del cliente, permitiendo su uso sin conexión a Internet.
+\end{itemize}
+
+Hay que mencionar también que Mozilla no ofrece soporte para \acrshort{pwa} en su navegador Firefox\cite{firefoxNoPWA}, aunque este puede ser habilitado mediante una extensión\cite{firefoxPWAextension}.
+
+\subsection{Aplicación Web}
+
+Es la última capa, se encuentra nuestra aplicación, cuya arquitectura de procesamiento se explica en la \autoref{chap:architecture:processing}. Explicamos a continuación los componentes lógicos que se encuentran en el cliente:
+
+\subsubsection{Router}
+
+ChatStats es una aplicación multipágina. Esto quiere decir que cuenta con diferentes rutas web en las que se muestran diferentes páginas. La página principal consolida la ruta `\textit{/}', mientras que `\textit{/graphs}' enruta la página para la visualización de los gráficos.
+
+\subsubsection{React Virtual DOM}
+
+El DOM virtual es un concepto de programación en el que una representación virtual de la interfaz de usuario (UI) es guardada en memoria y sincronizada con el DOM del navegador. Esto nos permite definir qué queremos en la interfaz de usuario y React conseguirá que el DOM virtual y el DOM del navegador se sincronicen.
 
 
 \newpage

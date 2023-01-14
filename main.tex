@@ -135,7 +135,7 @@
 
 \usepackage[pdftex,
     pdfauthor={\authorname},
-    pdftitle={\tfgtitle},
+    pdftitle={\tfgtitlees},
     pdfsubject={Bachelor Final Project},
     pdfkeywords={GSI},
     pdfproducer={PDFTex},
@@ -285,6 +285,11 @@
 % \usepackage{tikz}
 % \usepackage[top=0cm, bottom=0cm, outer=0cm, inner=0cm]{geometry}
 
+% Comments
+\usepackage{todonotes}
+\usepackage{soul}
+\usepackage{hyperref}
+
 \begin{document}
 
 \newcommand\litem[1]{\item{\bfseries #1 }}
@@ -293,6 +298,14 @@
 \newcommand\headcell[1]{
   \multicolumn{1}{|c|}{\cellcolor{DodgerBlue}\bfseries\sffamily\textcolor{white}{#1}}
 }
+
+% Comments
+\newcommand{\tb}{\textcolor{blue}}
+\newcommand{\tr}{\textcolor{red}}
+\newcommand{\tod}{\todo[color=bluep]}
+\newcommand{\tody}{\todo[inline,color=yellow]}
+\newcommand{\todi}{\todo[inline,color=bluep]}
+\definecolor{bluep}{RGB}{3, 252, 244}
 
 % Cuadros por tablas
 % \renewcommand{\listtablename}{Tables Index}

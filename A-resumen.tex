@@ -3,9 +3,34 @@
 \chapter*{Resumen}
 \addcontentsline{toc}{chapter}{Resumen}
 
-Con 14 años compré mi primer teléfono inteligente. Con ello, gran parte de las interacciones con las personas de mi entorno más cercano, tenían lugar a través de aplicaciones de mensajería instantánea: principalmente WhatsApp. Por entonces no era consciente de la información que se perdía por estas vías, pero con el tiempo me he dado cuenta de la importancia de la información no verbal que se manifiesta en gestos, emociones, entonación y; finalmente, con la acumulación de todos estos factores, puede llegar a deteriorar una relación si no se reacciona correctamente.
+Las aplicaciones de mensajería instantánea son un componente principal de las comunicaciones interpersonales; más aún para personas que no se ven en el día a día. En octubre de 2020, WhatsApp reportaba enviar unos 200 miles de millones de mensajes al día \cite{whatsAppsPerDay} y, a día de hoy, cuenta con más de 2 mil millones de usuarios.\cite{whatsAppsUsers}
 
-Han sido numerosas las ocasiones en las que he sentido la necesidad de comprobar si mi relación con alguna persona cercana estaba decayendo, o se trataba únicamente de un sentimiento sin fundamentos. Es por ello que, en 2019, comencé el desarrollo de una herramienta de código libre para el análisis de conversaciones exportadas por aplicaciones de mensajería instantánea. Al tratar información tan personal, la arquitectura estaba clara: todo el procesamiento debe hacerse en el cliente y evitar enviar información a servidores salvo la autorización del usuario final.
+En 1992, Robin Dunbar aproximó en 150 la cantidad de personas que pueden relacionarse plenamente en un sistema, relacionándolo con el tamaño de la neocorteza cerebral y su capacidad de procesamiento.\cite{dunbarNumber} Conocer el estado objetivo de las relaciones personales con nuestros círculos puede ser de vital importancia para el mantenimiento, conservación y mejora de relaciones fuertes, duraderas y sanas.
+
+El principal objetivo de este trabajo es brindar al usuario una herramienta que ofrezca estos datos objetivos de una forma visual y fácilmente comprensible, permitiendo su análisis y posterior acción en consecuencia.
+
+El ser humano genera y recoge cada vez más datos en la era digital. Con el crecimiento de esta tendencia, los usuarios son cada vez más conscientes de el valor de sus datos y el uso que se puede hacer de ellos en las manos equivocadas. La privacidad es una preocupación principal en el ámbito de las conversaciones personales, por lo que ha sido ampliamente considerada durante el desarrollo de este proyecto. Para proteger los datos del usuario, toda la aplicación se envía al cliente, en el que se realizan todas las operaciones necesarias con las conversaciones de manera local. Además, la aplicación es de código libre, permitiendo acceder al código para su lectura y modificación por parte de usuarios y contribuyentes; bajo la licencia \acrfull{gplv3}.\cite{GPLv3} La aplicación se ha desarrollado haciendo uso de React, \textit{framework} abierto desarrollado principalmente por Facebook.
+
+Con todo, este proyecto presenta el diseño e implementación de una aplicación web que permite al usuario analizar sus conversaciones de WhatsApp, obteniendo información sobre sus interacciones sociales y relaciones. Todo esto asegurando la privacidad de los datos, que nunca abandonan el dispositivo, y bajo una licencia de código libre. Hemos decidido llamarla \textit{ChatStats}.
+
+\begin{comment}
+
+Instant messaging applications are a major component of interpersonal communications; even more so for people who do not see each other on a day-to-day basis. In October 2020, WhatsApp reported sending about 200 billion messages per day and, as of today, it has more than 2 billion users.
+
+In 1992, Robin Dunbar approximated the number of people who can fully relate to each other in a system by 150, relating it to the size of the brain's neocortex and its processing capacity. Knowing the objective state of personal relationships with our circles can be of vital importance for the maintenance, preservation and improvement of strong, lasting and healthy relationships.
+
+The main objective of this project is to provide the user with a tool that offers this objective data in a visual and easily understandable way, allowing its analysis and subsequent action accordingly.
+
+The human being generates and collects more and more data in the digital era. With the growth of this trend, users are increasingly aware of the value of their data and the use that can be made of it in the wrong hands. Privacy is a major concern in the realm of personal conversations, and it has been considered a primary concern during the development of this application. To protect user data, the entire application is sent to the client, and all necessary operations are executed on the client's device. Additionally, the application is open-source, and the code is freely accessible for reading and modification by users and contributors under the \acrfull{gplv3} license.\cite{GPLv3} The application is built using React.
+
+Overall, this project presents the design and implementation of a web application that allows users to analyze their WhatsApp chats and gain insights into their social interactions and relationships, all while ensuring data privacy and accessibility under an open-source license. It is called \textit{ChatStats}.
+
+Debido a la importancia de la privacidad de los datos en el ámbito de las conversaciones personales, se ha tenido en cuenta durante el desarrollo del proyecto como principal preocupación para la arquitectura.
+
+Por ello se ha desarrollado una aplicación web que se envía al cliente en su totalidad para que todas las operaciones necesarias se ejecuten en su dispositivo. Además, todo el código es de acceso libre para lectura y modificación de usuarios y contribuyentes, categorizando el proyecto como \textit{software} libre y gratuito bajo la licencia \acrfull{gplv3}. \cite{GPLv3}
+ 
+\end{comment}
+
 
 \vfill
-\textbf{Palabras clave: mensajería instantánea, aplicación web, javascript, código libre, WhatsApp, privacidad} 
+\textbf{Palabras clave: mensajería instantánea, aplicación web, JavaScript, código libre, WhatsApp, privacidad, número de Dunbar.} 

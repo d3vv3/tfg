@@ -9,126 +9,137 @@
 \contentsline {section}{\numberline {1.2}Objetivos}{2}{section.14}%
 \contentsline {section}{\numberline {1.3}Estructura del documento}{2}{section.15}%
 \contentsline {chapter}{\numberline {2}Tecnolog\IeC {\'\i }as habilitantes}{5}{chapter.16}%
-\contentsline {section}{\numberline {2.1}Tecnolog\IeC {\'\i }as en el cliente}{5}{section.17}%
-\contentsline {subsection}{\numberline {2.1.1}React}{5}{subsection.18}%
-\contentsline {section}{\numberline {2.2}Progressive Web App}{6}{section.19}%
-\contentsline {subsection}{\numberline {2.2.1}WebAssembly}{6}{subsection.20}%
-\contentsline {subsection}{\numberline {2.2.2}Expresiones regulares}{7}{subsection.21}%
-\contentsline {section}{\numberline {2.3}Tecnolog\IeC {\'\i }as en el servidor}{7}{section.22}%
-\contentsline {subsection}{\numberline {2.3.1}GNU/Linux}{7}{subsection.23}%
-\contentsline {subsection}{\numberline {2.3.2}Traefik}{7}{subsection.24}%
-\contentsline {section}{\numberline {2.4}Herramientas de desarrollo}{8}{section.25}%
-\contentsline {subsection}{\numberline {2.4.1}Git}{8}{subsection.26}%
-\contentsline {subsection}{\numberline {2.4.2}Docker}{8}{subsection.27}%
-\contentsline {subsection}{\numberline {2.4.3}Software Libre}{8}{subsection.28}%
-\contentsline {subsection}{\numberline {2.4.4}Tests unitarios}{9}{subsection.38}%
-\contentsline {chapter}{\numberline {3}An\IeC {\'a}lisis de requisitos}{11}{chapter.39}%
-\contentsline {section}{\numberline {3.1}Introducci\IeC {\'o}n}{11}{section.40}%
-\contentsline {section}{\numberline {3.2}Casos de uso}{12}{section.42}%
-\contentsline {subsection}{\numberline {3.2.1}Consultar estad\IeC {\'\i }sticas y visualizaciones de chat individual sin contenido multimedia}{12}{subsection.43}%
-\contentsline {subsubsection}{\numberline {3.2.1.1}Nombre del caso de uso}{12}{subsubsection.44}%
-\contentsline {subsubsection}{\numberline {3.2.1.2}Actores}{12}{subsubsection.45}%
-\contentsline {subsubsection}{\numberline {3.2.1.3}Resumen}{13}{subsubsection.46}%
-\contentsline {subsubsection}{\numberline {3.2.1.4}Secuencia de acciones}{13}{subsubsection.47}%
-\contentsline {subsection}{\numberline {3.2.2}Actores del sistema}{13}{subsection.52}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}Usuario de WhatsApp}{13}{subsubsection.53}%
-\contentsline {subsubsection}{\numberline {3.2.2.2}Navegador con soporte \acrfull {pwa}}{13}{subsubsection.54}%
-\contentsline {subsubsection}{\numberline {3.2.2.3}Aplicaci\IeC {\'o}n WhatsApp}{14}{subsubsection.55}%
-\contentsline {subsubsection}{\numberline {3.2.2.4}Datos conversacionales de WhatsApp}{14}{subsubsection.56}%
-\contentsline {subsection}{\numberline {3.2.3}Especificaci\IeC {\'o}n suplementaria}{14}{subsection.57}%
-\contentsline {subsubsection}{\numberline {3.2.3.1}Reglas de dominio}{14}{subsubsection.58}%
-\contentsline {subsubsection}{\numberline {3.2.3.2}Requisitos no funcionales}{14}{subsubsection.59}%
-\contentsline {subsubsection}{\numberline {3.2.3.3}Restricciones}{14}{subsubsection.60}%
-\contentsline {subsection}{\numberline {3.2.4}Consultar estad\IeC {\'\i }sticas y visualizaciones de chat grupal sin contenido multimedia}{15}{subsection.61}%
-\contentsline {subsubsection}{\numberline {3.2.4.1}Nombre del caso de uso}{15}{subsubsection.62}%
-\contentsline {subsubsection}{\numberline {3.2.4.2}Actores}{15}{subsubsection.63}%
-\contentsline {subsubsection}{\numberline {3.2.4.3}Resumen}{15}{subsubsection.64}%
-\contentsline {subsubsection}{\numberline {3.2.4.4}Secuencia de acciones}{15}{subsubsection.65}%
-\contentsline {subsection}{\numberline {3.2.5}Actores del sistema}{16}{subsection.70}%
-\contentsline {subsubsection}{\numberline {3.2.5.1}Usuario de WhatsApp}{16}{subsubsection.71}%
-\contentsline {subsubsection}{\numberline {3.2.5.2}Navegador con soporte \acrfull {pwa}}{16}{subsubsection.72}%
-\contentsline {subsubsection}{\numberline {3.2.5.3}Aplicaci\IeC {\'o}n WhatsApp}{16}{subsubsection.73}%
-\contentsline {subsubsection}{\numberline {3.2.5.4}Datos conversacionales de WhatsApp}{16}{subsubsection.74}%
-\contentsline {subsection}{\numberline {3.2.6}Especificaci\IeC {\'o}n suplementaria}{16}{subsection.75}%
-\contentsline {subsubsection}{\numberline {3.2.6.1}Reglas de dominio}{16}{subsubsection.76}%
-\contentsline {subsubsection}{\numberline {3.2.6.2}Requisitos no funcionales}{16}{subsubsection.77}%
-\contentsline {subsubsection}{\numberline {3.2.6.3}Restricciones}{17}{subsubsection.78}%
-\contentsline {subsection}{\numberline {3.2.7}Consultar estad\IeC {\'\i }sticas y visualizaciones de chat individual con contenido multimedia}{17}{subsection.79}%
-\contentsline {subsubsection}{\numberline {3.2.7.1}Nombre del caso de uso}{17}{subsubsection.80}%
-\contentsline {subsubsection}{\numberline {3.2.7.2}Actores}{17}{subsubsection.81}%
-\contentsline {subsubsection}{\numberline {3.2.7.3}Resumen}{17}{subsubsection.82}%
-\contentsline {subsubsection}{\numberline {3.2.7.4}Secuencia de acciones}{18}{subsubsection.83}%
-\contentsline {subsection}{\numberline {3.2.8}Actores del sistema}{18}{subsection.88}%
-\contentsline {subsubsection}{\numberline {3.2.8.1}Usuario de WhatsApp}{18}{subsubsection.89}%
-\contentsline {subsubsection}{\numberline {3.2.8.2}Navegador con soporte \acrfull {pwa}}{18}{subsubsection.90}%
-\contentsline {subsubsection}{\numberline {3.2.8.3}Aplicaci\IeC {\'o}n WhatsApp}{18}{subsubsection.91}%
-\contentsline {subsubsection}{\numberline {3.2.8.4}Datos conversacionales de WhatsApp}{19}{subsubsection.92}%
-\contentsline {subsection}{\numberline {3.2.9}Especificaci\IeC {\'o}n suplementaria}{19}{subsection.93}%
-\contentsline {subsubsection}{\numberline {3.2.9.1}Reglas de dominio}{19}{subsubsection.94}%
-\contentsline {subsubsection}{\numberline {3.2.9.2}Requisitos no funcionales}{19}{subsubsection.95}%
-\contentsline {subsubsection}{\numberline {3.2.9.3}Restricciones}{19}{subsubsection.96}%
-\contentsline {subsection}{\numberline {3.2.10}Consultar estad\IeC {\'\i }sticas y visualizaciones de chat grupal con contenido multimedia}{19}{subsection.97}%
-\contentsline {subsubsection}{\numberline {3.2.10.1}Nombre del caso de uso}{19}{subsubsection.98}%
-\contentsline {subsubsection}{\numberline {3.2.10.2}Actores}{20}{subsubsection.99}%
-\contentsline {subsubsection}{\numberline {3.2.10.3}Resumen}{20}{subsubsection.100}%
-\contentsline {subsubsection}{\numberline {3.2.10.4}Secuencia de acciones}{20}{subsubsection.101}%
-\contentsline {subsection}{\numberline {3.2.11}Actores del sistema}{20}{subsection.106}%
-\contentsline {subsubsection}{\numberline {3.2.11.1}Usuario de WhatsApp}{20}{subsubsection.107}%
-\contentsline {subsubsection}{\numberline {3.2.11.2}Navegador con soporte \acrfull {pwa}}{21}{subsubsection.108}%
-\contentsline {subsubsection}{\numberline {3.2.11.3}Aplicaci\IeC {\'o}n WhatsApp}{21}{subsubsection.109}%
-\contentsline {subsubsection}{\numberline {3.2.11.4}Datos conversacionales de WhatsApp}{21}{subsubsection.110}%
-\contentsline {subsection}{\numberline {3.2.12}Especificaci\IeC {\'o}n suplementaria}{21}{subsection.111}%
-\contentsline {subsubsection}{\numberline {3.2.12.1}Reglas de dominio}{21}{subsubsection.112}%
-\contentsline {subsubsection}{\numberline {3.2.12.2}Requisitos no funcionales}{21}{subsubsection.113}%
-\contentsline {subsubsection}{\numberline {3.2.12.3}Restricciones}{22}{subsubsection.114}%
-\contentsline {chapter}{\numberline {4}Arquitectura}{23}{chapter.115}%
-\contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{23}{section.116}%
-\contentsline {section}{\numberline {4.2}Arquitectura de procesamiento}{24}{section.117}%
-\contentsline {subsection}{\numberline {4.2.1}Input}{24}{subsection.119}%
-\contentsline {subsection}{\numberline {4.2.2}Descompresor (Opcional)}{24}{subsection.120}%
-\contentsline {subsection}{\numberline {4.2.3}Parser}{24}{subsection.121}%
-\contentsline {subsubsection}{\numberline {4.2.3.1}Parser de cadenas de caracteres de tiempo}{25}{subsubsection.126}%
-\contentsline {subsubsection}{\numberline {4.2.3.2}Parser de archivos multimedia}{25}{subsubsection.127}%
-\contentsline {paragraph}{Con contenido multimedia}{25}{subsubsection.127}%
-\contentsline {paragraph}{Sin contenido multimedia}{26}{lstnumber.132}%
-\contentsline {subsubsection}{\numberline {4.2.3.3}Parser de mensajes}{26}{subsubsection.135}%
-\contentsline {subsection}{\numberline {4.2.4}Agregadores}{26}{subsection.144}%
-\contentsline {subsubsection}{\numberline {4.2.4.1}Agregador por contacto}{27}{subsubsection.145}%
-\contentsline {subsubsection}{\numberline {4.2.4.2}Agregador por d\IeC {\'\i }a}{27}{subsubsection.152}%
-\contentsline {subsubsection}{\numberline {4.2.4.3}Agregador por hora}{28}{subsubsection.169}%
-\contentsline {subsubsection}{\numberline {4.2.4.4}Agregador por mes}{28}{subsubsection.186}%
-\contentsline {subsection}{\numberline {4.2.5}Visualizador}{29}{subsection.201}%
-\contentsline {subsubsection}{\numberline {4.2.5.1}Contador de palabras}{29}{subsubsection.202}%
-\contentsline {subsubsection}{\numberline {4.2.5.2}Contador de caracteres}{29}{subsubsection.203}%
-\contentsline {subsubsection}{\numberline {4.2.5.3}Media de palabras por mensaje}{29}{subsubsection.204}%
-\contentsline {subsubsection}{\numberline {4.2.5.4}Media de caracteres por mensaje}{29}{subsubsection.205}%
-\contentsline {subsubsection}{\numberline {4.2.5.5}Contador de multimedia}{30}{subsubsection.206}%
-\contentsline {subsubsection}{\numberline {4.2.5.6}Contador de palabras m\IeC {\'a}s repetidas}{30}{subsubsection.207}%
-\contentsline {subsubsection}{\numberline {4.2.5.7}Generador de estructuras de datos por d\IeC {\'\i }a, hora y mes}{30}{subsubsection.208}%
-\contentsline {section}{\numberline {4.3}Arquitectura en el servidor}{30}{section.209}%
-\contentsline {subsection}{\numberline {4.3.1}ChatStats React Server}{31}{subsection.211}%
-\contentsline {subsection}{\numberline {4.3.2}Traefik}{32}{subsection.212}%
-\contentsline {chapter}{\numberline {5}Caso de estudio}{33}{chapter.213}%
-\contentsline {section}{\numberline {5.1}Introducci\IeC {\'o}n}{33}{section.214}%
-\contentsline {section}{\numberline {5.2}Rule edition}{33}{section.215}%
-\contentsline {chapter}{\numberline {6}Conclusiones y futuras l\IeC {\'\i }neas de trabajo}{35}{chapter.216}%
-\contentsline {section}{\numberline {6.1}Conclusiones}{35}{section.217}%
-\contentsline {section}{\numberline {6.2}Objetivos conseguidos}{35}{section.218}%
-\contentsline {section}{\numberline {6.3}Futuras l\IeC {\'\i }neas de trabajo}{36}{section.219}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Impacto del proyecto}{\es@scroman {i}}{appendix.220}%
-\contentsline {section}{\numberline {A.1}Impacto social}{\es@scroman {i}}{section.221}%
-\contentsline {subsection}{\numberline {A.1.1}Introducci\IeC {\'o}n}{\es@scroman {i}}{subsection.222}%
-\contentsline {subsection}{\numberline {A.1.2}Descripci\IeC {\'o}n de impactos relevantes relacionados con el proyecto}{\es@scroman {i}}{subsection.223}%
-\contentsline {subsection}{\numberline {A.1.3}Conclusiones}{\es@scroman {ii}}{subsection.224}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {B}Presupuesto econ\IeC {\'o}mico}{\es@scroman {iii}}{appendix.225}%
-\contentsline {section}{\numberline {B.1}Costes}{\es@scroman {iii}}{section.226}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {C}C\IeC {\'o}digo}{\es@scroman {v}}{appendix.227}%
-\contentsline {section}{\numberline {C.1}Acceso al c\IeC {\'o}digo fuente}{\es@scroman {v}}{section.228}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {D}Expresiones regulares}{\es@scroman {vii}}{appendix.229}%
-\contentsline {section}{\numberline {D.1}Grupos de captura}{\es@scroman {vii}}{section.230}%
-\contentsline {paragraph}{Grupo de captura 1: fecha}{\es@scroman {vii}}{lstnumber.232}%
-\contentsline {paragraph}{Grupo de captura 2: hora}{\es@scroman {viii}}{lstnumber.234}%
-\contentsline {paragraph}{Grupo de captura 3: contacto}{\es@scroman {viii}}{lstnumber.236}%
-\contentsline {paragraph}{Grupo de captura 4: mensaje}{\es@scroman {viii}}{lstnumber.238}%
-\contentsline {paragraph}{Look ahead o mirada hacia delante}{\es@scroman {viii}}{lstnumber.240}%
-\contentsline {chapter}{Bibliography}{\es@scroman {xi}}{section*.243}%
+\contentsline {section}{\numberline {2.1}Tecnolog\IeC {\'\i }as en el cliente}{5}{section.18}%
+\contentsline {subsection}{\numberline {2.1.1}React}{5}{subsection.20}%
+\contentsline {section}{\numberline {2.2}Progressive Web App}{6}{section.21}%
+\contentsline {subsection}{\numberline {2.2.1}WebAssembly}{6}{subsection.22}%
+\contentsline {subsection}{\numberline {2.2.2}Expresiones regulares}{7}{subsection.24}%
+\contentsline {section}{\numberline {2.3}Tecnolog\IeC {\'\i }as en el servidor}{7}{section.25}%
+\contentsline {subsection}{\numberline {2.3.1}GNU/Linux}{7}{subsection.27}%
+\contentsline {subsection}{\numberline {2.3.2}Traefik}{8}{subsection.28}%
+\contentsline {section}{\numberline {2.4}Herramientas de desarrollo}{8}{section.29}%
+\contentsline {subsection}{\numberline {2.4.1}Git}{8}{subsection.30}%
+\contentsline {subsection}{\numberline {2.4.2}Docker}{8}{subsection.31}%
+\contentsline {subsection}{\numberline {2.4.3}Software Libre}{9}{subsection.32}%
+\contentsline {subsection}{\numberline {2.4.4}Tests unitarios}{9}{subsection.42}%
+\contentsline {chapter}{\numberline {3}An\IeC {\'a}lisis de requisitos}{11}{chapter.44}%
+\contentsline {section}{\numberline {3.1}Introducci\IeC {\'o}n}{11}{section.45}%
+\contentsline {section}{\numberline {3.2}Casos de uso}{12}{section.47}%
+\contentsline {subsection}{\numberline {3.2.1}Consultar estad\IeC {\'\i }sticas y visualizaciones de chat individual sin contenido multimedia}{12}{subsection.48}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Nombre del caso de uso}{12}{subsubsection.49}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}Actores}{12}{subsubsection.50}%
+\contentsline {subsubsection}{\numberline {3.2.1.3}Resumen}{13}{subsubsection.51}%
+\contentsline {subsubsection}{\numberline {3.2.1.4}Secuencia de acciones}{13}{subsubsection.52}%
+\contentsline {subsection}{\numberline {3.2.2}Actores del sistema}{13}{subsection.57}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Usuario de WhatsApp}{13}{subsubsection.58}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Navegador con soporte \acrfull {pwa}}{14}{subsubsection.59}%
+\contentsline {subsubsection}{\numberline {3.2.2.3}Aplicaci\IeC {\'o}n WhatsApp}{14}{subsubsection.60}%
+\contentsline {subsubsection}{\numberline {3.2.2.4}Datos conversacionales de WhatsApp}{14}{subsubsection.61}%
+\contentsline {subsection}{\numberline {3.2.3}Especificaci\IeC {\'o}n suplementaria}{14}{subsection.62}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}Reglas de dominio}{14}{subsubsection.63}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}Requisitos no funcionales}{14}{subsubsection.64}%
+\contentsline {subsubsection}{\numberline {3.2.3.3}Restricciones}{15}{subsubsection.65}%
+\contentsline {subsection}{\numberline {3.2.4}Consultar estad\IeC {\'\i }sticas y visualizaciones de chat grupal sin contenido multimedia}{15}{subsection.66}%
+\contentsline {subsubsection}{\numberline {3.2.4.1}Nombre del caso de uso}{15}{subsubsection.67}%
+\contentsline {subsubsection}{\numberline {3.2.4.2}Actores}{15}{subsubsection.68}%
+\contentsline {subsubsection}{\numberline {3.2.4.3}Resumen}{15}{subsubsection.69}%
+\contentsline {subsubsection}{\numberline {3.2.4.4}Secuencia de acciones}{15}{subsubsection.70}%
+\contentsline {subsection}{\numberline {3.2.5}Actores del sistema}{16}{subsection.75}%
+\contentsline {subsubsection}{\numberline {3.2.5.1}Usuario de WhatsApp}{16}{subsubsection.76}%
+\contentsline {subsubsection}{\numberline {3.2.5.2}Navegador con soporte \acrfull {pwa}}{16}{subsubsection.77}%
+\contentsline {subsubsection}{\numberline {3.2.5.3}Aplicaci\IeC {\'o}n WhatsApp}{16}{subsubsection.78}%
+\contentsline {subsubsection}{\numberline {3.2.5.4}Datos conversacionales de WhatsApp}{16}{subsubsection.79}%
+\contentsline {subsection}{\numberline {3.2.6}Especificaci\IeC {\'o}n suplementaria}{17}{subsection.80}%
+\contentsline {subsubsection}{\numberline {3.2.6.1}Reglas de dominio}{17}{subsubsection.81}%
+\contentsline {subsubsection}{\numberline {3.2.6.2}Requisitos no funcionales}{17}{subsubsection.82}%
+\contentsline {subsubsection}{\numberline {3.2.6.3}Restricciones}{17}{subsubsection.83}%
+\contentsline {subsection}{\numberline {3.2.7}Consultar estad\IeC {\'\i }sticas y visualizaciones de chat individual con contenido multimedia}{17}{subsection.84}%
+\contentsline {subsubsection}{\numberline {3.2.7.1}Nombre del caso de uso}{17}{subsubsection.85}%
+\contentsline {subsubsection}{\numberline {3.2.7.2}Actores}{17}{subsubsection.86}%
+\contentsline {subsubsection}{\numberline {3.2.7.3}Resumen}{18}{subsubsection.87}%
+\contentsline {subsubsection}{\numberline {3.2.7.4}Secuencia de acciones}{18}{subsubsection.88}%
+\contentsline {subsection}{\numberline {3.2.8}Actores del sistema}{18}{subsection.93}%
+\contentsline {subsubsection}{\numberline {3.2.8.1}Usuario de WhatsApp}{18}{subsubsection.94}%
+\contentsline {subsubsection}{\numberline {3.2.8.2}Navegador con soporte \acrfull {pwa}}{18}{subsubsection.95}%
+\contentsline {subsubsection}{\numberline {3.2.8.3}Aplicaci\IeC {\'o}n WhatsApp}{19}{subsubsection.96}%
+\contentsline {subsubsection}{\numberline {3.2.8.4}Datos conversacionales de WhatsApp}{19}{subsubsection.97}%
+\contentsline {subsection}{\numberline {3.2.9}Especificaci\IeC {\'o}n suplementaria}{19}{subsection.98}%
+\contentsline {subsubsection}{\numberline {3.2.9.1}Reglas de dominio}{19}{subsubsection.99}%
+\contentsline {subsubsection}{\numberline {3.2.9.2}Requisitos no funcionales}{19}{subsubsection.100}%
+\contentsline {subsubsection}{\numberline {3.2.9.3}Restricciones}{19}{subsubsection.101}%
+\contentsline {subsection}{\numberline {3.2.10}Consultar estad\IeC {\'\i }sticas y visualizaciones de chat grupal con contenido multimedia}{20}{subsection.102}%
+\contentsline {subsubsection}{\numberline {3.2.10.1}Nombre del caso de uso}{20}{subsubsection.103}%
+\contentsline {subsubsection}{\numberline {3.2.10.2}Actores}{20}{subsubsection.104}%
+\contentsline {subsubsection}{\numberline {3.2.10.3}Resumen}{20}{subsubsection.105}%
+\contentsline {subsubsection}{\numberline {3.2.10.4}Secuencia de acciones}{20}{subsubsection.106}%
+\contentsline {subsection}{\numberline {3.2.11}Actores del sistema}{21}{subsection.111}%
+\contentsline {subsubsection}{\numberline {3.2.11.1}Usuario de WhatsApp}{21}{subsubsection.112}%
+\contentsline {subsubsection}{\numberline {3.2.11.2}Navegador con soporte \acrfull {pwa}}{21}{subsubsection.113}%
+\contentsline {subsubsection}{\numberline {3.2.11.3}Aplicaci\IeC {\'o}n WhatsApp}{21}{subsubsection.114}%
+\contentsline {subsubsection}{\numberline {3.2.11.4}Datos conversacionales de WhatsApp}{21}{subsubsection.115}%
+\contentsline {subsection}{\numberline {3.2.12}Especificaci\IeC {\'o}n suplementaria}{21}{subsection.116}%
+\contentsline {subsubsection}{\numberline {3.2.12.1}Reglas de dominio}{21}{subsubsection.117}%
+\contentsline {subsubsection}{\numberline {3.2.12.2}Requisitos no funcionales}{21}{subsubsection.118}%
+\contentsline {subsubsection}{\numberline {3.2.12.3}Restricciones}{22}{subsubsection.119}%
+\contentsline {chapter}{\numberline {4}Arquitectura}{23}{chapter.120}%
+\contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{23}{section.121}%
+\contentsline {section}{\numberline {4.2}Arquitectura de procesamiento}{23}{section.122}%
+\contentsline {subsection}{\numberline {4.2.1}Input}{25}{subsection.125}%
+\contentsline {subsection}{\numberline {4.2.2}Descompresor (Opcional)}{25}{subsection.126}%
+\contentsline {subsection}{\numberline {4.2.3}Parser}{25}{subsection.127}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}Parser de cadenas de caracteres de tiempo}{26}{subsubsection.135}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}Parser de archivos multimedia}{26}{subsubsection.136}%
+\contentsline {paragraph}{Con contenido multimedia}{26}{subsubsection.136}%
+\contentsline {paragraph}{Sin contenido multimedia}{27}{lstnumber.141}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}Parser de mensajes}{27}{subsubsection.144}%
+\contentsline {subsection}{\numberline {4.2.4}Agregadores}{27}{subsection.153}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}Agregador por contacto}{28}{subsubsection.154}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}Agregador por d\IeC {\'\i }a}{28}{subsubsection.161}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}Agregador por hora}{29}{subsubsection.178}%
+\contentsline {subsubsection}{\numberline {4.2.4.4}Agregador por mes}{29}{subsubsection.195}%
+\contentsline {subsection}{\numberline {4.2.5}Visualizador}{30}{subsection.210}%
+\contentsline {subsubsection}{\numberline {4.2.5.1}Contador de palabras}{30}{subsubsection.212}%
+\contentsline {subsubsection}{\numberline {4.2.5.2}Contador de caracteres}{30}{subsubsection.213}%
+\contentsline {subsubsection}{\numberline {4.2.5.3}Media de palabras por mensaje}{30}{subsubsection.214}%
+\contentsline {subsubsection}{\numberline {4.2.5.4}Media de caracteres por mensaje}{30}{subsubsection.215}%
+\contentsline {subsubsection}{\numberline {4.2.5.5}Contador de multimedia}{31}{subsubsection.216}%
+\contentsline {subsubsection}{\numberline {4.2.5.6}Contador de palabras m\IeC {\'a}s repetidas}{31}{subsubsection.217}%
+\contentsline {subsubsection}{\numberline {4.2.5.7}Contador de emoticonos m\IeC {\'a}s usados}{31}{subsubsection.220}%
+\contentsline {subsubsection}{\numberline {4.2.5.8}Generador de estructuras de datos por d\IeC {\'\i }a, hora y mes}{31}{subsubsection.221}%
+\contentsline {section}{\numberline {4.3}Arquitectura en el servidor}{31}{section.222}%
+\contentsline {subsection}{\numberline {4.3.1}ChatStats React Server}{32}{subsection.224}%
+\contentsline {subsection}{\numberline {4.3.2}Traefik}{33}{subsection.225}%
+\contentsline {section}{\numberline {4.4}Arquitectura en el cliente}{33}{section.226}%
+\contentsline {subsection}{\numberline {4.4.1}Navegador}{34}{subsection.229}%
+\contentsline {subsection}{\numberline {4.4.2}Aplicaci\IeC {\'o}n Web}{34}{subsection.230}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}Router}{34}{subsubsection.231}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}React Virtual DOM}{34}{subsubsection.232}%
+\contentsline {chapter}{\numberline {5}Caso de estudio}{37}{chapter.233}%
+\contentsline {section}{\numberline {5.1}Introducci\IeC {\'o}n}{37}{section.234}%
+\contentsline {section}{\numberline {5.2}Consultar estad\IeC {\'\i }sticas y visualizaciones de chat individual con contenido multimedia}{37}{section.235}%
+\contentsline {subsection}{\numberline {5.2.1}Paso 1. Acceso a la aplicaci\IeC {\'o}n}{38}{subsection.239}%
+\contentsline {subsection}{\numberline {5.2.2}Paso 2. Selecci\IeC {\'o}n del archivo de datos conversacionales}{38}{subsection.241}%
+\contentsline {subsection}{\numberline {5.2.3}Paso 3. Confirmaci\IeC {\'o}n del archivo seleccionado}{39}{subsection.243}%
+\contentsline {subsection}{\numberline {5.2.4}Paso 4. C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas}{40}{subsection.245}%
+\contentsline {subsection}{\numberline {5.2.5}Paso 5. Visualizaci\IeC {\'o}n de estad\IeC {\'\i }sticas y gr\IeC {\'a}ficos}{41}{subsection.247}%
+\contentsline {chapter}{\numberline {6}Conclusiones y futuras l\IeC {\'\i }neas de trabajo}{43}{chapter.251}%
+\contentsline {section}{\numberline {6.1}Conclusiones}{43}{section.252}%
+\contentsline {section}{\numberline {6.2}Objetivos conseguidos}{43}{section.254}%
+\contentsline {section}{\numberline {6.3}Futuras l\IeC {\'\i }neas de trabajo}{44}{section.256}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Impacto del proyecto}{\es@scroman {i}}{appendix.258}%
+\contentsline {section}{\numberline {A.1}Impacto social}{\es@scroman {i}}{section.259}%
+\contentsline {subsection}{\numberline {A.1.1}Introducci\IeC {\'o}n}{\es@scroman {i}}{subsection.260}%
+\contentsline {subsection}{\numberline {A.1.2}Descripci\IeC {\'o}n de impactos relevantes relacionados con el proyecto}{\es@scroman {i}}{subsection.261}%
+\contentsline {subsection}{\numberline {A.1.3}Conclusiones}{\es@scroman {ii}}{subsection.262}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {B}Presupuesto econ\IeC {\'o}mico}{\es@scroman {iii}}{appendix.263}%
+\contentsline {section}{\numberline {B.1}Costes}{\es@scroman {iii}}{section.264}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {C}C\IeC {\'o}digo}{\es@scroman {v}}{appendix.265}%
+\contentsline {section}{\numberline {C.1}Acceso al c\IeC {\'o}digo fuente}{\es@scroman {v}}{section.266}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {D}Expresiones regulares}{\es@scroman {vii}}{appendix.267}%
+\contentsline {section}{\numberline {D.1}Grupos de captura}{\es@scroman {vii}}{section.268}%
+\contentsline {paragraph}{Grupo de captura 1: fecha}{\es@scroman {vii}}{lstnumber.270}%
+\contentsline {paragraph}{Grupo de captura 2: hora}{\es@scroman {viii}}{lstnumber.272}%
+\contentsline {paragraph}{Grupo de captura 3: contacto}{\es@scroman {viii}}{lstnumber.274}%
+\contentsline {paragraph}{Grupo de captura 4: mensaje}{\es@scroman {viii}}{lstnumber.276}%
+\contentsline {paragraph}{Look ahead o mirada hacia delante}{\es@scroman {viii}}{lstnumber.278}%
+\contentsline {chapter}{Bibliography}{\es@scroman {xi}}{section*.281}%

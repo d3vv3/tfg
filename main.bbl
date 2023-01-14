@@ -1,5 +1,26 @@
 \begin{thebibliography}{1}
 
+\bibitem{whatsAppsPerDay}
+Manish Singh.
+\newblock ``{W}hats{A}pp is now delivering roughly 100 billion messages a
+  day''.
+\newblock
+  \url{https://techcrunch.com/2020/10/29/whatsapp-is-now-delivering-roughly-100-billion-messages-a-day/}.
+\newblock Online; accedido a 28 de diciembre de 2022.
+
+\bibitem{whatsAppsUsers}
+Daniel Ruby.
+\newblock ``{W}hatsapp {S}tatistics 2023 — {H}ow {M}any {P}eople {U}se
+  {W}hatsapp''.
+\newblock \url{https://www.demandsage.com/whatsapp-statistics/}.
+\newblock Online; accedido a 28 de diciembre de 2022.
+
+\bibitem{GPLv3}
+Inc. Free Software~Foundation.
+\newblock ``{GNU} {G}eneral {P}ublic {L}icense {V}ersion 3''.
+\newblock \url{https://www.gnu.org/licenses/gpl-3.0.en.html}.
+\newblock Online; accedido a 28 de diciembre de 2022.
+
 \bibitem{firefoxNoPWA}
 Jared Newman.
 \newblock ``{F}irefox just walked away from a key piece of the open web''.
@@ -24,10 +45,16 @@ Barry Elad.
   \url{https://www.enterpriseappstoday.com/stats/linux-statistics.html}.
 \newblock Online; accedido a 10 de octubre de 2022.
 
-\bibitem{GPLv3}
-Free~Software Foundation.
-\newblock ``{GNU} {G}eneral {P}ublic {L}icense''.
-\newblock \url{https://www.gnu.org/licenses/gpl-3.0.en.html}.
-\newblock Online; accedido a 18 de octubre de 2022.
+\bibitem{firefoxPWAextension}
+Filip Š.
+\newblock ``{P}rogressive {W}eb {A}pps for {F}irefox''.
+\newblock
+  \url{https://addons.mozilla.org/en-US/firefox/addon/pwas-for-firefox/}.
+\newblock Online; accedido a 11 de enero de 2023.
+
+\bibitem{dunbarNumber}
+``{N}úmero de {D}unbar''.
+\newblock \url{https://es.wikipedia.org/wiki/N%C3%BAmero_de_Dunbar}.
+\newblock Online; accedido a 11 de enero de 2023.
 
 \end{thebibliography}

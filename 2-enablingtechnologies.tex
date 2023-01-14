@@ -3,8 +3,12 @@
 
 % Javascript, Reactjs, Docker, traefik, WebAssembly, WebApp, Regex, Git, Open Source Software, Linux
 
+\todi{Escribir pequeña introducción o resumen del capítulo}
+
 \section{Tecnologías en el cliente}
 \label{tec_hab:client}
+
+\todi{Escribir pequeña introducción}
 
 \subsection{React}
 \label{tec_hab:react}
@@ -35,6 +39,8 @@ Además, en noviembre de 2016 el tráfico web móvil superó al tráfico web de 
 \subsection{WebAssembly}
 \label{tec_hab:wam}
 
+\todi{Meter algo del lenguaje utilizado en WASM}
+
 WebAssembly define un formato de código binario portable e instrucciones correspondientes a modo de interfaz para facilitar interacciones entre programas y el entorno del host. Se trata de un estándar abierto que apunta a soportar la ejecución de cualquier lenguaje en cualquier sistema operativo.
 
 Para ello, requiere de la integración del soporte de WebAssembly por los navegadores. Los navegadores principales (Chrome, Firefox, Safari y Edge) ya soportan la versión 1.0 de WebAssembly.
@@ -55,6 +61,8 @@ Haremos uso de las mismas para segmentar los mensajes recibidos en texto plano, 
 \begin{comment}
 	Debido a la sencillez de nuestra lógica de negocio, no contamos con un back-end en el servidor, dado que únicamente servimos la aplicación al cliente. Una vez servida la aplicación, todas las operaciones se ejecutan en el cliente.
 \end{comment}
+
+\todi{Pequeña introducción}
 
 
 
@@ -110,10 +118,12 @@ Durante las fase de desarrollo, se usará Git como sistema de control de version
 	\item Ni el autor del código ni la licencia pueden ser marcadas como responsables de daños producidos por el software.
 \end{enumerate}
 
-El código fuente está disponible en Codeberg para consulta, contribuciones y seguimiento de errores. Se ha elegido Codeberg como alternativa de código abierto a otras plataformas como GitHub, ya que está basada en Gitea.
+El código fuente está disponible en Codeberg para consulta, contribuciones y seguimiento de errores. Se ha elegido Codeberg como alternativa de código abierto a otras plataformas como GitHub, ya que está basada en Gitea. A su vez, existe un repositorio alternativo o \textit{mirror} en Github. Ambos pueden verse en el \autoref{chap:code}.
 
 
 \subsection{Tests unitarios}
 \label{tec_hab:tests}
+
+\todi{Actualizar y cálcular el \%}
 
 A lo largo del desarrollo se han implementado numerosos tests unitarios para comprobar el funcionamiento de las diferentes unidades lógicas que componen la aplicación. Se ha utilizado Jest como librería para estas pruebas, y se ha implementado una cobertura del $85\%$ de las unidades lógicas de la lógica de negocio. La decisión de utilizar esta librería tiene en cuenta su compatibilidad con React y las facilidades que ofrece durante el desarrollo.
