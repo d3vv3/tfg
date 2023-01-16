@@ -71,34 +71,35 @@
 \contentsline {subsection}{\numberline {3.3.3}Restricciones}{18}{subsection.83}%
 \contentsline {chapter}{\numberline {4}Arquitectura}{19}{chapter.84}%
 \contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{19}{section.85}%
-\contentsline {section}{\numberline {4.2}Arquitectura de procesamiento}{20}{section.88}%
-\contentsline {subsection}{\numberline {4.2.1}Input}{21}{subsection.91}%
-\contentsline {subsection}{\numberline {4.2.2}Descompresor (Opcional)}{21}{subsection.92}%
-\contentsline {subsection}{\numberline {4.2.3}Parser}{22}{subsection.93}%
-\contentsline {subsubsection}{\numberline {4.2.3.1}Parser de cadenas de caracteres de tiempo}{22}{subsubsection.101}%
-\contentsline {subsubsection}{\numberline {4.2.3.2}Parser de archivos multimedia}{23}{subsubsection.102}%
+\contentsline {section}{\numberline {4.2}Arquitectura de la aplicaci\IeC {\'o}n}{20}{section.88}%
+\contentsline {subsection}{\numberline {4.2.1}Importador}{21}{subsection.90}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}Entrada}{21}{subsubsection.91}%
+\contentsline {subsubsection}{\numberline {4.2.1.2}Descompresor (Opcional)}{22}{subsubsection.92}%
+\contentsline {subsection}{\numberline {4.2.2}Parser}{22}{subsection.93}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Parser de cadenas de caracteres de tiempo}{23}{subsubsection.101}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Parser de archivos multimedia}{23}{subsubsection.102}%
 \contentsline {paragraph}{Con contenido multimedia}{23}{subsubsection.102}%
-\contentsline {paragraph}{Sin contenido multimedia}{23}{lstnumber.107}%
-\contentsline {subsubsection}{\numberline {4.2.3.3}Parser de mensajes}{24}{subsubsection.110}%
-\contentsline {subsection}{\numberline {4.2.4}Agregadores}{24}{subsection.119}%
-\contentsline {subsubsection}{\numberline {4.2.4.1}Agregador por contacto}{24}{subsubsection.120}%
-\contentsline {subsubsection}{\numberline {4.2.4.2}Agregador por d\IeC {\'\i }a}{25}{subsubsection.127}%
-\contentsline {subsubsection}{\numberline {4.2.4.3}Agregador por hora}{25}{subsubsection.144}%
-\contentsline {subsubsection}{\numberline {4.2.4.4}Agregador por mes}{26}{subsubsection.161}%
-\contentsline {subsection}{\numberline {4.2.5}Visualizador}{26}{subsection.176}%
-\contentsline {subsubsection}{\numberline {4.2.5.1}Contador de palabras}{27}{subsubsection.178}%
-\contentsline {subsubsection}{\numberline {4.2.5.2}Contador de caracteres}{27}{subsubsection.179}%
-\contentsline {subsubsection}{\numberline {4.2.5.3}Media de palabras por mensaje}{27}{subsubsection.180}%
-\contentsline {subsubsection}{\numberline {4.2.5.4}Media de caracteres por mensaje}{27}{subsubsection.181}%
-\contentsline {subsubsection}{\numberline {4.2.5.5}Contador de multimedia}{27}{subsubsection.182}%
-\contentsline {subsubsection}{\numberline {4.2.5.6}Contador de palabras m\IeC {\'a}s repetidas}{27}{subsubsection.183}%
-\contentsline {subsubsection}{\numberline {4.2.5.7}Contador de emoticonos m\IeC {\'a}s usados}{28}{subsubsection.186}%
-\contentsline {subsubsection}{\numberline {4.2.5.8}Generador de estructuras de datos por d\IeC {\'\i }a, hora y mes}{28}{subsubsection.187}%
+\contentsline {paragraph}{Sin contenido multimedia}{24}{lstnumber.107}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}Parser de mensajes}{24}{subsubsection.110}%
+\contentsline {subsection}{\numberline {4.2.3}Agregadores}{24}{subsection.119}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}Agregador por contacto}{25}{subsubsection.120}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}Agregador por d\IeC {\'\i }a}{25}{subsubsection.127}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}Agregador por hora}{26}{subsubsection.144}%
+\contentsline {subsubsection}{\numberline {4.2.3.4}Agregador por mes}{26}{subsubsection.161}%
+\contentsline {subsection}{\numberline {4.2.4}Visualizador}{27}{subsection.176}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}Contador de palabras}{27}{subsubsection.178}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}Contador de caracteres}{27}{subsubsection.179}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}Media de palabras por mensaje}{27}{subsubsection.180}%
+\contentsline {subsubsection}{\numberline {4.2.4.4}Media de caracteres por mensaje}{27}{subsubsection.181}%
+\contentsline {subsubsection}{\numberline {4.2.4.5}Contador de multimedia}{28}{subsubsection.182}%
+\contentsline {subsubsection}{\numberline {4.2.4.6}Contador de palabras m\IeC {\'a}s repetidas}{28}{subsubsection.183}%
+\contentsline {subsubsection}{\numberline {4.2.4.7}Contador de emoticonos m\IeC {\'a}s usados}{28}{subsubsection.186}%
+\contentsline {subsubsection}{\numberline {4.2.4.8}Generador de estructuras de datos por d\IeC {\'\i }a, hora y mes}{28}{subsubsection.187}%
 \contentsline {section}{\numberline {4.3}Arquitectura en el servidor}{28}{section.188}%
 \contentsline {subsection}{\numberline {4.3.1}ChatStats React Server}{29}{subsection.190}%
-\contentsline {subsection}{\numberline {4.3.2}Traefik}{29}{subsection.191}%
+\contentsline {subsection}{\numberline {4.3.2}Traefik}{30}{subsection.191}%
 \contentsline {section}{\numberline {4.4}Arquitectura en el cliente}{30}{section.192}%
-\contentsline {subsection}{\numberline {4.4.1}Navegador}{30}{subsection.195}%
+\contentsline {subsection}{\numberline {4.4.1}Navegador}{31}{subsection.195}%
 \contentsline {subsection}{\numberline {4.4.2}Aplicaci\IeC {\'o}n Web}{31}{subsection.196}%
 \contentsline {subsubsection}{\numberline {4.4.2.1}Router}{31}{subsubsection.197}%
 \contentsline {subsubsection}{\numberline {4.4.2.2}React Virtual DOM}{31}{subsubsection.198}%
