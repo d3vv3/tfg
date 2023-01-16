@@ -20,7 +20,7 @@ Se presenta a continuación el escenario principal de uso de ChatStats:
 
 Como se puede observar, el usuario debe exportar un chat desde la aplicación de WhatsApp (móvil) o Telegram para escritorio. Son estas las únicas versiones de las aplicaciones que permiten exportar las conversaciones. Con estos datos exportados, el usuario accede a ChatStats desde el navegador, ya sea en un dispositivo móvil o en un ordenador. El servidor le envía el cliente completo, por lo que no intercambia más peticiones en adelante. El usuario puede seleccionar e importar el archivo a la aplicación, que los estandariza, calcula métricas sobre la conversación y ofrece una visualización de los mismos. Finalmente, el usuario puede compartir las visualizaciones, así como exportar los datos calculados para su uso personal.
 
-
+\todi{Exponer por qué se decide JavaScript}
 
 \section{Arquitectura de la aplicación}
 \label{chap:architecture:processing}
@@ -53,37 +53,102 @@ En caso de exportar el chat con contenido multimedia, ChatStats únicamente espe
 
 \subsubsection{Entrada}
 
-Este módulo se encarga de cargar el fichero seleccionado por el usuario, que el navegador ofrece desde una ruta falsa y protegida para que la aplicación no pueda acceder a todos los archivos del dispositivo. En caso de tratarse de un fichero de texto plano, este módulo abre el archivo como una cadena de caracteres. En caso de tratarse de un fichero comprimido, se lo envía al módulo ``Descompresor'' esperando un archivo de texto plano como salida. Por último, en caso de tratarse de cualquier otro tipo de fichero, el módulo alerta al usuario de que el archivo de entrada no es válido.
+Este submódulo se encarga de cargar el fichero seleccionado por el usuario, que el navegador ofrece desde una ruta falsa y protegida para que la aplicación no pueda acceder a todos los archivos del dispositivo. En caso de tratarse de un fichero de texto plano, este módulo abre el archivo como una cadena de caracteres. En caso de tratarse de un fichero comprimido, se lo envía al módulo ``Descompresor'' esperando un archivo de texto plano como salida. Por último, en caso de tratarse de cualquier otro tipo de fichero, el módulo alerta al usuario de que el archivo de entrada no es válido.
 
-Este módulo hace uso de una instancia de \textit{FileReader}; clase que ofrecen los navegadores, permitiendo abrir el fichero como secuencia de caracteres.
+Este submódulo hace uso de una instancia de \textit{FileReader}; clase que ofrecen los navegadores, permitiendo abrir el fichero como secuencia de caracteres.
 
 \subsubsection{Descompresor (Opcional)}
 
-Este módulo se encarga de la descompresión de ficheros \textit{zip}, que descomprime bajo petición del módulo anterior. Finalmente, el módulo devuelve un fichero llamado \textit{\_chat.txt}, que, como se ha comentado anteriormente, contiene toda la información necesaria para el análisis (con o sin multimedia).
+Este submódulo se encarga de la descompresión de ficheros \textit{zip}, que descomprime bajo petición del módulo anterior. Finalmente, el módulo devuelve un fichero llamado \textit{\_chat.txt}, que, como se ha comentado anteriormente, contiene toda la información necesaria para el análisis (con o sin multimedia).
 
 El descompresor hace uso de la librería \textit{jszip} para la descompresión del fichero. La lógica añadida a esta aplicación nos permite encontrar el fichero de texto plano dentro del fichero comprimido y devolver el mismo al módulo de ``Entrada''.
 
 \subsection{Parseador}
 
-El objetivo de este módulo es estandarizar los datos de entrada.
+El objetivo de este módulo es estandarizar los datos de entrada con la finalidad de poder utilizar los mismos módulos para cualquier archivo de entrada.
 
-Todo comienza por encontrar una expresión regular que pueda buscar coincidencias en el archivo de texto, así como dividir estas coincidencias en los grupos correspondientes. Tras analizar varias fuentes de datos con distintos dispositivos, hemos detectado que existen dos formatos de mensaje: uno para Android y otro para dispositivos iOS.
+Mientras que Telegram ofrece los datos en formato \acrshort{json}, facilitando así la operabilidad de los mismos; WhatsApp no ofrece una estructura de datos ni consistencia entre distintas versiones de su aplicación.
 
-A continuación se muestra un mensaje en el formato de los dispositivos Android como ejemplo:
+Se expone a continuación un breve ejemplo del formato utilizado por Telegram:
+
+\begin{lstlisting}[language=JavaScript]
+	{
+		"name": "group_or_contact_name",
+		"type": "private_group_or_private_chat",
+		"id": 00000000,
+		"messages": [
+		...
+		{
+			"id": 11111,
+			"type": "message_service",
+			"date": "2019-04-02T20:53:14",
+			"date_unixtime": "1554231194",
+			"from": "Alice",
+			"from_id": "contact_user_id",
+			"text": "actual_body_message",
+			"text_entities": [
+			{
+				"type": "plain_link_or_document",
+				"text": "actual_body_message"
+			}
+			]
+		},
+		{
+			"id": 22222,
+			"type": "message",
+			"date": "2019-05-29T23:46:00",
+			"date_unixtime": "1559166360",
+			"from": "Bob",
+			"from_id": "contact_user_id",
+			"reply_to_message_id": 59386,
+			"file": "stickers/sticker.webp",
+			"thumbnail": "stickers/sticker.webp_thumb.jpg",
+			"media_type": "sticker",
+			"sticker_emoji": "actual_unicode_emoji",
+			"width": 512,
+			"height": 341,
+			"text": "",
+			"text_entities": []
+		}, ...
+		]
+	}
+\end{lstlisting}
+
+También se muestra un mensaje en el formato de exportación de WhatsApp en los dispositivos Android:
 
 \begin{lstlisting}
 	17/07/2022, 01:28 - Alice: Este es un mensaje de prueba
 \end{lstlisting}
 
-También se muestra un mensaje exportado por un dispositivo iOS:
+Así como un mensaje exportado desde WhatsApp por un dispositivo iOS:
 
 \begin{lstlisting}
 	[29/12/22, 0:14:55] Bob: Te escribo desde mi iPhone.
 \end{lstlisting}
 
-Podemos observar que ambos mensajes se componen de la fecha, la hora, el nombre del contacto y el propio cuerpo del mensaje, aunque con distinto formato.
+Podemos observar que, en el caso de WhatsApp, ambos mensajes se componen de la fecha, la hora, el nombre del contacto y el propio cuerpo del mensaje, aunque con distinto formato. Dicha información está disponible también en los mensajes de Telegram.
 
-Para poder separar cada mensaje se ha llegado a la siguiente expresión regular:
+\subsubsection{Parseador de mensajes}
+
+El objetivo del submódulo es convertir la cadena de caracteres de entrada en mensajes con el siguiente formato \acrshort{json}:
+
+\begin{lstlisting}[language=JavaScript]
+	{
+		date: new Date("2022-10-17T10:37:00"),
+		from: "Juan Pedro",
+		text: "IMG-20221020-WA0013.jpg",
+		type: "message",
+		media_type: "image"
+	}
+\end{lstlisting}
+
+Hemos decidido esta estructura ya que se trata de toda la información que podemos obtener de mensajes de WhatsApp. Además, es compatible con la estructura ya propuesta por Telegram. Podemos decir entonces que es un máximo común denominador de la información disponible en ambos casos. Serán estos los objetos que se utilizarán más adelante para calcular las estadísticas y las estructuras de datos de visualización.
+
+Es por ello que analizamos ambos casos por separado:
+
+\paragraph{Telegram} En caso de tratar un fichero en formato \acrshort{json}, utiliza la librería \textit{JSON} nativa para \textit{JavaScript}, parseando todo el contenido del módulo ``Importador'' y eliminando los datos del objeto original que no se van a utilizar. Posteriormente, llama al módulo ``Parseador de fecha y hora'' que se describe más adelante.
+
+\paragraph{WhatsApp} En caso de tratar con un fichero de WhatsApp, se llega a la siguiente expresión regular que nos permite separar las partes del mensaje, tanto para Android como para iOS.
 
 \begin{lstlisting}
 	/\[*(\d{1,2}\/\d{1,2}\/\d{2,4}),\s(\d{1,2}:\d{2}:*\d*)\]*\s(?:-\s)*(.*?):{1}\s(.*?)(?=\s\[*\d{1,2}\/\d{1,2}\/\d{2,4}|$)/gum
@@ -91,14 +156,16 @@ Para poder separar cada mensaje se ha llegado a la siguiente expresión regular:
 
 Los grupos de captura que lo componen se describen en detalle en el \autoref{chap:regex}.
 
-\todi{Actualizar grupos de captura con los de iPhone}
+En caso de tratarse de un mensaje de texto (no multimedia), el ``\textit{media\_type}'' es \textit{undefined} (indefinido) y ``\textit{text}'' contiene el cuerpo del mensaje.
 
 
-\subsubsection{Parser de cadenas de caracteres de tiempo}
+\subsubsection{Parseador de fecha y hora}
 
-Este submódulo recoge las coincidencias del grupo de captura 1 y 2, devolviendo un objeto de tipo \textit{Date}, lo cual nos permitirá operar con el fácilmente. Este módulo considera el \textit{locale} del cliente, invirtiendo mes y día para el caso \textit{en\_US}.
+Este submódulo tiene como entrada la fecha y la hora. Devuelve un objeto de tipo \textit{Date}, nativo de JavaScript. Esto nos permite realizar operaciones de tiempo con facilidad en otros módulos.
 
-Asimismo, el módulo considera los posibles formatos de fecha y hora, puesto que en iOS se incluyen los segundos y se usan los días, meses y horas sin cero a la izquierda; contrario a Android.
+Este submódulo utiliza la librería \textit{momentjs} para parsear los posibles distintos formatos de fecha que utilizan Telegram y WhatsApp en sus cadenas de caracteres. Además, considera el \textit{locale} del cliente, invirtiendo mes y día para el caso \textit{en\_US}.
+
+La salida de este submódulo se utiliza en la clave \textit{``date''} del objeto mensaje del submódulo anterior.
 
 \subsubsection{Parser de archivos multimedia}
 
@@ -126,24 +193,6 @@ Para el segundo caso, cada vez que un mensaje sea contenido multimedia, aparecer
 \begin{lstlisting}
 	17/07/2022, 01:33 - Juan Pedro: <Media omitted>
 \end{lstlisting}
-
-\subsubsection{Parser de mensajes}
-
-Este módulo convierte las cadenas de textos en un objeto \acrshort{json} con la siguiente estructura:
-
-\begin{lstlisting}[language=JavaScript]
-	{
-		date: new Date("2022-10-17T10:37:00"),
-		from: "Juan Pedro",
-		text: "IMG-20221020-WA0013.jpg",
-		type: "message",
-		media_type: "image"
-	}
-\end{lstlisting}
-
-En caso de tratarse de un mensaje de texto (no multimedia), el ``\textit{media\_type}'' será \textit{undefined} (indefinido) y ``\textit{text}'' contendrá el cuerpo del mensaje.
-
-Serán estos los objetos que se utilizarán más adelante para calcular las estadísticas y las estructuras de datos de visualización.
 
 \subsection{Agregadores}
 
