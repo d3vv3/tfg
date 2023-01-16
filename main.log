@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022 - Flatpak) (preloaded format=pdflatex 2022.11.15)  16 JAN 2023 19:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022 - Flatpak) (preloaded format=pdflatex 2022.11.15)  16 JAN 2023 19:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1693,7 +1693,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 LaTeX Info: Redefining \. on input line 54.
 LaTeX Info: Redefining \% on input line 54.
  [21 <./img/client.png>]
-<img/server.png, id=766, 726.715pt x 503.8825pt>
+<img/server.png, id=764, 726.715pt x 503.8825pt>
 File: img/server.png Graphic file (type png)
 <use img/server.png>
 Package pdftex.def Info: img/server.png  used on input line 68.
@@ -1710,7 +1710,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [22 <./img/server.png>]
-<img/architecture_processing.png, id=774, 1931.215pt x 827.09pt>
+<img/architecture_processing.png, id=770, 1931.215pt x 827.09pt>
 File: img/architecture_processing.png Graphic file (type png)
 <use img/architecture_processing.png>
 Package pdftex.def Info: img/architecture_processing.png  used on input line 10
@@ -1864,7 +1864,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [31]
-<img/word_count.png, id=946, 809.0225pt x 813.0375pt>
+<img/word_count.png, id=928, 809.0225pt x 813.0375pt>
 File: img/word_count.png Graphic file (type png)
 <use img/word_count.png>
 Package pdftex.def Info: img/word_count.png  used on input line 389.
@@ -1881,12 +1881,12 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [32 <./img/word_count.png>]
-<img/char_count.png, id=953, 806.01125pt x 819.06pt>
+<img/char_count.png, id=933, 806.01125pt x 819.06pt>
 File: img/char_count.png Graphic file (type png)
 <use img/char_count.png>
 Package pdftex.def Info: img/char_count.png  used on input line 404.
 (pdftex.def)             Requested size: 216.81pt x 220.3118pt.
-<img/word_avg.png, id=954, 820.06375pt x 817.0525pt>
+<img/word_avg.png, id=934, 820.06375pt x 817.0525pt>
 File: img/word_avg.png Graphic file (type png)
 <use img/word_avg.png>
 Package pdftex.def Info: img/word_avg.png  used on input line 417.
@@ -1903,7 +1903,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [33 <./img/char_count.png>]
-<img/char_avg.png, id=963, 811.03pt x 833.1125pt>
+<img/char_avg.png, id=940, 811.03pt x 833.1125pt>
 File: img/char_avg.png Graphic file (type png)
 <use img/char_avg.png>
 Package pdftex.def Info: img/char_avg.png  used on input line 430.
@@ -1920,13 +1920,13 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [34 <./img/word_avg.png> <./img/char_avg.png>]
-<img/conversations_started.png, id=972, 830.10126pt x 832.10875pt>
+<img/conversations_started.png, id=946, 830.10126pt x 832.10875pt>
 File: img/conversations_started.png Graphic file (type png)
 <use img/conversations_started.png>
 Package pdftex.def Info: img/conversations_started.png  used on input line 443.
 
 (pdftex.def)             Requested size: 216.81pt x 217.33353pt.
-<img/avg_response_time.png, id=973, 828.09375pt x 831.105pt>
+<img/avg_response_time.png, id=947, 828.09375pt x 831.105pt>
 File: img/avg_response_time.png Graphic file (type png)
 <use img/avg_response_time.png>
 Package pdftex.def Info: img/avg_response_time.png  used on input line 457.
@@ -1946,7 +1946,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [35 <./img/conversations_started.png>]
-<img/media_count.png, id=983, 1721.43124pt x 1670.24pt>
+<img/media_count.png, id=954, 1721.43124pt x 1670.24pt>
 File: img/media_count.png Graphic file (type png)
 <use img/media_count.png>
 Package pdftex.def Info: img/media_count.png  used on input line 472.
@@ -1966,7 +1966,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [36 <./img/avg_response_time.png>]
-<img/time_distributions.png, id=990, 1698.345pt x 1553.805pt>
+<img/time_distributions.png, id=959, 1698.345pt x 1553.805pt>
 File: img/time_distributions.png Graphic file (type png)
 <use img/time_distributions.png>
 Package pdftex.def Info: img/time_distributions.png  used on input line 485.
@@ -1998,12 +1998,12 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [38 <./img/time_distributions.png>]
-<img/word_cloud.png, id=1005, 590.205pt x 637.38126pt>
+<img/word_cloud.png, id=970, 590.205pt x 637.38126pt>
 File: img/word_cloud.png Graphic file (type png)
 <use img/word_cloud.png>
 Package pdftex.def Info: img/word_cloud.png  used on input line 506.
 (pdftex.def)             Requested size: 173.44534pt x 187.30614pt.
-<img/emoji_cloud.png, id=1006, 607.26875pt x 636.3775pt>
+<img/emoji_cloud.png, id=971, 607.26875pt x 636.3775pt>
 File: img/emoji_cloud.png Graphic file (type png)
 <use img/emoji_cloud.png>
 Package pdftex.def Info: img/emoji_cloud.png  used on input line 519.
@@ -2036,7 +2036,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
  (./5-case-study.tex
 Cap\'{\i }tulo 5.
-<img/study_case/step1.png, id=1020, 1927.2pt x 1127.21124pt>
+<img/study_case/step1.png, id=982, 1927.2pt x 1127.21124pt>
 File: img/study_case/step1.png Graphic file (type png)
 <use img/study_case/step1.png>
 Package pdftex.def Info: img/study_case/step1.png  used on input line 28.
@@ -2050,7 +2050,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<img/study_case/step2.png, id=1032, 1927.2pt x 1124.2pt>
+<img/study_case/step2.png, id=991, 1927.2pt x 1124.2pt>
 File: img/study_case/step2.png Graphic file (type png)
 <use img/study_case/step2.png>
 Package pdftex.def Info: img/study_case/step2.png  used on input line 42.
@@ -2070,7 +2070,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [42 <./img/study_case/step1.png>]
-<img/study_case/step3.png, id=1039, 1927.2pt x 1068.99374pt>
+<img/study_case/step3.png, id=996, 1927.2pt x 1068.99374pt>
 File: img/study_case/step3.png Graphic file (type png)
 <use img/study_case/step3.png>
 Package pdftex.def Info: img/study_case/step3.png  used on input line 56.
@@ -2090,7 +2090,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.0217pt}.
 
 [43 <./img/study_case/step2.png>]
-<img/study_case/step4.png, id=1048, 1508.24348pt x 857.81348pt>
+<img/study_case/step4.png, id=1003, 1508.24348pt x 857.81348pt>
 File: img/study_case/step4.png Graphic file (type png)
 <use img/study_case/step4.png>
 Package pdftex.def Info: img/study_case/step4.png  used on input line 68.
@@ -2107,12 +2107,12 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [44 <./img/study_case/step3.png> <./img/study_case/step4.png>]
-<img/study_case/step5_1.png, id=1059, 1927.2pt x 1126.2075pt>
+<img/study_case/step5_1.png, id=1010, 1927.2pt x 1126.2075pt>
 File: img/study_case/step5_1.png Graphic file (type png)
 <use img/study_case/step5_1.png>
 Package pdftex.def Info: img/study_case/step5_1.png  used on input line 82.
 (pdftex.def)             Requested size: 411.93767pt x 240.72076pt.
-<img/study_case/step5_2.png, id=1060, 1927.2pt x 1129.21875pt>
+<img/study_case/step5_2.png, id=1011, 1927.2pt x 1129.21875pt>
 File: img/study_case/step5_2.png Graphic file (type png)
 <use img/study_case/step5_2.png>
 Package pdftex.def Info: img/study_case/step5_2.png  used on input line 91.
@@ -2132,7 +2132,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.0217pt}.
 
 [45 <./img/study_case/step5_1.png>]
-<img/study_case/step5_3.png, id=1066, 1927.2pt x 1109.14375pt>
+<img/study_case/step5_3.png, id=1016, 1927.2pt x 1109.14375pt>
 File: img/study_case/step5_3.png Graphic file (type png)
 <use img/study_case/step5_3.png>
 Package pdftex.def Info: img/study_case/step5_3.png  used on input line 105.
@@ -2408,272 +2408,56 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 74918B9F5DDD333073C943ED6D772512;15549
-(rerunfilecheck)             After:  4DB47F89AC73C2CE0D71A7A03E6401DB;15549.
+(rerunfilecheck)             Before: 39A9EB804F1286B0A5F366F41949D11E;15549
+(rerunfilecheck)             After:  C42C3AA4A5A96299A25779AF90E3936F;15549.
  ) 
 Here is how much of TeX's memory you used:
- 41014 strings out of 478268
- 789797 string characters out of 5847839
- 1225247 words of memory out of 5000000
- 57944 multiletter control sequences out of 15000+600000
+ 40950 strings out of 478268
+ 788759 string characters out of 5847839
+ 1225102 words of memory out of 5000000
+ 57937 multiletter control sequences out of 15000+600000
  483123 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,94p,1128b,2536s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-pdfTeX warning (dest): name{figure.caption.267} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.263} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.261} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.259} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.257} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.247} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.244} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.242} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.239} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.237} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.235} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.232} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.229} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.227} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.224} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.94} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.92} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.90} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section*.298} has been referenced but does not exis
+pdfTeX warning (dest): name{section*.295} has been referenced but does not exis
 t, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{section.285} has been referenced but does not exist
+pdfTeX warning (dest): name{section.282} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{appendix.284} has been referenced but does not exis
+pdfTeX warning (dest): name{appendix.281} has been referenced but does not exis
 t, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{section.283} has been referenced but does not exist
+pdfTeX warning (dest): name{section.280} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{appendix.282} has been referenced but does not exis
+pdfTeX warning (dest): name{appendix.279} has been referenced but does not exis
 t, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{section.281} has been referenced but does not exist
+pdfTeX warning (dest): name{section.278} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{appendix.280} has been referenced but does not exis
+pdfTeX warning (dest): name{appendix.277} has been referenced but does not exis
 t, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{subsection.279} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection.276} has been referenced but does not ex
 ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.276} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{appendix.275} has been referenced but does not exis
-t, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{section.273} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{section.271} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.269} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.268} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.264} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.262} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.260} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.258} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.256} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.251} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.249} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.246} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.243} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.241} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.238} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.236} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.234} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.231} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.228} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.226} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.223} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.222} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.221} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.206} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.189} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.172} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.165} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.164} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.156} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.144} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.98} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.97} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.95} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.93} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.91} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.89} has been referenced but does not exist,
- replaced by a fixed one
+pdfTeX warning (dest): name{appendix.272} has been referenced but does not exis
+t, replaced by a fixed one
 
 {/app/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</app/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmbx10.pfb></app/texlive/texmf-dist/fonts/type1/p
@@ -2691,10 +2475,10 @@ pp/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></app/texlive
 /public/amsfonts/cm/cmti10.pfb></app/texlive/texmf-dist/fonts/type1/public/euro
 sym/feymr10.pfb></app/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></a
 pp/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on main.pdf (77 pages, 2448377 bytes).
+Output written on main.pdf (77 pages, 2447332 bytes).
 PDF statistics:
- 1356 PDF objects out of 1440 (max. 8388607)
- 1199 compressed objects within 12 object streams
- 450 named destinations out of 1000 (max. 500000)
+ 1288 PDF objects out of 1440 (max. 8388607)
+ 1131 compressed objects within 12 object streams
+ 393 named destinations out of 1000 (max. 500000)
  845 words of extra memory for PDF output out of 10000 (max. 10000000)
 
