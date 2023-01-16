@@ -18,54 +18,54 @@ A level-1 auxiliary file: 8-budget.aux
 A level-1 auxiliary file: 9-code.aux
 A level-1 auxiliary file: 10-regex.aux
 The style file: unsrt.bst
-Illegal, another \bibstyle command---line 53 of file main.aux
+Illegal, another \bibstyle command---line 71 of file main.aux
  : \bibstyle
  :          {plain}
 I'm skipping whatever remains of this command
 Database file #1: biblio/ref.bib
-Repeated entry---line 91 of file biblio/ref.bib
+Repeated entry---line 117 of file biblio/ref.bib
  : @misc{GPLv3
  :            ,
 I'm skipping whatever remains of this entry
-You've used 8 entries,
+You've used 10 entries,
             1791 wiz_defined-function locations,
-            514 strings with 5439 characters,
-and the built_in function-call counts, 1071 in all, are:
-= -- 95
-> -- 29
+            524 strings with 5796 characters,
+and the built_in function-call counts, 1341 in all, are:
+= -- 119
+> -- 37
 < -- 0
-+ -- 15
-- -- 7
++ -- 19
+- -- 9
 * -- 3
-:= -- 168
-add.period$ -- 31
-call.type$ -- 8
-change.case$ -- 8
+:= -- 212
+add.period$ -- 39
+call.type$ -- 10
+change.case$ -- 10
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 40
-empty$ -- 145
-format.name$ -- 7
-if$ -- 255
+cite$ -- 10
+duplicate$ -- 50
+empty$ -- 181
+format.name$ -- 9
+if$ -- 319
 int.to.chr$ -- 0
-int.to.str$ -- 8
+int.to.str$ -- 10
 missing$ -- 0
-newline$ -- 50
-num.names$ -- 7
-pop$ -- 56
+newline$ -- 62
+num.names$ -- 9
+pop$ -- 70
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 17
+skip$ -- 20
 stack$ -- 0
 substring$ -- 0
-swap$ -- 8
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 7
-width$ -- 9
-write$ -- 89
+while$ -- 9
+width$ -- 12
+write$ -- 111
 (There were 2 error messages)

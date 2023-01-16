@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{whatsAppsPerDay}
 Manish Singh.
@@ -14,6 +14,24 @@ Daniel Ruby.
   {W}hatsapp''.
 \newblock \url{https://www.demandsage.com/whatsapp-statistics/}.
 \newblock Online; accedido a 28 de diciembre de 2022.
+
+\bibitem{telegramSecondPlaceGlobally}
+Manish Singh.
+\newblock ``{T}elegram tops 700 million users, launches premium tier''.
+\newblock
+  \url{https://techcrunch.com/2022/06/19/telegram-tops-700-million-users-launches-premium-tier/}.
+\newblock Online; accedido a 16 de enero de 2023.
+
+\bibitem{telegramMessagesPerDay}
+The~Telegram Team.
+\newblock ``{T}elegram tops 700 million users, launches premium tier''.
+\newblock \url{https://telegram.org/blog/15-billion}.
+\newblock Online; accedido a 16 de enero de 2023.
+
+\bibitem{dunbarNumber}
+``{N}úmero de {D}unbar''.
+\newblock \url{https://es.wikipedia.org/wiki/N%C3%BAmero_de_Dunbar}.
+\newblock Online; accedido a 11 de enero de 2023.
 
 \bibitem{GPLv3}
 Inc. Free Software~Foundation.
@@ -50,11 +68,6 @@ Filip Š.
 \newblock ``{P}rogressive {W}eb {A}pps for {F}irefox''.
 \newblock
   \url{https://addons.mozilla.org/en-US/firefox/addon/pwas-for-firefox/}.
-\newblock Online; accedido a 11 de enero de 2023.
-
-\bibitem{dunbarNumber}
-``{N}úmero de {D}unbar''.
-\newblock \url{https://es.wikipedia.org/wiki/N%C3%BAmero_de_Dunbar}.
 \newblock Online; accedido a 11 de enero de 2023.
 
 \end{thebibliography}

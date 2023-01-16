@@ -5,12 +5,28 @@
 \section{Introducción}
 \label{sec:introduction}
 
-En este capítulo trataremos la fase de diseño de este proyecto, así como los detalles de implementación de dicha arquitectura. Primero, presentaremos una vista general del proyecto, dividido en módulos. Con ello tenemos la intención de facilitar al lector una vista general de la arquitectura del proyecto. Posteriormente, presentaremos cada módulo de forma separada y en mayor profundidad. Finalmente, describirá también la arquitectura del cliente y del servidor; así como el rol que desempeña cada uno.
+En este capítulo trataremos la fase de diseño de este proyecto, así como los detalles de implementación de dicha arquitectura. Primero, presentaremos una vista general del proyecto por medio de un escenario. A continuación se mostrará la arquitectura en el cliente, así como la del servidor y los servicios que la componen. Posteriormente, se detallarán los módulos que conforman la aplicación, así como las métricas que se han decidido calcular y sus motivos. Con ello tenemos la intención de facilitar al lector una vista general de la arquitectura del proyecto.
+
+Se presenta a continuación el escenario principal de uso de ChatStats:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{img/scenario.png}
+	\caption{Escenario de ChatStats}
+	\label{fig:chap4:architecture_scenario}
+\end{figure}
+
+\todi{El servidor únicamente sirve la página... ¿Debería meterlo aquí? ¿Cómo?}
 
 \section{Arquitectura de procesamiento}
 \label{chap:architecture:processing}
 
-Para mantener la privacidad de los datos del usuario, se han planteado las siguientes opciones de diseño:
+
+
+
+Para mantener la privacidad de los datos del usuario, se ha planteado las siguientes opción de diseño:
+
+El cliente solicita la aplicación, que se envía en su totalidad.
 
 La primera, y más segura, es que los datos nunca salgan del dispositivo de ninguna forma. Esto supondrá coste computacional en el cliente para realizar las operaciones necesarias, por lo que el código deberá ser altamente eficiente. En este caso, el cliente descargaría toda la aplicación web en una petición (y sus consecuentes). Tras ello, ningún dato se enviaría al servidor.
 

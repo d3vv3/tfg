@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022 - Flatpak) (preloaded format=pdflatex 2022.11.15)  16 JAN 2023 03:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022 - Flatpak) (preloaded format=pdflatex 2022.11.15)  16 JAN 2023 13:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1246,13 +1246,17 @@ Package pdftex.def Info: img/logo_etsit.jpg  used on input line 69.
 ])
 \openout2 = `A-resumen.aux'.
 
- (./A-resumen.tex) [1
+ (./A-resumen.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 
 
 
 
-] [2]
+]
+[2]
 \openout2 = `B-abstract.aux'.
 
  (./B-abstract.tex) [3
@@ -1261,21 +1265,20 @@ Package pdftex.def Info: img/logo_etsit.jpg  used on input line 69.
 
 
 
-]
+] [4]
 \openout2 = `C-agradecimientos.aux'.
 
-
-(./C-agradecimientos.tex [4
-
+ (./C-agradecimientos.tex) [5
 
 
 
-]) [5
+
 
 ]
 \openout2 = `E-contents.aux'.
 
- (./E-contents.tex [6
+ (./E-contents.tex
+[6
 
 
 
@@ -1292,27 +1295,27 @@ Underfull \vbox (badness 2932) has occurred while \output is active []
 [9]
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 116.
+(Font)              using `OT1/cmr/bx/n' instead on input line 117.
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 116.
+(spanish)                faked small caps on input line 117.
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 121.
+(spanish)                faked small caps on input line 122.
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 123.
+(spanish)                faked small caps on input line 124.
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 125.
+(spanish)                faked small caps on input line 126.
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 132.
+(spanish)                faked small caps on input line 133.
 
 )
 \tf@toc=\write9
@@ -1509,11 +1512,11 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
  (./3-requirements.tex
 Cap\'{\i }tulo 3.
-<img/uml.png, id=661, 1094.0875pt x 1086.0575pt>
+<img/uml.png, id=669, 1100.11pt x 1086.0575pt>
 File: img/uml.png Graphic file (type png)
 <use img/uml.png>
 Package pdftex.def Info: img/uml.png  used on input line 11.
-(pdftex.def)             Requested size: 346.89731pt x 344.34712pt.
+(pdftex.def)             Requested size: 346.89731pt x 342.45793pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1557,30 +1560,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-LaTeX Info: Redefining \. on input line 64.
-LaTeX Info: Redefining \% on input line 64.
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+LaTeX Info: Redefining \. on input line 60.
+LaTeX Info: Redefining \% on input line 60.
 [13]
-Overfull \hbox (21.97305pt too wide) in paragraph at lines 64--65
-[] []\OT1/cmss/bx/n/10.95 Ac-to-res[] \OT1/cmr/m/n/10.95 Usua-rio de WhatsApp, 
-apli-ca-ci^^Son de WhatsApp, da-tos con-ver-sa-cio-na-les de WhatsApp. 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
-
- []
-
-LaTeX Info: Redefining \. on input line 86.
-LaTeX Info: Redefining \% on input line 86.
+LaTeX Info: Redefining \. on input line 84.
+LaTeX Info: Redefining \% on input line 84.
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
 (fancyhdr)                Make it at least 14.42169pt, for example:
@@ -1590,19 +1587,24 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
 LaTeX Info: Redefining \. on input line 107.
 LaTeX Info: Redefining \% on input line 107.
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-LaTeX Info: Redefining \. on input line 129.
-LaTeX Info: Redefining \% on input line 129.
+LaTeX Info: Redefining \. on input line 128.
+LaTeX Info: Redefining \% on input line 128.
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
 (fancyhdr)                Make it at least 14.42169pt, for example:
@@ -1611,7 +1613,19 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
-[16])
+[16]
+LaTeX Info: Redefining \. on input line 169.
+LaTeX Info: Redefining \% on input line 169.
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.42169pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.42169pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
+
+[17])
 LaTeX Info: Redefining \. on input line 339.
 LaTeX Info: Redefining \% on input line 339.
 
@@ -1623,43 +1637,29 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
-[17]
+[18]
 \openout2 = `4-architecture.aux'.
 
  (./4-architecture.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
+Cap\'{\i }tulo 4.
+<img/scenario.png, id=731, 1971.365pt x 774.895pt>
+File: img/scenario.png Graphic file (type png)
+<use img/scenario.png>
+Package pdftex.def Info: img/scenario.png  used on input line 14.
+(pdftex.def)             Requested size: 433.62pt x 170.44196pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package fancyhdr Warning: \headheight is too small (14.0pt): 
-(fancyhdr)                Make it at least 14.42169pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.42169pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
-
-[18
+ [19
 
 
 
 
 ]
-Cap\'{\i }tulo 4.
+Underfull \vbox (badness 3471) has occurred while \output is active []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19]
-<img/architecture_processing.png, id=728, 783.92876pt x 342.27875pt>
-File: img/architecture_processing.png Graphic file (type png)
-<use img/architecture_processing.png>
-Package pdftex.def Info: img/architecture_processing.png  used on input line 27
-.
-(pdftex.def)             Requested size: 433.62pt x 189.32976pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 37.
-LaTeX Info: Redefining \% on input line 37.
+LaTeX Info: Redefining \. on input line 33.
+LaTeX Info: Redefining \% on input line 33.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1669,28 +1669,33 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
-[20 <./img/architecture_processing.png>]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 5
-2.
+[20 <./img/scenario.png>]
+<img/architecture_processing.png, id=745, 783.92876pt x 342.27875pt>
+File: img/architecture_processing.png Graphic file (type png)
+<use img/architecture_processing.png>
+Package pdftex.def Info: img/architecture_processing.png  used on input line 38
+.
+(pdftex.def)             Requested size: 433.62pt x 189.32976pt.
+LaTeX Info: Redefining \. on input line 59.
+LaTeX Info: Redefining \% on input line 59.
+ [21 <./img/architecture_processing.png>]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 6
+3.
 
 (/app/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 6
-7.
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 7
+8.
 
 (/app/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-LaTeX Info: Redefining \. on input line 68.
-LaTeX Info: Redefining \% on input line 68.
- [21]
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- []
+LaTeX Info: Redefining \. on input line 96.
+LaTeX Info: Redefining \% on input line 96.
 
-LaTeX Info: Redefining \. on input line 97.
-LaTeX Info: Redefining \% on input line 97.
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
 (fancyhdr)                Make it at least 14.42169pt, for example:
@@ -1700,32 +1705,37 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 1
-02.
+13.
 (/app/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 102.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 113.
 
-Overfull \hbox (2.01337pt too wide) in paragraph at lines 102--103
+Overfull \hbox (2.01337pt too wide) in paragraph at lines 113--114
 []\OT1/cmr/m/n/10.95 Para el se-gun-do ca-so, ca-da vez que un men-sa-je sea co
 n-te-ni-do mul-ti-me-dia, apa-re-cer^^Sa \OML/cmm/m/it/10.95 <\OT1/cmr/m/it/10.
 95 Me-
  []
 
 
-Underfull \vbox (badness 1394) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 133.
-LaTeX Info: Redefining \% on input line 133.
+LaTeX Info: Redefining \. on input line 123.
+LaTeX Info: Redefining \% on input line 123.
  [23]
-LaTeX Info: Redefining \. on input line 179.
-LaTeX Info: Redefining \% on input line 179.
+LaTeX Info: Redefining \. on input line 160.
+LaTeX Info: Redefining \% on input line 160.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1736,11 +1746,11 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [24]
-LaTeX Info: Redefining \. on input line 219.
-LaTeX Info: Redefining \% on input line 219.
+LaTeX Info: Redefining \. on input line 204.
+LaTeX Info: Redefining \% on input line 204.
  [25]
-LaTeX Info: Redefining \. on input line 254.
-LaTeX Info: Redefining \% on input line 254.
+LaTeX Info: Redefining \. on input line 243.
+LaTeX Info: Redefining \% on input line 243.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1751,16 +1761,16 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [26]
-<img/server.png, id=840, 724.7075pt x 523.9575pt>
+LaTeX Info: Redefining \. on input line 272.
+LaTeX Info: Redefining \% on input line 272.
+ [27]
+<img/server.png, id=867, 724.7075pt x 523.9575pt>
 File: img/server.png Graphic file (type png)
 <use img/server.png>
-Package pdftex.def Info: img/server.png  used on input line 287.
+Package pdftex.def Info: img/server.png  used on input line 298.
 (pdftex.def)             Requested size: 260.17464pt x 188.10489pt.
-LaTeX Info: Redefining \. on input line 291.
-LaTeX Info: Redefining \% on input line 291.
- [27]
-LaTeX Info: Redefining \. on input line 310.
-LaTeX Info: Redefining \% on input line 310.
+LaTeX Info: Redefining \. on input line 304.
+LaTeX Info: Redefining \% on input line 304.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1771,19 +1781,16 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [28 <./img/server.png>]
-<img/client.png, id=852, 724.7075pt x 664.4825pt>
+<img/client.png, id=878, 724.7075pt x 664.4825pt>
 File: img/client.png Graphic file (type png)
 <use img/client.png>
-Package pdftex.def Info: img/client.png  used on input line 325.
+Package pdftex.def Info: img/client.png  used on input line 336.
 (pdftex.def)             Requested size: 260.17464pt x 238.55446pt.
-
-Underfull \vbox (badness 1728) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 332.
-LaTeX Info: Redefining \% on input line 332.
- [29 <./img/client.png>]
-LaTeX Info: Redefining \. on input line 357.
-LaTeX Info: Redefining \% on input line 357.
+LaTeX Info: Redefining \. on input line 339.
+LaTeX Info: Redefining \% on input line 339.
+ [29]
+LaTeX Info: Redefining \. on input line 354.
+LaTeX Info: Redefining \% on input line 354.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1793,9 +1800,9 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
-[30]
-LaTeX Info: Redefining \. on input line 357.
-LaTeX Info: Redefining \% on input line 357.
+[30 <./img/client.png>]
+LaTeX Info: Redefining \. on input line 368.
+LaTeX Info: Redefining \% on input line 368.
  [31])
 \openout2 = `5-case-study.aux'.
 
@@ -1818,7 +1825,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 ]
 Cap\'{\i }tulo 5.
-<img/study_case/step1.png, id=876, 1927.2pt x 1127.21124pt>
+<img/study_case/step1.png, id=907, 1927.2pt x 1127.21124pt>
 File: img/study_case/step1.png Graphic file (type png)
 <use img/study_case/step1.png>
 Package pdftex.def Info: img/study_case/step1.png  used on input line 28.
@@ -1827,7 +1834,7 @@ Package pdftex.def Info: img/study_case/step1.png  used on input line 28.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33]
-<img/study_case/step2.png, id=885, 1927.2pt x 1124.2pt>
+<img/study_case/step2.png, id=919, 1927.2pt x 1124.2pt>
 File: img/study_case/step2.png Graphic file (type png)
 <use img/study_case/step2.png>
 Package pdftex.def Info: img/study_case/step2.png  used on input line 42.
@@ -1847,7 +1854,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [34 <./img/study_case/step1.png>]
-<img/study_case/step3.png, id=890, 1927.2pt x 1068.99374pt>
+<img/study_case/step3.png, id=926, 1927.2pt x 1068.99374pt>
 File: img/study_case/step3.png Graphic file (type png)
 <use img/study_case/step3.png>
 Package pdftex.def Info: img/study_case/step3.png  used on input line 56.
@@ -1867,7 +1874,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.0217pt}.
 
 [35 <./img/study_case/step2.png>]
-<img/study_case/step4.png, id=896, 1508.24348pt x 857.81348pt>
+<img/study_case/step4.png, id=934, 1508.24348pt x 857.81348pt>
 File: img/study_case/step4.png Graphic file (type png)
 <use img/study_case/step4.png>
 Package pdftex.def Info: img/study_case/step4.png  used on input line 68.
@@ -1884,12 +1891,12 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [36 <./img/study_case/step3.png> <./img/study_case/step4.png>]
-<img/study_case/step5_1.png, id=903, 1927.2pt x 1126.2075pt>
+<img/study_case/step5_1.png, id=945, 1927.2pt x 1126.2075pt>
 File: img/study_case/step5_1.png Graphic file (type png)
 <use img/study_case/step5_1.png>
 Package pdftex.def Info: img/study_case/step5_1.png  used on input line 82.
 (pdftex.def)             Requested size: 411.93767pt x 240.72076pt.
-<img/study_case/step5_2.png, id=904, 1927.2pt x 1129.21875pt>
+<img/study_case/step5_2.png, id=946, 1927.2pt x 1129.21875pt>
 File: img/study_case/step5_2.png Graphic file (type png)
 <use img/study_case/step5_2.png>
 Package pdftex.def Info: img/study_case/step5_2.png  used on input line 91.
@@ -1909,7 +1916,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.0217pt}.
 
 [37 <./img/study_case/step5_1.png>]
-<img/study_case/step5_3.png, id=910, 1927.2pt x 1109.14375pt>
+<img/study_case/step5_3.png, id=952, 1927.2pt x 1109.14375pt>
 File: img/study_case/step5_3.png Graphic file (type png)
 <use img/study_case/step5_3.png>
 Package pdftex.def Info: img/study_case/step5_3.png  used on input line 105.
@@ -2121,19 +2128,36 @@ hcrunch . com / 2020 / 10 / 29 /
 (/app/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 10000) in paragraph at lines 32--39
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
+[]\OT1/cmr/m/n/10 Manish Singh.  ``Te-le-gram tops 700 mi-llion users, laun-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
+\OT1/cmr/m/n/10 ches pre-mium tier''.  [][]$\OT1/pcr/m/n/10 https : / / techcru
+nch . com / 2022 / 06 / 19 /
+ []
+
+
+Underfull \hbox (badness 3260) in paragraph at lines 19--24
+\OT1/pcr/m/n/10 telegram-[]tops-[]700-[]million-[]users-[]launches-[]premium-[]
+tier/$[][]\OT1/cmr/m/n/10 .  On-li-ne; ac-ce-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--57
 []\OT1/cmr/m/n/10 Pablo G. Be-je-rano.  ``El tr^^Safi-co web pro-ce-den-te de s
 martpho-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--39
+Underfull \hbox (badness 10000) in paragraph at lines 50--57
 \OT1/cmr/m/n/10 nes ya su-pera al de or-de-na-do-res''.  [][]$\OT1/pcr/m/n/10 h
 ttps : / / blogthinkbig . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--39
+Overfull \hbox (3.1884pt too wide) in paragraph at lines 50--57
 \OT1/pcr/m/n/10 el-[]trafico-[]web-[]procedente-[]de-[]smartphones-[]ya-[]super
 a-[]al-[]de-[]ordenadores$[][]\OT1/cmr/m/n/10 ,
  []
@@ -2162,37 +2186,227 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 77092D66EF3E659817F69C7E598E376B;15577.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 2798124E5F8B9213EE28AEB09A7EE587;15578
+(rerunfilecheck)             After:  512C1D70A79CEA43EAD9BC21D76BAB1D;15578.
  ) 
 Here is how much of TeX's memory you used:
- 40694 strings out of 478268
- 784274 string characters out of 5847839
- 1158015 words of memory out of 5000000
- 57764 multiletter control sequences out of 15000+600000
+ 40757 strings out of 478268
+ 785298 string characters out of 5847839
+ 1161167 words of memory out of 5000000
+ 57776 multiletter control sequences out of 15000+600000
  483123 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,94p,1128b,2536s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/app/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</app/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmbx10.pfb></app/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx12.pfb></app/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx8.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc
-10.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></app
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></app/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></app/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr17.pfb></app/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsl10.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmss12.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb><
-/app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></app/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></app/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></app/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb></app/texlive/texmf-dist/fonts/type1/public/eu
-rosym/feymr10.pfb></app/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb><
-/app/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on main.pdf (69 pages, 1451491 bytes).
+
+pdfTeX warning (dest): name{figure.caption.214} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.212} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.210} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.208} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.206} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.192} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.188} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.88} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section*.247} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.234} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.233} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.232} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.231} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.230} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.229} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.226} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.225} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.224} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.222} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.220} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.218} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{chapter.217} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.213} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.211} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.209} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.207} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.205} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.199} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{chapter.198} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.196} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.194} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.191} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.189} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.187} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.185} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.177} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.175} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.160} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.143} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.126} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.119} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.118} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.109} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.100} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.90} has been referenced but does not exi
+st, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.87} has been referenced but does not exist,
+ replaced by a fixed one
+
+{/app/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</app/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx10.pfb></app/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx8.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10
+.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></app/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></app/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></app/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb></app/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsl10.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ss12.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></a
+pp/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></app/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></app/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></app/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti10.pfb></app/texlive/texmf-dist/fonts/type1/public/euro
+sym/feymr10.pfb></app/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></a
+pp/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on main.pdf (69 pages, 1568836 bytes).
 PDF statistics:
- 1157 PDF objects out of 1200 (max. 8388607)
- 1021 compressed objects within 11 object streams
- 325 named destinations out of 1000 (max. 500000)
- 806 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1227 PDF objects out of 1440 (max. 8388607)
+ 1089 compressed objects within 11 object streams
+ 375 named destinations out of 1000 (max. 500000)
+ 811 words of extra memory for PDF output out of 10000 (max. 10000000)
 
