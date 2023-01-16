@@ -20,7 +20,79 @@ Se presenta a continuación el escenario principal de uso de ChatStats:
 
 Como se puede observar, el usuario debe exportar un chat desde la aplicación de WhatsApp (móvil) o Telegram para escritorio. Son estas las únicas versiones de las aplicaciones que permiten exportar las conversaciones. Con estos datos exportados, el usuario accede a ChatStats desde el navegador, ya sea en un dispositivo móvil o en un ordenador. El servidor le envía el cliente completo, por lo que no intercambia más peticiones en adelante. El usuario puede seleccionar e importar el archivo a la aplicación, que los estandariza, calcula métricas sobre la conversación y ofrece una visualización de los mismos. Finalmente, el usuario puede compartir las visualizaciones, así como exportar los datos calculados para su uso personal.
 
-\todi{Exponer por qué se decide JavaScript}
+
+Se desarrolla toda la aplicación en \textit{JavaScript}, puesto que puede ejecutarse en todos los navegadores salvo que lo tengan deshabilitado. Otros lenguajes como \textit{PHP} o Python requieren de un servidor para realizar operaciones y que estos envíen una plantilla rellena con los resultados.
+
+
+
+\section{Arquitectura en el cliente}
+
+A continuación se presenta la arquitectura que podemos encontrar en un cliente cualquiera:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/client.png}
+	\caption{Arquitectura en el cliente}
+	\label{fig:chap4:architecture_client}
+\end{figure}
+
+\paragraph{Navegador.} El navegador juega un papel fundamental para el acceso y ejecución de cualquier aplicación web. Aunque no se entra en detalle en su estructura interna, sí que vamos a detallar la integración con \acrfull{pwa}. Esta integración que ofrecen algunos navegadores como los basados en Chromium, permite instalar aplicaciones web, con ventajas como:
+
+\begin{itemize}
+	\item La aplicación saldrá en el escritorio en teléfonos Android e iOS, así como en el cajón de aplicaciones del navegador.
+	\item Posibilidad de acceso a notificaciones \textit{push} para el sistema (que no utilizaremos).
+	\item Posibilidad de guardar en \textit{cache} el código del cliente, permitiendo su uso sin conexión a Internet.
+\end{itemize}
+
+Hay que mencionar también que Mozilla no ofrece soporte para \acrshort{pwa} en su navegador Firefox\cite{firefoxNoPWA}, aunque este puede ser habilitado mediante una extensión\cite{firefoxPWAextension}.
+
+\paragraph{Aplicación Web.} Es la última capa, se encuentra nuestra aplicación, cuya arquitectura de procesamiento se explica en la \autoref{chap:architecture:processing}. Explicamos a continuación los componentes lógicos que se encuentran en el cliente:
+
+\subparagraph{Router.} ChatStats es una aplicación multipágina. Esto quiere decir que cuenta con diferentes rutas web en las que se muestran diferentes páginas. La página principal consolida la ruta `\textit{/}', mientras que `\textit{/graphs}' enruta la página para la visualización de los gráficos.
+
+\subparagraph{React Virtual DOM} El DOM virtual es un concepto de programación en el que una representación virtual de la interfaz de usuario (UI) es guardada en memoria y sincronizada con el DOM del navegador. Esto nos permite definir qué queremos en la interfaz de usuario y React conseguirá que el DOM virtual y el DOM del navegador se sincronicen.
+
+
+
+
+
+
+
+
+\section{Arquitectura en el servidor}
+
+Se muestra a continuación una grafo de la arquitectura en el servidor, donde se muestran las capas que lo componen.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/server.png}
+	\caption{Arquitectura en el servidor}
+	\label{fig:chap4:architecture_server}
+\end{figure}
+
+Se ha decidido no instalar el software directamente sobre el sistema operativo, evitando problemas de dependencias y distintas versiones de las mismas para los componentes del sistema operativo. Asimismo, se evitan problemas de seguridad que puedan venir por vulnerabilidades en el código fuente y sus dependencias.
+
+Hemos elegido virtualización ligera para ejecutar nuestro código en contenedores, por las razones que se exponen:
+
+\begin{itemize}
+	\item Se contienen las dependencias de terceros en una imagen.
+	\item En caso de vulnerabilidad, solo se expone el contenedor y no el sistema completo.
+	\item Los recursos se ocupan dinámicamente en función a las necesidades, al contrario que con la virtualización completa.
+	\item Permite el despliegue en cualquier sistema operativo compatible con Linux, salvo arquitecturas ARM (que no es frecuente en servidores).
+\end{itemize}
+
+\paragraph{ChatStats React Server.} Se trata del servidor de React que sirve el contenido. Tras construir la versión de producción con el código fuente, este contenedor sirve el contenido estático final, que enviará al cliente completamente cuando este solicite la aplicación web. Se ha implementado por medio de un fichero Dockerfile, que parte de una imagen de \textit{NodeJS}, instala las dependencias y sirve el contenido. Con esta secuencia de instrucciones, se ha creado una imagen para uso en contenedores Docker, que puede encontrarse públicamente en el repositorio de imágenes DockerHub.
+
+\paragraph{Traefik} Se ha decidido usar Traefik como \textit{proxy} inverso, que se sitúa frente al servidor de ChatStats para redirigir las peticiones realizadas a su contenedor correspondiente en el puerto adecuado.
+
+Además, Traefik gestiona los certificados \acrshort{ssl} haciendo uso de \textit{Let's Encrypt}: autoridad sin ánimo de lucro que provee certificados para la capa \acrshort{tls} sin coste alguno.
+
+
+
+
+
+
+
 
 \section{Arquitectura de la aplicación}
 \label{chap:architecture:processing}
@@ -292,135 +364,170 @@ El resultado son objetos con la siguiente estructura:
 
 El objetivo de esta estructura de datos es visualizar la distribución de los mensajes a lo largo del tiempo, con una agregación mensual.
 
+\subsubsection{Agregador por conversación}
+
+Este submódulo analiza las diferencias de tiempos entre los mensajes, categorizándolos como inicio de conversación si son el primer mensaje en las últimas 5 horas, o como respuesta si se trata de un intervalo de tiempo menor. Esto nos permitirá calcular cuántas conversaciones ha iniciado cada contacto, así como el tiempo de respuesta medio de cada uno; módulos que se verán más adelante.
+
+Aunque un sesgo temporal no es una solución perfecta, acierta gran parte de las veces sin necesitar gran capacidad de cómputo.
+
 \subsection{Visualizador}
 
-\todi{Añadir descripción emoji regex y emoji cloud}
+Este módulo prepara los datos para ser representados por la librería de visualización elegida: \textit{ChartJS}.  Esta librería ha sido elegida por su alta actividad de contribuciones al proyecto, que es libre y cuenta con 12 mil estrellas en GitHub. Además, permite alta extensibilidad mediante plugins, de los que hacemos uso, por ejemplo, para mostrar las etiquetas de los datos.
 
-Este módulo prepara los datos para ser representados por la librería de visualización elegida: \textit{ChartJS}. Además, también se procesan datos para otras librerías de visualización, como las nubes de palabras o \textit{word clouds}.
+Cada módulo aquí desarrollado realiza el cálculo de una métrica, cuyo resultado pasa por una función que adapta el contenido a la estructura solicitada por \textit{ChartJS}. \textit{ChartJS} nos permite un único formato de entrada para los datos, permitiéndonos elegir el tipo de gráfico de forma independiente a dichos datos. Esta arquitectura nos permite añadir más módulos posteriormente; realizando el cálculo de la métrica a mostrar y pasándolo por la función que estandariza los datos para \textit{ChartJS}.
+
+Todos los submódulos que utilizan \textit{ChartJS} adaptan el tamaño del gráfico al número de contactos que hay en el grupo de forma \textit{responsive}. También permiten la interacción con el mismo, pudiendo eliminar contactos de la representación haciendo click sobre el nombre de los mismos en la leyenda.
+
+Además, también se procesan datos para otras librerías de visualización, como \textit{react-wordcloud}, para las nubes de palabras o \textit{word clouds} y nubes de emoticonos.
 
 \subsubsection{Contador de palabras}
 
-Este submódulo cuenta las palabras que hay en los mensajes de cada contacto y calcula la suma total de las mismas, obteniendo el número de palabras totales enviadas por cada contacto.
+Este submódulo cuenta las palabras que hay en los mensajes de cada contacto y calcula la suma total de las mismas, obteniendo el número de palabras totales enviadas por cada contacto. Para chats grupales, usa la librería \textit{ChartJS}, mientras que para chat individuales, únicamente se exponen los números de ambas partes directamente.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/word_count.png}
+	\caption{Contador de palabras}
+	\label{fig:chap4:word_count}
+\end{figure}
+
+\todi{Insertar imagen de caso individual al lado}
+
+Se ha optado por calcular esta métrica puesto que puede ayudar a observar diferencias drásticas en la cantidad de texto que aporta cada contacto.
 
 \subsubsection{Contador de caracteres}
 
-Este submódulo cuenta los caracteres que hay en los mensajes de cada contacto y calcula la suma total de los mismos, obteniendo el número de caracteres totales enviados por cada contacto.
+Este submódulo cuenta los caracteres que hay en los mensajes de cada contacto y calcula la suma total de los mismos, obteniendo el número de caracteres totales enviados por cada contacto. Aunque suele indicar resultados similares al módulo anterior, en algunas ocasiones es distinto, por lo que se ha decidido incluir también.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/char_count.png}
+	\caption{Contador de caracteres}
+	\label{fig:chap4:char_count}
+\end{figure}
+
+De nuevo, para chats grupales, usa la librería \textit{ChartJS}, mientras que para chat individuales, únicamente se exponen los números de ambas partes directamente.
 
 \subsubsection{Media de palabras por mensaje}
 
-Este submódulo devuelve el número medio de palabras por mensaje para cada contacto.
+Este submódulo calcula y muestra el número medio de palabras por mensaje para cada contacto. Esta métrica puede ayudar, junto con el número de mensajes totales, a saber si un contacto tiende a mandar más mensajes con menor número de palabras, o menos mensajes con más palabras.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/word_avg.png}
+	\caption{Media de palabras por mensaje}
+	\label{fig:chap4:word_avg}
+\end{figure}
+
+\todi{Insertar imagen de caso individual al lado}
 
 \subsubsection{Media de caracteres por mensaje}
 
-Este submódulo devuelve el número medio de caracteres por mensaje para cada contacto.
+Este submódulo calcula y muestra el número medio de caracteres por mensaje para cada contacto. Aunque suele indicar resultados similares al módulo anterior, en algunas ocasiones puede resaltar personas que tienden a usar palabras más largas.
 
-Tanto el número de caracteres como el número de palabras suelen indicar la misma información respecto a qué contacto escribe más.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/char_avg.png}
+	\caption{Media de caracteres por mensaje}
+	\label{fig:chap4:char_avg}
+\end{figure}
+
+\todi{Insertar imagen de caso individual al lado}
+
+\subsubsection{Número de conversaciones iniciadas}
+
+Este submódulo calcula el número de veces que cada contacto ha iniciado la conversación, con los criterios y datos obtenidos del módulo ``Agregador por conversación''. Se ha decidido calcular esta métrica puesto que es una buena forma de medir la iniciativa de una persona, así como su interés en el grupo o persona individual.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/conversations_started.png}
+	\caption{Conversaciones iniciadas por cada contacto}
+	\label{fig:chap4:conversations_started}
+\end{figure}
+
+En este ejemplo, podemos ver cómo Alejandro, el presidente de la asociación, suele tomar la iniciativa y comenzar las conversaciones.
+
+
+\subsubsection{Velocidad media de respuesta}
+
+Este submódulo calcula la velocidad media de respuesta de cada contacto, con los criterios y datos obtenidos del módulo ``Agregador por conversación''. Se ha decidido calcular esta métrica puesto que es una buena forma de medir la atención a la aplicación de mensajería instantánea, así como la importancia que le da al grupo.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/avg_response_time.png}
+	\caption{Tiempo medio de respuesta}
+	\label{fig:chap4:avg_response_time}
+\end{figure}
+
+Añadiendo esta figura a la anterior, podemos ver cómo Martín inicia pocas conversaciones y, además, suele tardar bastante en responder. Esto puede sugerir que está menos involucrado en el grupo.
+
+
 
 \subsubsection{Contador de multimedia}
 
-En caso de que existan objetos \acrshort{json} con el campo ``\textit{media\_type}'' distinto de \textit{undefined}, este módulo contará cuántos archivos multimedia de cada tipo ha mandado cada contacto.
+En caso de que existan objetos \acrshort{json} con el campo ``\textit{media\_type}'' distinto de \textit{undefined}, este submódulo cuenta cuántos archivos multimedia de cada tipo ha mandado cada contacto.
 
-\subsubsection{Contador de palabras más repetidas}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/media_count.png}
+	\caption{Contador de multimedia}
+	\label{fig:chap4:media_count}
+\end{figure}
 
-Este módulo elimina las palabras más comunes del español y el inglés, así como otros mensajes que WhatsApp añade, como \textit{Media ommited} o \textit{This message has been deleted}.
-
-Las listas de palabras más comunes del español e inglés se han recopilado de distintas fuentes, combinado y eliminado repeticiones.
-
-A la salida de este módulo, se entrega un diccionario con las palabras más repetidas y el número de veces que aparece cada una; información de la que hará uso la nube de palabras.
-
-\todi{Añadir fuzzy-wuzzy (se ha usado fuzzball)... Debería añadirlo a las tecnologías habilitantes?}
-
-\todi{Anexar enlace a listas de palabras más comunes en anexo C}
-
-% Contar que es para hacer un word cloud y que se eliminan las palabras más comunes del lenguaje inglés y español. También se deben eliminar enlaces, Media ommitted y This message has been deleted. Añadir fuzzywuzzy a la arquitectura del sistema (esquema) y al código.
-
-% Contar de dónde se han recopilado las listas de palabras más comunes y anexar en C, junto con el código.
-
-% Añadir fuzzy-wuzzy a las tecnologías habilitantes?
-
-\subsubsection{Contador de emoticonos más usados}
-
-Este módulo aplica una expresión regular unicode a todos los mensajes, seleccionando los emoticonos y contando el número de veces que aparecen. Posteriormente otra nube de palabras hará uso de esta información.
+\todi{Insertar imagen de caso individual al lado}
 
 \subsubsection{Generador de estructuras de datos por día, hora y mes}
 
 Para el gráfico de barras con el número de mensajes en el tiempo, \textit{ChartJS} necesita una estructura de datos para mensajes por día, siendo los días la variable independiente y el número de mensajes la variable dependiente.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/time_distributions.png}
+	\caption{Distribuciones en el tiempo}
+	\label{fig:chap4:time_distributions}
+\end{figure}
 
-\section{Arquitectura en el servidor}
+Se elige calcular y mostrar estas distribuciones puesto que ayudan a observar la evolución en el tiempo de la cantidad de mensajes intercambiados, así como los días de la semana más activos. Por ejemplo una pareja que pasa los fines de semana juntos tendrá menos mensajes los fines de semana. Por último, la distribución en las 24 horas del día ayuda a analizar las horas pico de conversación, así como las horas de final e inicio del día para cada contacto.
 
-Se muestra a continuación una grafo de la arquitectura en el servidor, donde se muestran las capas que lo componen.
+Para la distribución por horas en el día, se ha planteado también usar un gráfico de araña o radar, pero dicha opción se descartó al observar el solapamiento que tenía lugar con varios contactos.
+
+En la figura podemos observar cómo el contacto Jaime comienza a mandar mensajes a las 9 de la mañana, mientras que James suele comenzar 2 horas antes: a las 7 de la mañana. Esto sugiere que James comienza antes el día, o Jaime no utiliza el móvil hasta las 9 de la mañana.
+
+\subsubsection{Contador de palabras más repetidas}
+
+Este submódulo procesa todas las palabras de los mensajes, elimina las palabras más comunes del español y el inglés, así como otros mensajes que WhatsApp añade, como \textit{Media ommited} o \textit{This message has been deleted}.
+
+Las listas de palabras más comunes del español e inglés se han recopilado de distintas fuentes, combinado y eliminado repeticiones.
+
+A la salida de este módulo, se muestra un diccionario con las palabras más repetidas y el número de veces que aparece cada una; información de la que hará uso la librería \textit{react-wordcloud}. Esta información resulta útil para resaltar los temas principales tratados en el chat.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{img/server.png}
-	\caption{Arquitectura en el servidor}
-	\label{fig:chap4:architecture_server}
+	\includegraphics[width=0.4\textwidth]{img/word_cloud.png}
+	\caption{Nube de palabras}
+	\label{fig:chap4:word_cloud}
 \end{figure}
 
-Se ha decidido no instalar el software directamente sobre el sistema operativo, evitando problemas de dependencias y distintas versiones de las mismas para los componentes del sistema operativo. Asimismo, se evitan problemas de seguridad que puedan venir por vulnerabilidades en el código fuente y sus dependencias.
+\todi{Anexar enlace a listas de palabras más comunes en anexo C}
 
-Hemos elegido virtualización ligera para ejecutar nuestro código en contenedores, por las razones que se exponen:
+\subsubsection{Contador de emoticonos más usados}
 
-\begin{itemize}
-	\item Se contienen las dependencias de terceros en una imagen.
-	\item En caso de vulnerabilidad, solo se expone el contenedor y no el sistema completo.
-	\item Los recursos se ocupan dinámicamente en función a las necesidades, al contrario que con la virtualización completa.
-	\item Permite el despliegue en cualquier sistema operativo compatible con Linux, salvo arquitecturas ARM (que no es frecuente en servidores).
-\end{itemize}
+Este módulo aplica una expresión regular unicode a todos los mensajes, seleccionando los emoticonos y contando el número de veces que aparecen. Posteriormente otra nube de palabras hace uso de esta información por medio de la librería \textit{react-wordcloud}.
 
-\subsection{ChatStats React Server}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{img/emoji_cloud.png}
+	\caption{Nube de emoticonos}
+	\label{fig:chap4:emoji_cloud}
+\end{figure}
 
-Se trata del servidor de React que sirve el contenido. Tras construir la versión de producción con el código fuente, este contenedor sirve el contenido estático final, que enviará al cliente completamente cuando este solicite la aplicación web.
-
-\subsection{Traefik}
-
-Se ha decidido usar Traefik como \textit{proxy} inverso, que se sitúa frente al servidor de ChatStats para redirigir las peticiones realizadas a su contenedor correspondiente en el puerto adecuado.
-
-Además, Traefik gestiona los certificados \acrshort{ssl} haciendo uso de \textit{Let's Encrypt}: autoridad sin ánimo de lucro que provee certificados para la capa \acrshort{tls} sin coste alguno.
+Se elige calcular y mostrar esta visualización puesto que los emoticonos constituyen en un chat la forma más similar a la expresión no verbal.
 
 \vspace{8mm}
 
+\todi{Reescribir el cierre del capítulo}
+
 Con todo, si en un futuro se quiere extender la arquitectura propuesta a un modelo de cliente-servidor; como en la tercera opción que se propone al comienzo de este capítulo, siempre se puede añadir un tercer contenedor en la última capa que implemente lógica adicional. Sería también necesaria cierta modificación en el código del cliente para implementar peticiones a este nuevo servicio.
-
-
-
-\section{Arquitectura en el cliente}
-
-A continuación se presenta la arquitectura que podemos encontrar en un cliente cualquiera.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth]{img/client.png}
-	\caption{Arquitectura en el cliente}
-	\label{fig:chap4:architecture_client}
-\end{figure}
-
-\todi{Hacer esquinas del rectángulo menos redondeadas}
-
-\subsection{Navegador}
-
-El navegador juega un papel fundamental para el acceso y ejecución de cualquier aplicación web. Aunque no se entra en detalle en su estructura interna, sí que vamos a detallar la integración con \acrfull{pwa}. Esta integración que ofrecen algunos navegadores como los basados en Chromium, permite instalar aplicaciones web, con ventajas como:
-
-\begin{itemize}
-	\item La aplicación saldrá en el escritorio en teléfonos Android e iOS, así como en el cajón de aplicaciones del navegador.
-	\item Posibilidad de acceso a notificaciones \textit{push} para el sistema (que no utilizaremos).
-	\item Posibilidad de guardar en \textit{cache} el código del cliente, permitiendo su uso sin conexión a Internet.
-\end{itemize}
-
-Hay que mencionar también que Mozilla no ofrece soporte para \acrshort{pwa} en su navegador Firefox\cite{firefoxNoPWA}, aunque este puede ser habilitado mediante una extensión\cite{firefoxPWAextension}.
-
-\subsection{Aplicación Web}
-
-Es la última capa, se encuentra nuestra aplicación, cuya arquitectura de procesamiento se explica en la \autoref{chap:architecture:processing}. Explicamos a continuación los componentes lógicos que se encuentran en el cliente:
-
-\subsubsection{Router}
-
-ChatStats es una aplicación multipágina. Esto quiere decir que cuenta con diferentes rutas web en las que se muestran diferentes páginas. La página principal consolida la ruta `\textit{/}', mientras que `\textit{/graphs}' enruta la página para la visualización de los gráficos.
-
-\subsubsection{React Virtual DOM}
-
-El DOM virtual es un concepto de programación en el que una representación virtual de la interfaz de usuario (UI) es guardada en memoria y sincronizada con el DOM del navegador. Esto nos permite definir qué queremos en la interfaz de usuario y React conseguirá que el DOM virtual y el DOM del navegador se sincronicen.
 
 
 \newpage
