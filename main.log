@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022 - Flatpak) (preloaded format=pdflatex 2022.11.15)  16 JAN 2023 19:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022 - Flatpak) (preloaded format=pdflatex 2022.11.15)  17 JAN 2023 00:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -821,31 +821,23 @@ rs
 \f@nch@O@olf=\skip91
 \f@nch@O@orf=\skip92
 )
-(/app/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen268
-\WF@size=\dimen269
-\c@WF@wrappedlines=\count358
-\WF@box=\box76
-\WF@everypar=\toks50
-Package: wrapfig 2003/01/31  v 3.6
-)
 (/app/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
 Package: fancybox 2010/05/15 1.4
 
 Style option: `fancybox' v1.4 <2010/05/15> (tvz)
-\@fancybox=\box77
-\shadowsize=\dimen270
-\@Sbox=\box78
-\do@VerbBox=\toks51
-\the@fancyput=\toks52
-\this@fancyput=\toks53
-\EndVerbatimTokens=\toks54
+\@fancybox=\box76
+\shadowsize=\dimen268
+\@Sbox=\box77
+\do@VerbBox=\toks50
+\the@fancyput=\toks51
+\this@fancyput=\toks52
+\EndVerbatimTokens=\toks53
 \Verbatim@Outfile=\write6
 \Verbatim@Infile=\read4
 ) (/app/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
-\ESO@tempdima=\dimen271
-\ESO@tempdimb=\dimen272
+\ESO@tempdima=\dimen269
+\ESO@tempdimb=\dimen270
 )
 (/app/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
 Package: todonotes 2021/06/04 v1.1.5 Todonotes source and documentation.
@@ -855,13 +847,13 @@ Package: todonotes 2021/06/04
 (/app/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/app/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/app/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks55
-\pgfutil@tempdima=\dimen273
-\pgfutil@tempdimb=\dimen274
+\pgfutil@everybye=\toks54
+\pgfutil@tempdima=\dimen271
+\pgfutil@tempdimb=\dimen272
 
 (/app/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex))
 (/app/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box79
+\pgfutil@abb=\box78
 )
 (/app/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
 (/app/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -875,32 +867,32 @@ Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
 Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 
 (/app/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks56
-\pgfkeys@temptoks=\toks57
+\pgfkeys@pathtoks=\toks55
+\pgfkeys@temptoks=\toks56
 
 (/app/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks58
+\pgfkeys@tmptoks=\toks57
 ))
-\pgf@x=\dimen275
-\pgf@y=\dimen276
-\pgf@xa=\dimen277
-\pgf@ya=\dimen278
-\pgf@xb=\dimen279
-\pgf@yb=\dimen280
-\pgf@xc=\dimen281
-\pgf@yc=\dimen282
-\pgf@xd=\dimen283
-\pgf@yd=\dimen284
+\pgf@x=\dimen273
+\pgf@y=\dimen274
+\pgf@xa=\dimen275
+\pgf@ya=\dimen276
+\pgf@xb=\dimen277
+\pgf@yb=\dimen278
+\pgf@xc=\dimen279
+\pgf@yc=\dimen280
+\pgf@xd=\dimen281
+\pgf@yd=\dimen282
 \w@pgf@writea=\write7
 \r@pgf@reada=\read5
-\c@pgf@counta=\count359
-\c@pgf@countb=\count360
-\c@pgf@countc=\count361
-\c@pgf@countd=\count362
-\t@pgf@toka=\toks59
-\t@pgf@tokb=\toks60
-\t@pgf@tokc=\toks61
-\pgf@sys@id@count=\count363
+\c@pgf@counta=\count358
+\c@pgf@countb=\count359
+\c@pgf@countc=\count360
+\c@pgf@countd=\count361
+\t@pgf@toka=\toks58
+\t@pgf@tokb=\toks59
+\t@pgf@tokc=\toks60
+\pgf@sys@id@count=\count362
 
 (/app/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
@@ -915,8 +907,8 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 )))
 (/app/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count364
-\pgfsyssoftpath@bigbuffer@items=\count365
+\pgfsyssoftpath@smallbuffer@items=\count363
+\pgfsyssoftpath@bigbuffer@items=\count364
 )
 (/app/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -928,12 +920,12 @@ Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
 (/app/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/app/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/app/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen285
-\pgfmath@count=\count366
-\pgfmath@box=\box80
-\pgfmath@toks=\toks62
-\pgfmath@stack@operand=\toks63
-\pgfmath@stack@operation=\toks64
+\pgfmath@dimen=\dimen283
+\pgfmath@count=\count365
+\pgfmath@box=\box79
+\pgfmath@toks=\toks61
+\pgfmath@stack@operand=\toks62
+\pgfmath@stack@operation=\toks63
 )
 (/app/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/app/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
@@ -949,55 +941,55 @@ tex)
 (/app/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmeti
 cs.code.tex)))
 (/app/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count367
+\c@pgfmathroundto@lastzeros=\count366
 ))
 (/app/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@picminx=\dimen286
-\pgf@picmaxx=\dimen287
-\pgf@picminy=\dimen288
-\pgf@picmaxy=\dimen289
-\pgf@pathminx=\dimen290
-\pgf@pathmaxx=\dimen291
-\pgf@pathminy=\dimen292
-\pgf@pathmaxy=\dimen293
-\pgf@xx=\dimen294
-\pgf@xy=\dimen295
-\pgf@yx=\dimen296
-\pgf@yy=\dimen297
-\pgf@zx=\dimen298
-\pgf@zy=\dimen299
+\pgf@picminx=\dimen284
+\pgf@picmaxx=\dimen285
+\pgf@picminy=\dimen286
+\pgf@picmaxy=\dimen287
+\pgf@pathminx=\dimen288
+\pgf@pathmaxx=\dimen289
+\pgf@pathminy=\dimen290
+\pgf@pathmaxy=\dimen291
+\pgf@xx=\dimen292
+\pgf@xy=\dimen293
+\pgf@yx=\dimen294
+\pgf@yy=\dimen295
+\pgf@zx=\dimen296
+\pgf@zy=\dimen297
 )
 (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.t
 ex
 File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@path@lastx=\dimen300
-\pgf@path@lasty=\dimen301
+\pgf@path@lastx=\dimen298
+\pgf@path@lasty=\dimen299
 )
 (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@shorten@end@additional=\dimen302
-\pgf@shorten@start@additional=\dimen303
+\pgf@shorten@end@additional=\dimen300
+\pgf@shorten@start@additional=\dimen301
 )
 (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfpic=\box81
-\pgf@hbox=\box82
-\pgf@layerbox@main=\box83
-\pgf@picture@serial@count=\count368
+\pgfpic=\box80
+\pgf@hbox=\box81
+\pgf@layerbox@main=\box82
+\pgf@picture@serial@count=\count367
 )
 (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.te
 x
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgflinewidth=\dimen304
+\pgflinewidth=\dimen302
 )
 (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code
 .tex
 File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@pt@x=\dimen305
-\pgf@pt@y=\dimen306
-\pgf@pt@temp=\dimen307
+\pgf@pt@x=\dimen303
+\pgf@pt@y=\dimen304
+\pgf@pt@temp=\dimen305
 ) (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -1008,19 +1000,19 @@ tex
 File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowsep=\dimen308
+\pgfarrowsep=\dimen306
 ) (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@max=\dimen309
-\pgf@sys@shading@range@num=\count369
-\pgf@shadingcount=\count370
+\pgf@max=\dimen307
+\pgf@sys@shading@range@num=\count368
+\pgf@shadingcount=\count369
 )
 (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 
 (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfexternal@startupbox=\box84
+\pgfexternal@startupbox=\box83
 ))
 (/app/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -1035,15 +1027,15 @@ File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )))
 (/app/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfnodeparttextbox=\box85
+\pgfnodeparttextbox=\box84
 )
 (/app/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
 (/app/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@nodesepstart=\dimen310
-\pgf@nodesepend=\dimen311
+\pgf@nodesepstart=\dimen308
+\pgf@nodesepend=\dimen309
 )
 (/app/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
@@ -1056,10 +1048,10 @@ Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
 Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
 
 (/app/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen312
-\pgffor@skip=\dimen313
-\pgffor@stack=\toks65
-\pgffor@toks=\toks66
+\pgffor@iter=\dimen310
+\pgffor@skip=\dimen311
+\pgffor@stack=\toks64
+\pgffor@toks=\toks65
 ))
 (/app/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
@@ -1067,32 +1059,32 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 (/app/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.
 tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count371
-\pgfplotmarksize=\dimen314
+\pgf@plot@mark@count=\count370
+\pgfplotmarksize=\dimen312
 )
-\tikz@lastx=\dimen315
-\tikz@lasty=\dimen316
-\tikz@lastxsaved=\dimen317
-\tikz@lastysaved=\dimen318
-\tikz@lastmovetox=\dimen319
-\tikz@lastmovetoy=\dimen320
-\tikzleveldistance=\dimen321
-\tikzsiblingdistance=\dimen322
-\tikz@figbox=\box86
-\tikz@figbox@bg=\box87
-\tikz@tempbox=\box88
-\tikz@tempbox@bg=\box89
-\tikztreelevel=\count372
-\tikznumberofchildren=\count373
-\tikznumberofcurrentchild=\count374
-\tikz@fig@count=\count375
+\tikz@lastx=\dimen313
+\tikz@lasty=\dimen314
+\tikz@lastxsaved=\dimen315
+\tikz@lastysaved=\dimen316
+\tikz@lastmovetox=\dimen317
+\tikz@lastmovetoy=\dimen318
+\tikzleveldistance=\dimen319
+\tikzsiblingdistance=\dimen320
+\tikz@figbox=\box85
+\tikz@figbox@bg=\box86
+\tikz@tempbox=\box87
+\tikz@tempbox@bg=\box88
+\tikztreelevel=\count371
+\tikznumberofchildren=\count372
+\tikznumberofcurrentchild=\count373
+\tikz@fig@count=\count374
  (/app/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count376
-\pgfmatrixcurrentcolumn=\count377
-\pgf@matrix@numberofcolumns=\count378
+\pgfmatrixcurrentrow=\count375
+\pgfmatrixcurrentcolumn=\count376
+\pgf@matrix@numberofcolumns=\count377
 )
-\tikz@expandcount=\count379
+\tikz@expandcount=\count378
 
 (/app/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibra
 rytopaths.code.tex
@@ -1102,18 +1094,18 @@ File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 rypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-\c@@todonotes@numberoftodonotes=\count380
+\c@@todonotes@numberoftodonotes=\count379
 ) (/app/texlive/texmf-dist/tex/generic/soul/soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
-\SOUL@word=\toks67
-\SOUL@lasttoken=\toks68
-\SOUL@cmds=\toks69
-\SOUL@buffer=\toks70
-\SOUL@token=\toks71
+\SOUL@word=\toks66
+\SOUL@lasttoken=\toks67
+\SOUL@cmds=\toks68
+\SOUL@buffer=\toks69
+\SOUL@token=\toks70
 \SOUL@spaceskip=\skip93
-\SOUL@ttwidth=\dimen323
-\SOUL@uldp=\dimen324
-\SOUL@ulht=\dimen325
+\SOUL@ttwidth=\dimen321
+\SOUL@uldp=\dimen322
+\SOUL@ulht=\dimen323
 )
 (./main.aux (./0-preamble.aux)
 LaTeX Info: Redefining \. on input line 34.
@@ -1129,24 +1121,24 @@ LaTeX Warning: Label `sec:introduction' multiply defined.
 (./9-code.aux) (./10-regex.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
 
 (/app/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
@@ -1157,7 +1149,7 @@ File: translations-basic-dictionary-spanish.trsl (spanish translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `spanish'. on input line 296.
+or `spanish'. on input line 295.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1167,23 +1159,22 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: supertabular package is loaded.
-Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count381
+\c@lstlisting=\count380
 
 (/app/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count382
-\scratchdimen=\dimen326
-\scratchbox=\box90
-\nofMPsegments=\count383
-\nofMParguments=\count384
-\everyMPshowfont=\toks72
-\MPscratchCnt=\count385
-\MPscratchDim=\dimen327
-\MPnumerator=\count386
-\makeMPintoPDFobject=\count387
-\everyMPtoPDFconversion=\toks73
+\scratchcounter=\count381
+\scratchdimen=\dimen324
+\scratchbox=\box89
+\nofMPsegments=\count382
+\nofMParguments=\count383
+\everyMPshowfont=\toks71
+\MPscratchCnt=\count384
+\MPscratchDim=\dimen325
+\MPnumerator=\count385
+\makeMPintoPDFobject=\count386
+\everyMPtoPDFconversion=\toks72
 ) (/app/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1193,11 +1184,11 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \. on input line 296.
-LaTeX Info: Redefining \% on input line 296.
+LaTeX Info: Redefining \. on input line 295.
+LaTeX Info: Redefining \% on input line 295.
 
 (./main.glsdefs)
-Package hyperref Info: Link coloring ON on input line 296.
+Package hyperref Info: Link coloring ON on input line 295.
  (/app/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1207,11 +1198,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/app/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count388
+\c@section@level=\count387
 )
-LaTeX Info: Redefining \ref on input line 296.
-LaTeX Info: Redefining \pageref on input line 296.
-LaTeX Info: Redefining \nameref on input line 296.
+LaTeX Info: Redefining \ref on input line 295.
+LaTeX Info: Redefining \pageref on input line 295.
+LaTeX Info: Redefining \nameref on input line 295.
 
 (./main.out) (./main.out)
 \@outlinefile=\write8
@@ -1223,7 +1214,7 @@ LaTeX Info: Redefining \nameref on input line 296.
 (/app/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-<img/portada.png, id=364, 597.95369pt x 845.60503pt>
+<img/portada.png, id=372, 597.95369pt x 845.60503pt>
 File: img/portada.png Graphic file (type png)
 <use img/portada.png>
 Package pdftex.def Info: img/portada.png  used on input line 20.
@@ -1245,7 +1236,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ) [3] [4
 
 ]
-<img/logo_etsit.jpg, id=385, 526.1256pt x 206.2104pt>
+<img/logo_etsit.jpg, id=393, 526.1256pt x 206.2104pt>
 File: img/logo_etsit.jpg Graphic file (type jpg)
 <use img/logo_etsit.jpg>
 Package pdftex.def Info: img/logo_etsit.jpg  used on input line 69.
@@ -1301,20 +1292,14 @@ LaTeX Info: Redefining \% on input line 1.
 Underfull \vbox (badness 2932) has occurred while \output is active []
 
  [8]
-Underfull \vbox (badness 1253) has occurred while \output is active []
-
- [9]
+[9]
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 123.
+(Font)              using `OT1/cmr/bx/n' instead on input line 125.
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 123.
-
-
-Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 128.
+(spanish)                faked small caps on input line 125.
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
@@ -1326,7 +1311,11 @@ Package spanish Warning: Replacing `OT1/cmr/bx/sc' by
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 139.
+(spanish)                faked small caps on input line 134.
+
+
+Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
+(spanish)                faked small caps on input line 141.
 
 )
 \tf@toc=\write9
@@ -1439,8 +1428,8 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [2])
-LaTeX Info: Redefining \. on input line 340.
-LaTeX Info: Redefining \% on input line 340.
+LaTeX Info: Redefining \. on input line 339.
+LaTeX Info: Redefining \% on input line 339.
  [3]
 \openout2 = `2-enablingtechnologies.aux'.
 
@@ -1507,11 +1496,11 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [8])
-LaTeX Info: Redefining \. on input line 341.
-LaTeX Info: Redefining \% on input line 341.
+LaTeX Info: Redefining \. on input line 340.
+LaTeX Info: Redefining \% on input line 340.
  [9]
-LaTeX Info: Redefining \. on input line 341.
-LaTeX Info: Redefining \% on input line 341.
+LaTeX Info: Redefining \. on input line 340.
+LaTeX Info: Redefining \% on input line 340.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1526,7 +1515,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
  (./3-requirements.tex
 Cap\'{\i }tulo 3.
-<img/uml.png, id=679, 1100.11pt x 1086.0575pt>
+<img/uml.png, id=691, 1100.11pt x 1086.0575pt>
 File: img/uml.png Graphic file (type png)
 <use img/uml.png>
 Package pdftex.def Info: img/uml.png  used on input line 11.
@@ -1640,8 +1629,8 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [17])
-LaTeX Info: Redefining \. on input line 342.
-LaTeX Info: Redefining \% on input line 342.
+LaTeX Info: Redefining \. on input line 341.
+LaTeX Info: Redefining \% on input line 341.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1656,7 +1645,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
  (./4-architecture.tex
 Cap\'{\i }tulo 4.
-<img/scenario.png, id=741, 1971.365pt x 774.895pt>
+<img/scenario.png, id=754, 1971.365pt x 774.895pt>
 File: img/scenario.png Graphic file (type png)
 <use img/scenario.png>
 Package pdftex.def Info: img/scenario.png  used on input line 14.
@@ -1670,7 +1659,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<img/client.png, id=748, 726.715pt x 423.5825pt>
+<img/client.png, id=760, 726.715pt x 423.5825pt>
 File: img/client.png Graphic file (type png)
 <use img/client.png>
 Package pdftex.def Info: img/client.png  used on input line 34.
@@ -1693,13 +1682,13 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 LaTeX Info: Redefining \. on input line 54.
 LaTeX Info: Redefining \% on input line 54.
  [21 <./img/client.png>]
-<img/server.png, id=764, 726.715pt x 503.8825pt>
+<img/server.png, id=776, 726.715pt x 503.8825pt>
 File: img/server.png Graphic file (type png)
 <use img/server.png>
-Package pdftex.def Info: img/server.png  used on input line 68.
+Package pdftex.def Info: img/server.png  used on input line 69.
 (pdftex.def)             Requested size: 260.17464pt x 180.39804pt.
-LaTeX Info: Redefining \. on input line 82.
-LaTeX Info: Redefining \% on input line 82.
+LaTeX Info: Redefining \. on input line 83.
+LaTeX Info: Redefining \% on input line 83.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1710,17 +1699,17 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [22 <./img/server.png>]
-<img/architecture_processing.png, id=770, 1931.215pt x 827.09pt>
+<img/architecture_processing.png, id=782, 1931.215pt x 827.09pt>
 File: img/architecture_processing.png Graphic file (type png)
 <use img/architecture_processing.png>
 Package pdftex.def Info: img/architecture_processing.png  used on input line 10
-7.
+8.
 (pdftex.def)             Requested size: 433.62pt x 185.7086pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 111.
-LaTeX Info: Redefining \% on input line 111.
+LaTeX Info: Redefining \. on input line 112.
+LaTeX Info: Redefining \% on input line 112.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1731,8 +1720,8 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [23]
-LaTeX Info: Redefining \. on input line 129.
-LaTeX Info: Redefining \% on input line 129.
+LaTeX Info: Redefining \. on input line 130.
+LaTeX Info: Redefining \% on input line 130.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1744,13 +1733,13 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [24 <./img/architecture_processing.png>]
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-46.
+47.
 
 (/app/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Info: Redefining \. on input line 160.
-LaTeX Info: Redefining \% on input line 160.
+LaTeX Info: Redefining \. on input line 161.
+LaTeX Info: Redefining \% on input line 161.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1763,8 +1752,8 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 [25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 207.
-LaTeX Info: Redefining \% on input line 207.
+LaTeX Info: Redefining \. on input line 208.
+LaTeX Info: Redefining \% on input line 208.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1776,12 +1765,12 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [26]
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 2
-26.
+27.
  (/app/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-LaTeX Info: Redefining \. on input line 237.
-LaTeX Info: Redefining \% on input line 237.
+LaTeX Info: Redefining \. on input line 238.
+LaTeX Info: Redefining \% on input line 238.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1792,31 +1781,31 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
 
  []
 
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 2
-61.
+62.
 (/app/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 261.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 262.
 
-Overfull \hbox (2.01337pt too wide) in paragraph at lines 261--262
+Overfull \hbox (2.01337pt too wide) in paragraph at lines 262--263
 []\OT1/cmr/m/n/10.95 Para el se-gun-do ca-so, ca-da vez que un men-sa-je sea co
 n-te-ni-do mul-ti-me-dia, apa-re-cer^^Sa \OML/cmm/m/it/10.95 <\OT1/cmr/m/it/10.
 95 Me-
  []
 
-LaTeX Info: Redefining \. on input line 265.
-LaTeX Info: Redefining \% on input line 265.
+LaTeX Info: Redefining \. on input line 266.
+LaTeX Info: Redefining \% on input line 266.
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
 (fancyhdr)                Make it at least 14.42169pt, for example:
@@ -1826,8 +1815,8 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [28]
-LaTeX Info: Redefining \. on input line 303.
-LaTeX Info: Redefining \% on input line 303.
+LaTeX Info: Redefining \. on input line 304.
+LaTeX Info: Redefining \% on input line 304.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1840,8 +1829,8 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 [29]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 346.
-LaTeX Info: Redefining \% on input line 346.
+LaTeX Info: Redefining \. on input line 347.
+LaTeX Info: Redefining \% on input line 347.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1852,8 +1841,8 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [30]
-LaTeX Info: Redefining \. on input line 376.
-LaTeX Info: Redefining \% on input line 376.
+LaTeX Info: Redefining \. on input line 377.
+LaTeX Info: Redefining \% on input line 377.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1864,35 +1853,78 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [31]
-<img/word_count.png, id=928, 809.0225pt x 813.0375pt>
+<img/message_count_individual.png, id=940, 867.24pt x 527.9725pt>
+File: img/message_count_individual.png Graphic file (type png)
+<use img/message_count_individual.png>
+Package pdftex.def Info: img/message_count_individual.png  used on input line 3
+90.
+(pdftex.def)             Requested size: 170.71652pt x 103.92499pt.
+<img/message_count.png, id=941, 785.93625pt x 815.045pt>
+File: img/message_count.png Graphic file (type png)
+<use img/message_count.png>
+Package pdftex.def Info: img/message_count.png  used on input line 392.
+(pdftex.def)             Requested size: 170.71652pt x 177.03456pt.
+LaTeX Info: Redefining \. on input line 399.
+LaTeX Info: Redefining \% on input line 399.
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.42169pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.42169pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
+
+[32 <./img/message_count_individual.png> <./img/message_count.png>]
+<img/word_count_individual.png, id=949, 861.2175pt x 517.935pt>
+File: img/word_count_individual.png Graphic file (type png)
+<use img/word_count_individual.png>
+Package pdftex.def Info: img/word_count_individual.png  used on input line 405.
+
+(pdftex.def)             Requested size: 170.71652pt x 102.6684pt.
+<img/word_count.png, id=950, 782.925pt x 804.00375pt>
 File: img/word_count.png Graphic file (type png)
 <use img/word_count.png>
-Package pdftex.def Info: img/word_count.png  used on input line 389.
-(pdftex.def)             Requested size: 216.81pt x 217.88547pt.
-LaTeX Info: Redefining \. on input line 394.
-LaTeX Info: Redefining \% on input line 394.
+Package pdftex.def Info: img/word_count.png  used on input line 407.
+(pdftex.def)             Requested size: 170.71652pt x 175.31105pt.
+<img/char_count_individual.png, id=951, 860.21375pt x 516.93124pt>
+File: img/char_count_individual.png Graphic file (type png)
+<use img/char_count_individual.png>
+Package pdftex.def Info: img/char_count_individual.png  used on input line 418.
 
-
-Package fancyhdr Warning: \headheight is too small (14.0pt): 
-(fancyhdr)                Make it at least 14.42169pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.42169pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
-
-[32 <./img/word_count.png>]
-<img/char_count.png, id=933, 806.01125pt x 819.06pt>
+(pdftex.def)             Requested size: 170.71652pt x 102.58775pt.
+<img/char_count.png, id=952, 806.01125pt x 819.06pt>
 File: img/char_count.png Graphic file (type png)
 <use img/char_count.png>
-Package pdftex.def Info: img/char_count.png  used on input line 404.
-(pdftex.def)             Requested size: 216.81pt x 220.3118pt.
-<img/word_avg.png, id=934, 820.06375pt x 817.0525pt>
+Package pdftex.def Info: img/char_count.png  used on input line 420.
+(pdftex.def)             Requested size: 170.71652pt x 173.46992pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 424.
+LaTeX Info: Redefining \% on input line 424.
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.42169pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.42169pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
+
+[33 <./img/word_count_individual.png> <./img/word_count.png>]
+<img/word_avg_individual.png, id=960, 858.20625pt x 543.02875pt>
+File: img/word_avg_individual.png Graphic file (type png)
+<use img/word_avg_individual.png>
+Package pdftex.def Info: img/word_avg_individual.png  used on input line 433.
+(pdftex.def)             Requested size: 170.71652pt x 108.01552pt.
+<img/word_avg.png, id=961, 820.06375pt x 817.0525pt>
 File: img/word_avg.png Graphic file (type png)
 <use img/word_avg.png>
-Package pdftex.def Info: img/word_avg.png  used on input line 417.
-(pdftex.def)             Requested size: 216.81pt x 216.00673pt.
-LaTeX Info: Redefining \. on input line 421.
-LaTeX Info: Redefining \% on input line 421.
+Package pdftex.def Info: img/word_avg.png  used on input line 435.
+(pdftex.def)             Requested size: 170.71652pt x 170.09003pt.
+LaTeX Info: Redefining \. on input line 443.
+LaTeX Info: Redefining \% on input line 443.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1902,40 +1934,58 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
-[33 <./img/char_count.png>]
-<img/char_avg.png, id=940, 811.03pt x 833.1125pt>
+[34 <./img/char_count_individual.png> <./img/char_count.png> <./img/word_avg_in
+dividual.png> <./img/word_avg.png>]
+<img/char_avg_individual.png, id=970, 858.20625pt x 536.0025pt>
+File: img/char_avg_individual.png Graphic file (type png)
+<use img/char_avg_individual.png>
+Package pdftex.def Info: img/char_avg_individual.png  used on input line 446.
+(pdftex.def)             Requested size: 170.71652pt x 106.6179pt.
+<img/char_avg.png, id=971, 811.03pt x 833.1125pt>
 File: img/char_avg.png Graphic file (type png)
 <use img/char_avg.png>
-Package pdftex.def Info: img/char_avg.png  used on input line 430.
-(pdftex.def)             Requested size: 216.81pt x 222.70602pt.
-LaTeX Info: Redefining \. on input line 435.
-LaTeX Info: Redefining \% on input line 435.
-
-
-Package fancyhdr Warning: \headheight is too small (14.0pt): 
-(fancyhdr)                Make it at least 14.42169pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.42169pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
-
-[34 <./img/word_avg.png> <./img/char_avg.png>]
-<img/conversations_started.png, id=946, 830.10126pt x 832.10875pt>
+Package pdftex.def Info: img/char_avg.png  used on input line 448.
+(pdftex.def)             Requested size: 170.71652pt x 175.36557pt.
+<img/conversations_started_individual.png, id=972, 863.225pt x 541.02126pt>
+File: img/conversations_started_individual.png Graphic file (type png)
+<use img/conversations_started_individual.png>
+Package pdftex.def Info: img/conversations_started_individual.png  used on inpu
+t line 459.
+(pdftex.def)             Requested size: 170.71652pt x 106.9888pt.
+<img/conversations_started.png, id=973, 830.10126pt x 832.10875pt>
 File: img/conversations_started.png Graphic file (type png)
 <use img/conversations_started.png>
-Package pdftex.def Info: img/conversations_started.png  used on input line 443.
+Package pdftex.def Info: img/conversations_started.png  used on input line 461.
 
-(pdftex.def)             Requested size: 216.81pt x 217.33353pt.
-<img/avg_response_time.png, id=947, 828.09375pt x 831.105pt>
+(pdftex.def)             Requested size: 170.71652pt x 171.12936pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 465.
+LaTeX Info: Redefining \% on input line 465.
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.42169pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.42169pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
+
+[35 <./img/char_avg_individual.png> <./img/char_avg.png>]
+<img/avg_response_time_individual.png, id=980, 859.21pt x 543.02875pt>
+File: img/avg_response_time_individual.png Graphic file (type png)
+<use img/avg_response_time_individual.png>
+Package pdftex.def Info: img/avg_response_time_individual.png  used on input li
+ne 475.
+(pdftex.def)             Requested size: 170.71652pt x 107.89122pt.
+<img/avg_response_time.png, id=981, 828.09375pt x 831.105pt>
 File: img/avg_response_time.png Graphic file (type png)
 <use img/avg_response_time.png>
-Package pdftex.def Info: img/avg_response_time.png  used on input line 457.
-(pdftex.def)             Requested size: 216.81pt x 217.59131pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 461.
-LaTeX Info: Redefining \% on input line 461.
+Package pdftex.def Info: img/avg_response_time.png  used on input line 477.
+(pdftex.def)             Requested size: 170.71652pt x 171.32875pt.
+LaTeX Info: Redefining \. on input line 483.
+LaTeX Info: Redefining \% on input line 483.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1945,49 +1995,33 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
-[35 <./img/conversations_started.png>]
-<img/media_count.png, id=954, 1721.43124pt x 1670.24pt>
+[36 <./img/conversations_started_individual.png> <./img/conversations_started.p
+ng> <./img/avg_response_time_individual.png> <./img/avg_response_time.png>]
+<img/media_count_individual.png, id=990, 1764.5925pt x 1075.01625pt>
+File: img/media_count_individual.png Graphic file (type png)
+<use img/media_count_individual.png>
+Package pdftex.def Info: img/media_count_individual.png  used on input line 492
+.
+(pdftex.def)             Requested size: 346.89731pt x 211.32507pt.
+<img/media_count.png, id=991, 1721.43124pt x 1670.24pt>
 File: img/media_count.png Graphic file (type png)
 <use img/media_count.png>
-Package pdftex.def Info: img/media_count.png  used on input line 472.
+Package pdftex.def Info: img/media_count.png  used on input line 500.
 (pdftex.def)             Requested size: 346.89731pt x 336.56517pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 476.
-LaTeX Info: Redefining \% on input line 476.
-
-
-Package fancyhdr Warning: \headheight is too small (14.0pt): 
-(fancyhdr)                Make it at least 14.42169pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.42169pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
-
-[36 <./img/avg_response_time.png>]
-<img/time_distributions.png, id=959, 1698.345pt x 1553.805pt>
-File: img/time_distributions.png Graphic file (type png)
-<use img/time_distributions.png>
-Package pdftex.def Info: img/time_distributions.png  used on input line 485.
-(pdftex.def)             Requested size: 346.89731pt x 317.37033pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Info: Redefining \. on input line 494.
-LaTeX Info: Redefining \% on input line 494.
+<img/time_distributions.png, id=992, 1698.345pt x 1553.805pt>
+File: img/time_distributions.png Graphic file (type png)
+<use img/time_distributions.png>
+Package pdftex.def Info: img/time_distributions.png  used on input line 511.
+(pdftex.def)             Requested size: 346.89731pt x 317.37033pt.
 
-Package fancyhdr Warning: \headheight is too small (14.0pt): 
-(fancyhdr)                Make it at least 14.42169pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.42169pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
-
-[37 <./img/media_count.png>]
-LaTeX Info: Redefining \. on input line 503.
-LaTeX Info: Redefining \% on input line 503.
+LaTeX Info: Redefining \. on input line 515.
+LaTeX Info: Redefining \% on input line 515.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1997,19 +2031,36 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
-[38 <./img/time_distributions.png>]
-<img/word_cloud.png, id=970, 590.205pt x 637.38126pt>
+[37 <./img/media_count_individual.png>]
+Overfull \vbox (74.86555pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 515.
+LaTeX Info: Redefining \% on input line 515.
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.42169pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.42169pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
+
+[38 <./img/media_count.png> <./img/time_distributions.png>]
+<img/word_cloud.png, id=1003, 590.205pt x 637.38126pt>
 File: img/word_cloud.png Graphic file (type png)
 <use img/word_cloud.png>
-Package pdftex.def Info: img/word_cloud.png  used on input line 506.
-(pdftex.def)             Requested size: 173.44534pt x 187.30614pt.
-<img/emoji_cloud.png, id=971, 607.26875pt x 636.3775pt>
+Package pdftex.def Info: img/word_cloud.png  used on input line 538.
+(pdftex.def)             Requested size: 170.71652pt x 184.35927pt.
+<img/emoji_cloud.png, id=1004, 607.26875pt x 636.3775pt>
 File: img/emoji_cloud.png Graphic file (type png)
 <use img/emoji_cloud.png>
-Package pdftex.def Info: img/emoji_cloud.png  used on input line 519.
-(pdftex.def)             Requested size: 173.44534pt x 181.75787pt.
-LaTeX Info: Redefining \. on input line 525.
-LaTeX Info: Redefining \% on input line 525.
+Package pdftex.def Info: img/emoji_cloud.png  used on input line 540.
+(pdftex.def)             Requested size: 170.71652pt x 178.89334pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 544.
+LaTeX Info: Redefining \% on input line 544.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2019,9 +2070,9 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
-[39 <./img/word_cloud.png> <./img/emoji_cloud.png>]
-LaTeX Info: Redefining \. on input line 533.
-LaTeX Info: Redefining \% on input line 533.
+[39])
+LaTeX Info: Redefining \. on input line 342.
+LaTeX Info: Redefining \% on input line 342.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2031,15 +2082,15 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
-[40])
+[40 <./img/word_cloud.png> <./img/emoji_cloud.png>]
 \openout2 = `5-case-study.aux'.
 
  (./5-case-study.tex
 Cap\'{\i }tulo 5.
-<img/study_case/step1.png, id=982, 1927.2pt x 1127.21124pt>
+<img/study_case/step1.png, id=1016, 1927.2pt x 1127.21124pt>
 File: img/study_case/step1.png Graphic file (type png)
 <use img/study_case/step1.png>
-Package pdftex.def Info: img/study_case/step1.png  used on input line 28.
+Package pdftex.def Info: img/study_case/step1.png  used on input line 30.
 (pdftex.def)             Requested size: 411.93767pt x 240.9353pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2050,16 +2101,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<img/study_case/step2.png, id=991, 1927.2pt x 1124.2pt>
+<img/study_case/step2.png, id=1026, 1927.2pt x 1124.2pt>
 File: img/study_case/step2.png Graphic file (type png)
 <use img/study_case/step2.png>
-Package pdftex.def Info: img/study_case/step2.png  used on input line 42.
+Package pdftex.def Info: img/study_case/step2.png  used on input line 44.
 (pdftex.def)             Requested size: 411.93767pt x 240.29167pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 46.
-LaTeX Info: Redefining \% on input line 46.
+LaTeX Info: Redefining \. on input line 48.
+LaTeX Info: Redefining \% on input line 48.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2070,16 +2121,16 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [42 <./img/study_case/step1.png>]
-<img/study_case/step3.png, id=996, 1927.2pt x 1068.99374pt>
+<img/study_case/step3.png, id=1031, 1927.2pt x 1068.99374pt>
 File: img/study_case/step3.png Graphic file (type png)
 <use img/study_case/step3.png>
-Package pdftex.def Info: img/study_case/step3.png  used on input line 56.
+Package pdftex.def Info: img/study_case/step3.png  used on input line 58.
 (pdftex.def)             Requested size: 411.93767pt x 228.49162pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 60.
-LaTeX Info: Redefining \% on input line 60.
+LaTeX Info: Redefining \. on input line 62.
+LaTeX Info: Redefining \% on input line 62.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2090,13 +2141,13 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.0217pt}.
 
 [43 <./img/study_case/step2.png>]
-<img/study_case/step4.png, id=1003, 1508.24348pt x 857.81348pt>
+<img/study_case/step4.png, id=1038, 1508.24348pt x 857.81348pt>
 File: img/study_case/step4.png Graphic file (type png)
 <use img/study_case/step4.png>
-Package pdftex.def Info: img/study_case/step4.png  used on input line 68.
+Package pdftex.def Info: img/study_case/step4.png  used on input line 70.
 (pdftex.def)             Requested size: 411.93767pt x 234.28291pt.
-LaTeX Info: Redefining \. on input line 78.
-LaTeX Info: Redefining \% on input line 78.
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2107,21 +2158,21 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [44 <./img/study_case/step3.png> <./img/study_case/step4.png>]
-<img/study_case/step5_1.png, id=1010, 1927.2pt x 1126.2075pt>
+<img/study_case/step5_1.png, id=1045, 1927.2pt x 1126.2075pt>
 File: img/study_case/step5_1.png Graphic file (type png)
 <use img/study_case/step5_1.png>
-Package pdftex.def Info: img/study_case/step5_1.png  used on input line 82.
+Package pdftex.def Info: img/study_case/step5_1.png  used on input line 84.
 (pdftex.def)             Requested size: 411.93767pt x 240.72076pt.
-<img/study_case/step5_2.png, id=1011, 1927.2pt x 1129.21875pt>
+<img/study_case/step5_2.png, id=1046, 1927.2pt x 1129.21875pt>
 File: img/study_case/step5_2.png Graphic file (type png)
 <use img/study_case/step5_2.png>
-Package pdftex.def Info: img/study_case/step5_2.png  used on input line 91.
+Package pdftex.def Info: img/study_case/step5_2.png  used on input line 93.
 (pdftex.def)             Requested size: 411.93767pt x 241.3644pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 95.
-LaTeX Info: Redefining \% on input line 95.
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2132,14 +2183,14 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.0217pt}.
 
 [45 <./img/study_case/step5_1.png>]
-<img/study_case/step5_3.png, id=1016, 1927.2pt x 1109.14375pt>
+<img/study_case/step5_3.png, id=1051, 1927.2pt x 1109.14375pt>
 File: img/study_case/step5_3.png Graphic file (type png)
 <use img/study_case/step5_3.png>
-Package pdftex.def Info: img/study_case/step5_3.png  used on input line 105.
+Package pdftex.def Info: img/study_case/step5_3.png  used on input line 107.
 (pdftex.def)             Requested size: 411.93767pt x 237.07347pt.
 )
-LaTeX Info: Redefining \. on input line 344.
-LaTeX Info: Redefining \% on input line 344.
+LaTeX Info: Redefining \. on input line 343.
+LaTeX Info: Redefining \% on input line 343.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2164,8 +2215,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ])
-LaTeX Info: Redefining \. on input line 345.
-LaTeX Info: Redefining \% on input line 345.
+LaTeX Info: Redefining \. on input line 344.
+LaTeX Info: Redefining \% on input line 344.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2187,8 +2238,8 @@ Ap\'{e}ndice A.
 
 
 ]
-LaTeX Info: Redefining \. on input line 351.
-LaTeX Info: Redefining \% on input line 351.
+LaTeX Info: Redefining \. on input line 350.
+LaTeX Info: Redefining \% on input line 350.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2232,8 +2283,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ])
-LaTeX Info: Redefining \. on input line 352.
-LaTeX Info: Redefining \% on input line 352.
+LaTeX Info: Redefining \. on input line 351.
+LaTeX Info: Redefining \% on input line 351.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2311,11 +2362,11 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [8])
-LaTeX Info: Redefining \. on input line 354.
-LaTeX Info: Redefining \% on input line 354.
+LaTeX Info: Redefining \. on input line 353.
+LaTeX Info: Redefining \% on input line 353.
  [9]
-LaTeX Info: Redefining \. on input line 357.
-LaTeX Info: Redefining \% on input line 357.
+LaTeX Info: Redefining \. on input line 356.
+LaTeX Info: Redefining \% on input line 356.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2402,83 +2453,38 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 39A9EB804F1286B0A5F366F41949D11E;15549
-(rerunfilecheck)             After:  C42C3AA4A5A96299A25779AF90E3936F;15549.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: C526D9A437C5716FC54A4DA209878F84;15830.
  ) 
 Here is how much of TeX's memory you used:
- 40950 strings out of 478268
- 788759 string characters out of 5847839
- 1225102 words of memory out of 5000000
- 57937 multiletter control sequences out of 15000+600000
+ 40943 strings out of 478268
+ 789703 string characters out of 5847839
+ 1223607 words of memory out of 5000000
+ 57921 multiletter control sequences out of 15000+600000
  483123 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,94p,1128b,2536s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{section*.295} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.282} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{appendix.281} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.280} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{appendix.279} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.278} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{appendix.277} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.276} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.273} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{appendix.272} has been referenced but does not exis
-t, replaced by a fixed one
-
-{/app/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</app/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmbx10.pfb></app/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx12.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx8.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10
-.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></app/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></app/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></app/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr17.pfb></app/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsl10.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ss12.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></a
-pp/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></app/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></app/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb></app/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti10.pfb></app/texlive/texmf-dist/fonts/type1/public/euro
-sym/feymr10.pfb></app/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></a
-pp/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on main.pdf (77 pages, 2447332 bytes).
+{/app/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</app/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx10.pfb></app/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb></app/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx8.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc
+10.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></app
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></app/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></app/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></app/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr9.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sl10.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></a
+pp/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></app/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></app/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmssi10.pfb></app/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></app/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti10.pfb></app/texlive/texmf-dist/fonts/type1/public/eurosym/feymr10.
+pfb></app/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></app/texlive/t
+exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on main.pdf (77 pages, 2847719 bytes).
 PDF statistics:
- 1288 PDF objects out of 1440 (max. 8388607)
- 1131 compressed objects within 12 object streams
- 393 named destinations out of 1000 (max. 500000)
- 845 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1319 PDF objects out of 1440 (max. 8388607)
+ 1151 compressed objects within 12 object streams
+ 397 named destinations out of 1000 (max. 500000)
+ 906 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -60,6 +60,7 @@ Hay que mencionar también que Mozilla no ofrece soporte para \acrshort{pwa} en 
 
 
 \section{Arquitectura en el servidor}
+\label{chap:architecture:server}
 
 Se muestra a continuación una grafo de la arquitectura en el servidor, donde se muestran las capas que lo componen.
 
@@ -380,20 +381,33 @@ Todos los submódulos que utilizan \textit{ChartJS} adaptan el tamaño del gráf
 
 Además, también se procesan datos para otras librerías de visualización, como \textit{react-wordcloud}, para las nubes de palabras o \textit{word clouds} y nubes de emoticonos.
 
+\subsubsection{Contador de mensajes}
+
+Este submódulo cuenta el número de mensajes enviado por cada contacto. Para chats grupales, usa la librería \textit{ChartJS}, mientras que para chat individuales, únicamente se exponen los números de ambas partes directamente.
+
+\begin{figure}[H]
+	\centering
+	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/message_count_individual.png} }}
+	\qquad
+	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/message_count.png} }}
+	\caption{Contador de mensajes}
+	\label{fig:chap4:message_count}
+\end{figure}
+
+Se ha optado por calcular esta métrica puesto que puede ayudar a observar diferencias drásticas en la cantidad de texto que aporta cada contacto.
+
 \subsubsection{Contador de palabras}
 
 Este submódulo cuenta las palabras que hay en los mensajes de cada contacto y calcula la suma total de las mismas, obteniendo el número de palabras totales enviadas por cada contacto. Para chats grupales, usa la librería \textit{ChartJS}, mientras que para chat individuales, únicamente se exponen los números de ambas partes directamente.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{img/word_count.png}
+	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/word_count_individual.png} }}
+	\qquad
+	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/word_count.png} }}
 	\caption{Contador de palabras}
 	\label{fig:chap4:word_count}
 \end{figure}
-
-\todi{Insertar imagen de caso individual al lado}
-
-Se ha optado por calcular esta métrica puesto que puede ayudar a observar diferencias drásticas en la cantidad de texto que aporta cada contacto.
 
 \subsubsection{Contador de caracteres}
 
@@ -401,7 +415,9 @@ Este submódulo cuenta los caracteres que hay en los mensajes de cada contacto y
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{img/char_count.png}
+	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/char_count_individual.png} }}
+	\qquad
+	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/char_count.png} }}
 	\caption{Contador de caracteres}
 	\label{fig:chap4:char_count}
 \end{figure}
@@ -414,12 +430,12 @@ Este submódulo calcula y muestra el número medio de palabras por mensaje para 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{img/word_avg.png}
+	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/word_avg_individual.png} }}
+	\qquad
+	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/word_avg.png} }}
 	\caption{Media de palabras por mensaje}
 	\label{fig:chap4:word_avg}
 \end{figure}
-
-\todi{Insertar imagen de caso individual al lado}
 
 \subsubsection{Media de caracteres por mensaje}
 
@@ -427,12 +443,12 @@ Este submódulo calcula y muestra el número medio de caracteres por mensaje par
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{img/char_avg.png}
+	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/char_avg_individual.png} }}
+	\qquad
+	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/char_avg.png} }}
 	\caption{Media de caracteres por mensaje}
 	\label{fig:chap4:char_avg}
 \end{figure}
-
-\todi{Insertar imagen de caso individual al lado}
 
 \subsubsection{Número de conversaciones iniciadas}
 
@@ -440,7 +456,9 @@ Este submódulo calcula el número de veces que cada contacto ha iniciado la con
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{img/conversations_started.png}
+	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/conversations_started_individual.png} }}
+	\qquad
+	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/conversations_started.png} }}
 	\caption{Conversaciones iniciadas por cada contacto}
 	\label{fig:chap4:conversations_started}
 \end{figure}
@@ -454,7 +472,9 @@ Este submódulo calcula la velocidad media de respuesta de cada contacto, con lo
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{img/avg_response_time.png}
+	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/avg_response_time_individual.png} }}
+	\qquad
+	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/avg_response_time.png} }}
 	\caption{Tiempo medio de respuesta}
 	\label{fig:chap4:avg_response_time}
 \end{figure}
@@ -462,25 +482,31 @@ Este submódulo calcula la velocidad media de respuesta de cada contacto, con lo
 Añadiendo esta figura a la anterior, podemos ver cómo Martín inicia pocas conversaciones y, además, suele tardar bastante en responder. Esto puede sugerir que está menos involucrado en el grupo.
 
 
-
 \subsubsection{Contador de multimedia}
 
 En caso de que existan objetos \acrshort{json} con el campo ``\textit{media\_type}'' distinto de \textit{undefined}, este submódulo cuenta cuántos archivos multimedia de cada tipo ha mandado cada contacto.
 
-\begin{figure}[H]
+
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{img/media_count.png}
-	\caption{Contador de multimedia}
-	\label{fig:chap4:media_count}
+	\includegraphics[width=0.8\textwidth]{img/media_count_individual.png}
+	\caption{Contador de multimedia para chats individuales}
+	\label{fig:chap4:media_count_individual}
 \end{figure}
 
-\todi{Insertar imagen de caso individual al lado}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/media_count.png}
+	\caption{Contador de multimedia para chats grupales}
+	\label{fig:chap4:media_count}
+\end{figure}
 
 \subsubsection{Generador de estructuras de datos por día, hora y mes}
 
 Para el gráfico de barras con el número de mensajes en el tiempo, \textit{ChartJS} necesita una estructura de datos para mensajes por día, siendo los días la variable independiente y el número de mensajes la variable dependiente.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/time_distributions.png}
 	\caption{Distribuciones en el tiempo}
@@ -501,14 +527,7 @@ Las listas de palabras más comunes del español e inglés se han recopilado de 
 
 A la salida de este módulo, se muestra un diccionario con las palabras más repetidas y el número de veces que aparece cada una; información de la que hará uso la librería \textit{react-wordcloud}. Esta información resulta útil para resaltar los temas principales tratados en el chat.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\textwidth]{img/word_cloud.png}
-	\caption{Nube de palabras}
-	\label{fig:chap4:word_cloud}
-\end{figure}
-
-\todi{Anexar enlace a listas de palabras más comunes en anexo C}
+Puede observarse en la \autoref{fig:chap4:word_emoji_cloud}
 
 \subsubsection{Contador de emoticonos más usados}
 
@@ -516,18 +535,16 @@ Este módulo aplica una expresión regular unicode a todos los mensajes, selecci
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\textwidth]{img/emoji_cloud.png}
-	\caption{Nube de emoticonos}
-	\label{fig:chap4:emoji_cloud}
+	\subfloat[\centering Nube de palabras]{{\includegraphics[width=6cm]{img/word_cloud.png} }}
+	\qquad
+	\subfloat[\centering Nube de emoticonos]{{\includegraphics[width=6cm]{img/emoji_cloud.png} }}
+	\caption{Nube de palabras y emoticonos}
+	\label{fig:chap4:word_emoji_cloud}
 \end{figure}
 
 Se elige calcular y mostrar esta visualización puesto que los emoticonos constituyen en un chat la forma más similar a la expresión no verbal.
 
-\vspace{8mm}
+\section{Conclusión}
 
-\todi{Reescribir el cierre del capítulo}
+Con todo, si en un futuro se quiere extender la arquitectura propuesta a un modelo de cliente-servidor, siempre se puede añadir un tercer contenedor en la última capa de la \autoref{chap:architecture:server} que implemente lógica adicional. Sería también necesaria cierta modificación en el código del cliente para implementar peticiones a este nuevo servicio.
 
-Con todo, si en un futuro se quiere extender la arquitectura propuesta a un modelo de cliente-servidor; como en la tercera opción que se propone al comienzo de este capítulo, siempre se puede añadir un tercer contenedor en la última capa que implemente lógica adicional. Sería también necesaria cierta modificación en el código del cliente para implementar peticiones a este nuevo servicio.
-
-
-\newpage

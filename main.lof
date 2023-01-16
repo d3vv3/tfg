@@ -8,24 +8,41 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Arquitectura en el cliente\relax }}{21}{figure.caption.89}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Arquitectura en el servidor\relax }}{22}{figure.caption.91}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Arquitectura de la aplicaci\IeC {\'o}n\relax }}{24}{figure.caption.93}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Contador de palabras\relax }}{32}{figure.caption.223}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Contador de caracteres\relax }}{33}{figure.caption.226}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Media de palabras por mensaje\relax }}{34}{figure.caption.228}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Media de caracteres por mensaje\relax }}{34}{figure.caption.231}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Conversaciones iniciadas por cada contacto\relax }}{35}{figure.caption.234}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Tiempo medio de respuesta\relax }}{36}{figure.caption.236}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Contador de multimedia\relax }}{37}{figure.caption.238}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Distribuciones en el tiempo\relax }}{38}{figure.caption.241}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Nube de palabras\relax }}{39}{figure.caption.243}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Nube de emoticonos\relax }}{39}{figure.caption.246}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Contador de mensajes\relax }}{32}{figure.caption.223}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{32}{subfigure.5.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{32}{subfigure.5.2}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Contador de palabras\relax }}{33}{figure.caption.227}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{33}{subfigure.6.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{33}{subfigure.6.2}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Contador de caracteres\relax }}{34}{figure.caption.231}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{34}{subfigure.7.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{34}{subfigure.7.2}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Media de palabras por mensaje\relax }}{34}{figure.caption.235}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{34}{subfigure.8.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{34}{subfigure.8.2}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Media de caracteres por mensaje\relax }}{35}{figure.caption.239}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{35}{subfigure.9.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{35}{subfigure.9.2}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Conversaciones iniciadas por cada contacto\relax }}{36}{figure.caption.243}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{36}{subfigure.10.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{36}{subfigure.10.2}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Tiempo medio de respuesta\relax }}{36}{figure.caption.247}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{36}{subfigure.11.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{36}{subfigure.11.2}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Contador de multimedia para chats individuales\relax }}{37}{figure.caption.251}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Contador de multimedia para chats grupales\relax }}{38}{figure.caption.252}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Distribuciones en el tiempo\relax }}{38}{figure.caption.254}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Nube de palabras y emoticonos\relax }}{40}{figure.caption.257}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Nube de palabras}}}{40}{subfigure.15.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Nube de emoticonos}}}{40}{subfigure.15.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces P\IeC {\'a}gina principal de la aplicaci\IeC {\'o}n\relax }}{42}{figure.caption.256}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Selecci\IeC {\'o}n del fichero de datos conversacionales\relax }}{43}{figure.caption.258}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Confirmaci\IeC {\'o}n de la selecci\IeC {\'o}n\relax }}{44}{figure.caption.260}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas\relax }}{44}{figure.caption.262}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas\relax }}{45}{figure.caption.264}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas\relax }}{46}{figure.caption.265}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas\relax }}{46}{figure.caption.266}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces P\IeC {\'a}gina principal de la aplicaci\IeC {\'o}n\relax }}{42}{figure.caption.270}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Selecci\IeC {\'o}n del fichero de datos conversacionales\relax }}{43}{figure.caption.272}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Confirmaci\IeC {\'o}n de la selecci\IeC {\'o}n\relax }}{44}{figure.caption.274}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas\relax }}{44}{figure.caption.276}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas\relax }}{45}{figure.caption.278}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas\relax }}{46}{figure.caption.279}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas\relax }}{46}{figure.caption.280}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
