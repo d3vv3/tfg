@@ -8,75 +8,143 @@ El siguiente diagrama UML representa un resumen visual de los casos de uso que s
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{img/uml.png}
+	\includegraphics[width=0.8\textwidth]{img/uml.png}
 	\caption{Diagrama \acrshort{uml}}
 	\label{fig:chap3:uml}
 \end{figure}
+
+\begin{comment}
+	Debería crear un caso de uso para chats individuales y otro para chats grupales?
+	Debería diferenciar el caso de uso de PWA y web normal? (Por la integración con el SO)
+	El actor es el archivo exportado y no WhatsApp.
+	He cancelado el caso de uso de Telegram puesto que solo puede exportarse desde el ordenador y solo para algunos clientes.
+\end{comment}
 
 \section{Casos de uso}
 \label{sec:use-cases}
 
 
-\subsection{Consultar estadísticas y visualizaciones de chat individual sin contenido multimedia}
+\subsection{Actores del sistema}
+\label{subsec:system-actors}
 
-\subsubsection{Nombre del caso de uso} Consultar estadísticas y visualizaciones de chat individual sin contenido multimedia.
+Usuario de WhatsApp, datos conversacionales de WhatsApp, aplicación de WhatsApp y soporte PWA del navegador.
 
-\subsubsection{Actores}
+\paragraph{Usuario de WhatsApp}\mbox{}\\
 
-\begin{itemize}
-	\item Usuario de WhatsApp.
-	\item Navegador con soporte \acrfull{pwa}.
-	\item Aplicación WhatsApp.
-	\item Datos conversacionales de WhatsApp.
-\end{itemize}
+Se trata del usuario único en el que se centran nuestros casos de uso. Este es un usuario de WhatsApp, ya que ChatStats es compatible con los archivos de chat exportados por esta aplicación.
 
+\paragraph{Datos conversacionales de WhatsApp}\mbox{}\\
 
-\subsubsection{Resumen} El usuario de WhatsApp usará un archivo previamente exportado desde la aplicación WhatsApp como archivo de entrada. Podrá hacerlo desde el explorador de archivos del navegador o compartiendo el archivo en formato \textit{txt} desde el menú de compartir de su sistema operativo, si tiene la \acrfull{pwa} instalada. El archivo no incluirá los mensajes multimedia ni su contenido. Una vez el archivo se ha introducido, el usuario puede confirmar la selección y comenzar el análisis del archivo de texto, cálculo de estadísticas y datos para gráficos. Tras el análisis, se mostrarán las diferentes estadísticas y visualizaciones en la ventana del navegador.
+Es el fichero de datos que nuestro sistema espera como entrada. En este caso de uso, se trata de un fichero de texto plano con todos los datos conversacionales exportados por la aplicación WhatsApp para un chat individual o grupal, con o sin contenido multimedia.
 
-\subsubsection{Secuencia de acciones}
+\paragraph{Aplicación de WhatsApp}\mbox{}\\
+
+Este actor constituye un sistema externo necesario para producir el actor anterior. Sin la aplicación de WhatsApp, ChatStats no tiene ninguna finalidad.
+
+\paragraph{Soporte \acrshort{pwa} del navegador}\mbox{}\\
+
+Los navegadores con soporte para \acrfull{pwa} permiten instalar aplicaciones web, mejorando la integración con el sistema operativo.
+
+\subsection{Instalar aplicación en el cliente}
+
+\paragraph{Nombre del caso de uso} Instalar aplicación en el cliente.
+\paragraph{Actores} Usuario de WhatsApp, soporte \acrshort{pwa} del navegador.
+\paragraph{Resumen} El usuario de WhatsApp podrá, si su navegador lo soporta, instalar la aplicación de ChatStats para facilitar el acceso a la misma desde su sistema operativo y ofrecer mayor integración con el mismo.
+\paragraph{Secuencia de acciones}\mbox{}\\
 
 \begin{enumerate}
-	\item El usuario introduce el archivo de entrada, ya sea mediante la selección desde el explorador de archivos del navegador, como compartiendo el archivo mediante la \acrshort{pwa} si estuviese instalada.
-	\item El usuario confirma la selección del archivo de entrada.
-	\item Se realiza el \textit{parseo} del texto, se calculan las estadísticas y se preparan las estructuras de datos para la visualización, mientras el usuario espera en una pantalla de carga. Estas operaciones se realizan en el cliente.
-	\item Se muestran gráficos interactivos, así como las estadísticas calculadas previamente.
+	\item El usuario accede a la página principal de ChatStats.
+	\item El navegador con soporte \acrshort{pwa} le ofrece la opción de instalar la aplicación.
+	\item El usuario instala la aplicación obteniendo un acceso directo en el escritorio o en el cajón de aplicaciones del navegador.
 \end{enumerate}
+
+\subsection{Importar datos en el sistema}
+
+\paragraph{Nombre del caso de uso} Importar datos en el sistema.
+\paragraph{Actores} Usuario de WhatsApp, aplicación de WhatsApp, datos conversacionales de WhatsApp.
+\paragraph{Resumen} El usuario de WhatsApp exporta un chat de WhatsApp individual o grupal. Posteriormente, el usuario accede a la aplicación, selecciona e importa el archivo de datos conversacionales de WhatsApp. Finalmente, confirma su selección.
+\paragraph{Secuencia de acciones}\mbox{}\\
+
+\begin{enumerate}
+	\item El usuario de WhatsApp exporta un chat de WhatsApp individual o grupal.
+	\item El usuario accede a la aplicación.
+	\item El usuario selecciona e importa el archivo de datos conversacionales exportado anteriormente.
+	\item El usuario observa y confirma la selección.
+\end{enumerate}
+
+\subsection{Visualización de chat individual}
+
+\paragraph{Nombre del caso de uso} Visualización de chat individual.
+\paragraph{Actores} Usuario de WhatsApp, datos conversacionales de WhatsApp.
+\paragraph{Resumen} El usuario puede observar, analizar e interactuar con las gráficas y estadísticas calculadas para chats individuales.
+\paragraph{Secuencia de acciones}\mbox{}\\
+
+\begin{enumerate}
+	\item El usuario de WhatsApp inicia el cálculo de estadísticas desde la aplicación.
+	\item El usuario puede ver el número de mensajes enviado por ambas partes, así como el número de caracteres.
+	\item El usuario puede ver la media de palabras y caracteres por mensaje.
+	\item El usuario puede ver quién contesta más rápido los mensajes, así como el tiempo medio de respuesta.
+	\item El usuario puede ver quién comienza normalmente las conversaciones, así como cuántas conversaciones ha comenzado cada uno.
+	\item En caso de haber exportado el contenido multimedia, el usuario puede ver el número de fotos, vídeos, audios y pegatinas enviadas por ambas partes.
+	\item El usuario puede ver tres distribuciones de mensajes: distribución de mensajes por mes, distribución de la media por día de la semana y distribución de la media de mensajes por hora del día.
+	\item El usuario puede ver las palabras más utilizadas, así como los emoticonos.
+\end{enumerate}
+
+\paragraph{Condiciones previas} El usuario debe haber realizado anteriormente la exportación de un chat individual con o sin contenido multimedia desde la aplicación de WhatsApp. También debe haber realizado la importación de datos en el sistema.
+
+\subsection{Visualización de chat grupal}
+
+\paragraph{Nombre del caso de uso} Visualización de chat grupal.
+\paragraph{Actores} Usuario de WhatsApp, datos conversacionales de WhatsApp.
+\paragraph{Resumen} El usuario puede observar, analizar e interactuar con las gráficas y estadísticas calculadas para chats grupales.
+\paragraph{Secuencia de acciones}\mbox{}\\
+
+\begin{enumerate}
+	\item El usuario de WhatsApp inicia el cálculo de estadísticas desde la aplicación.
+	\item El usuario puede ver el número de mensajes enviado por cada persona, así como el número de caracteres.
+	\item El usuario puede ver la media de palabras y caracteres por mensaje.
+	\item El usuario puede ver quién contesta más rápido los mensajes, así como el tiempo medio de respuesta.
+	\item El usuario puede ver quién comienza normalmente las conversaciones, así como cuántas conversaciones ha comenzado cada uno.
+	\item En caso de haber exportado el contenido multimedia, el usuario puede ver el número de fotos, vídeos, audios y pegatinas enviadas por cada usuario.
+	\item El usuario puede ver tres distribuciones de mensajes: distribución de mensajes por mes, distribución de la media por día de la semana y distribución de la media de mensajes por hora del día.
+	\item El usuario puede ver las palabras más utilizadas, así como los emoticonos.
+\end{enumerate}
+
+\paragraph{Condiciones previas} El usuario debe haber realizado anteriormente la exportación de un chat grupal con o sin contenido multimedia desde la aplicación de WhatsApp. También debe haber realizado la importación de datos en el sistema.
+
+\subsection{Exportar analíticas}
+
+\paragraph{Nombre del caso de uso} Exportar analíticas.
+\paragraph{Actores} Usuario de WhatsApp, datos conversacionales de WhatsApp.
+\paragraph{Resumen} El usuario puede exportar sus analíticas en un fichero, así como exportar una imagen para compartir las visualizaciones obtenidas.
+\paragraph{Secuencia de acciones}\mbox{}\\
+
+\begin{enumerate}
+	\item El usuario de WhatsApp desciende en la página de visualización.
+	\item El usuario selecciona la opción de exportar o compartir.
+	\item El usuario puede compartir la imagen de las visualizaciones obtenidas o guardar el archivo de los estadísticos calculados.
+\end{enumerate}
+
+\paragraph{Condiciones previas} El usuario debe haber realizado anteriormente la exportación de un chat grupal con o sin contenido multimedia desde la aplicación de WhatsApp. También debe haber realizado la importación de datos en el sistema y el cálculo de las estadísticas para la visualización del chat.
+
+
+
+\section{Especificación suplementaria}
+\label{subsect:suplementary-specification}
+
+
+\subsection{Reglas de dominio}
+
+\begin{itemize}
+	\item \textbf{Legales:} Cumplimiento de la Ley General de Protección de Datos Europea.
+\end{itemize}
 
 \begin{comment}
-	Debería crear un caso de uso para chats individuales y otro para chats grupales?
-	Debería diferenciar el caso de uso de PWA y web normal? (Por la integración con el SO)
-	El actor es el archivo exportado y no WhatsApp.
-	He cancelado el caso de uso de Telegram puesto que solo puede exportarse desde el ordenador y solo para algunos clientes.
+	No tenemos más reglas de dominio porque no tenemos requisitos o restricciones específicas a la industria o dominio de trabajo de nuestro caso de uso.
 \end{comment}
 
-\subsection{Actores del sistema}
-\label{subsec:system-actors}
 
-\subsubsection{Usuario de WhatsApp}
-
-Se trata del usuario único en el que se centran nuestros casos de uso. Este es un usuario de WhatsApp, ya que ChatStats es compatible con los archivos de chat exportados por esta aplicación.
-
-\subsubsection{Navegador con soporte \acrfull{pwa}}
-
-Nuestra aplicación web se ejecuta en un navegador, y por tanto, se trata de un actor para nuestro sistema. Además, si el navegador soporta \acrfull{pwa}, la aplicación web puede ser instalada, ofreciendo mayor integración con el sistema operativo.
-
-\subsubsection{Aplicación WhatsApp}
-
-Para exportar y generar los datos conversacionales que ChatStats espera como entrada, es necesario hacer uso de la aplicación de WhatsApp. Desde dicha aplicación, se puede seleccionar si la exportación se debe realizar con archivos multimedia o sin los mismos.
-
-\subsubsection{Datos conversacionales de WhatsApp}
-
-Es el fichero de datos que nustro sistema espera como entrada. En este caso de uso, se trata de un fichero de texto plano con todos los datos conversacionales exportados por la aplicación WhatsApp para un chat individual, sin incluir los archivos multimedia.
-
-\subsection{Especificación suplementaria}
-\label{subsect:suplementary-specification}
-
-\subsubsection{Reglas de dominio}
-
-% Qué eran las reglas de dominio? Qué debería poner aquí?
-
-
-\subsubsection{Requisitos no funcionales}
+\subsection{Requisitos no funcionales}
 
 \begin{itemize}
 	\item \textbf{Interfaces:} leer y analizar archivos de texto plano \textit{txt}. 
@@ -86,98 +154,20 @@ Es el fichero de datos que nustro sistema espera como entrada. En este caso de u
 	\item \textbf{Seguridad:} Los datos no deben ser enviados a ningún servidor externo sin la autorización previa del usuario. Estos datos, además, no deben ser almacenados de manera temporal o permanente en ningún servidor. Todas las conexiones entre cliente y servidor deben estar cifradas con SSL.
 	
 	\item \textbf{Portabilidad:} La aplicación podrá ejecutarse en los navegadores: Chrome, Firefox, Edge y Safari; siendo compatible con \acrshort{pwa} en los navegadores que lo soporten.
+	
+	\item \textbf{Rendimiento:} El sistema debe ser capaz de analizar conversaciones de varios años sin aumentar drásticamente el tiempo de espera.
+	
+	\item \textbf{De implementación:} El código ha de ser libre bajo la licencia \acrfull{gplv3}.
 \end{itemize}
 
-\subsubsection{Restricciones}
-De implementación: lenguaje JavaScript tanto para el servidor como para el cliente, y Docker para el despliegue. El código ha de ser libre.
-
-De interfaz: uso de archivos \textit{txt} para importar los chats exportados desde la aplicación WhatsApp. 
-
-Legales: RGPD.
-
-
-
-
-
-
-
-
-
-
-\subsection{Consultar estadísticas y visualizaciones de chat grupal sin contenido multimedia}
-
-\subsubsection{Nombre del caso de uso} Consultar estadísticas y visualizaciones de chat grupal sin contenido multimedia.
-
-\subsubsection{Actores}
-
-Usuario de WhatsApp.
-Navegador con soporte \acrfull{pwa}.
-Aplicación WhatsApp
-Datos conversacionales de WhatsApp.
-
-\subsubsection{Resumen} El usuario de WhatsApp usará un archivo previamente exportado desde la aplicación WhatsApp como archivo de entrada. Podrá hacerlo desde el explorador de archivos del navegador o compartiendo el archivo en formato \textit{txt} desde el menú de compartir de su sistema operativo, si tiene la \acrfull{pwa} instalada. El archivo no incluirá los mensajes multimedia ni su contenido. Una vez el archivo se ha introducido, el usuario puede confirmar la selección y comenzar el análisis del archivo de texto, cálculo de estadísticas y datos para gráficos. Tras el análisis, se mostrarán las diferentes estadísticas y visualizaciones en la ventana del navegador.
-
-\subsubsection{Secuencia de acciones}
-
-\begin{enumerate}
-	\item El usuario introduce el archivo de entrada, ya sea mediante la selección desde el explorador de archivos del navegador, como compartiendo el archivo mediante la \acrshort{pwa} si estuviese instalada.
-	\item El usuario confirma la selección del archivo de entrada.
-	\item Se realiza el \textit{parseo} del texto, se calculan las estadísticas y se preparan las estructuras de datos para la visualización, mientras el usuario espera en una pantalla de carga. Estas operaciones se realizan en el cliente.
-	\item Se muestran gráficos interactivos, así como las estadísticas calculadas previamente.
-\end{enumerate}
-
-\begin{comment}
-	Debería crear un caso de uso para chats individuales y otro para chats grupales?
-	Debería diferenciar el caso de uso de PWA y web normal? (Por la integración con el SO)
-	El actor es el archivo exportado y no WhatsApp.
-	He cancelado el caso de uso de Telegram puesto que solo puede exportarse desde el ordenador y solo para algunos clientes.
-\end{comment}
-
-\subsection{Actores del sistema}
-\label{subsec:system-actors}
-
-\subsubsection{Usuario de WhatsApp}
-
-Se trata del usuario único en el que se centran nuestros casos de uso. Este es un usuario de WhatsApp, ya que ChatStats es compatible con los archivos de chat exportados por esta aplicación.
-
-\subsubsection{Navegador con soporte \acrfull{pwa}}
-
-Nuestra aplicación web se ejecuta en un navegador, y por tanto, se trata de un actor para nuestro sistema. Además, si el navegador soporta \acrfull{pwa}, la aplicación web puede ser instalada, ofreciendo mayor integración con el sistema operativo.
-
-\subsubsection{Aplicación WhatsApp}
-
-Para exportar y generar los datos conversacionales que ChatStats espera como entrada, es necesario hacer uso de la aplicación de WhatsApp. Desde dicha aplicación, se puede exportal un chat grupal y seleccionar si la exportación se debe realizar con archivos multimedia o sin los mismos.
-
-\subsubsection{Datos conversacionales de WhatsApp}
-
-Es el fichero de datos que nustro sistema espera como entrada. En este caso de uso, se trata de un fichero de texto plano con todos los datos conversacionales exportados por la aplicación WhatsApp para un chat de grupo, sin incluir los archivos multimedia.
-
-\subsection{Especificación suplementaria}
-\label{subsect:suplementary-specification}
-
-\subsubsection{Reglas de dominio}
-
-% Qué eran las reglas de dominio? Qué debería poner aquí?
-
-
-\subsubsection{Requisitos no funcionales}
+\subsection{Restricciones}
 
 \begin{itemize}
-	\item \textbf{Interfaces:} leer y analizar archivos de texto plano \textit{txt}. 
-	
-	\item \textbf{Operación:} Interfaz de Usuario para navegador web, smartphone y tablet.
-	
-	\item \textbf{Seguridad:} Los datos no deben ser enviados a ningún servidor externo sin la autorización previa del usuario. Estos datos, además, no deben ser almacenados de manera temporal o permanente en ningún servidor. Todas las conexiones entre cliente y servidor deben estar cifradas con SSL.
-	
-	\item \textbf{Portabilidad:} La aplicación podrá ejecutarse en los navegadores: Chrome, Firefox, Edge y Safari; siendo compatible con \acrshort{pwa} en los navegadores que lo soporten.
+	\item \textbf{De interfaz:} uso de archivos \textit{txt} y \textit{zip} para importar los chats exportados desde la aplicación WhatsApp, puesto que únicamente exporta en estos dos formatos.
 \end{itemize}
 
-\subsubsection{Restricciones}
-De implementación: lenguaje JavaScript tanto para el servidor como para el cliente, y Docker para el despliegue. El código ha de ser libre.
 
-De interfaz: uso de archivos \textit{txt} para importar los chats exportados desde la aplicación WhatsApp. 
 
-Legales: RGPD.
 
 
 
@@ -185,157 +175,3 @@ Legales: RGPD.
 
 
 
-
-
-
-
-
-
-\subsection{Consultar estadísticas y visualizaciones de chat individual con contenido multimedia}
-
-\subsubsection{Nombre del caso de uso} Consultar estadísticas y visualizaciones de chat individual con contenido multimedia.
-
-\subsubsection{Actores}
-
-Usuario de WhatsApp.
-Navegador con soporte \acrfull{pwa}.
-Aplicación WhatsApp
-Datos conversacionales de WhatsApp.
-
-\subsubsection{Resumen} El usuario de WhatsApp usará un archivo previamente exportado desde la aplicación WhatsApp como archivo de entrada. Podrá hacerlo desde el explorador de archivos del navegador o compartiendo el archivo en formato \textit{txt} desde el menú de compartir de su sistema operativo, si tiene la \acrfull{pwa} instalada. El archivo incluirá los mensajes multimedia. Una vez el archivo se ha introducido, el usuario puede confirmar la selección y comenzar el análisis del archivo de texto, cálculo de estadísticas y datos para gráficos. Tras el análisis, se mostrarán las diferentes estadísticas y visualizaciones en la ventana del navegador, con las visualizaciones de contenido multimedia correspondientes.
-
-\subsubsection{Secuencia de acciones}
-
-\begin{enumerate}
-	\item El usuario introduce el archivo de entrada, ya sea mediante la selección desde el explorador de archivos del navegador, como compartiendo el archivo mediante la \acrshort{pwa} si estuviese instalada.
-	\item El usuario confirma la selección del archivo de entrada.
-	\item Se realiza el \textit{parseo} del texto, se calculan las estadísticas y se preparan las estructuras de datos para la visualización, mientras el usuario espera en una pantalla de carga. Estas operaciones se realizan en el cliente.
-	\item Se muestran gráficos interactivos, así como las estadísticas calculadas previamente.
-\end{enumerate}
-
-\begin{comment}
-	Debería crear un caso de uso para chats individuales y otro para chats grupales?
-	Debería diferenciar el caso de uso de PWA y web normal? (Por la integración con el SO)
-	El actor es el archivo exportado y no WhatsApp.
-	He cancelado el caso de uso de Telegram puesto que solo puede exportarse desde el ordenador y solo para algunos clientes.
-\end{comment}
-
-\subsection{Actores del sistema}
-\label{subsec:system-actors}
-
-\subsubsection{Usuario de WhatsApp}
-
-Se trata del usuario único en el que se centran nuestros casos de uso. Este es un usuario de WhatsApp, ya que ChatStats es compatible con los archivos de chat exportados por esta aplicación.
-
-\subsubsection{Navegador con soporte \acrfull{pwa}}
-
-Nuestra aplicación web se ejecuta en un navegador, y por tanto, se trata de un actor para nuestro sistema. Además, si el navegador soporta \acrfull{pwa}, la aplicación web puede ser instalada, ofreciendo mayor integración con el sistema operativo.
-
-\subsubsection{Aplicación WhatsApp}
-
-Para exportar y generar los datos conversacionales que ChatStats espera como entrada, es necesario hacer uso de la aplicación de WhatsApp. Desde dicha aplicación, se puede seleccionar si la exportación se debe realizar con archivos multimedia o sin los mismos. Este caso de uso comprende la exportación con contenido multimedia.
-
-\subsubsection{Datos conversacionales de WhatsApp}
-
-Es el fichero de datos que nustro sistema espera como entrada. En este caso de uso, se trata de un fichero de texto plano con todos los datos conversacionales exportados por la aplicación WhatsApp para un chat individual, incluyendo los archivos multimedia.
-
-\subsection{Especificación suplementaria}
-\label{subsect:suplementary-specification}
-
-\subsubsection{Reglas de dominio}
-
-% Qué eran las reglas de dominio? Qué debería poner aquí?
-
-
-\subsubsection{Requisitos no funcionales}
-
-\begin{itemize}
-	\item \textbf{Interfaces:} leer y analizar archivos de texto plano \textit{txt}. 
-	
-	\item \textbf{Operación:} Interfaz de Usuario para navegador web, smartphone y tablet.
-	
-	\item \textbf{Seguridad:} Los datos no deben ser enviados a ningún servidor externo sin la autorización previa del usuario. Estos datos, además, no deben ser almacenados de manera temporal o permanente en ningún servidor. Todas las conexiones entre cliente y servidor deben estar cifradas con SSL.
-	
-	\item \textbf{Portabilidad:} La aplicación podrá ejecutarse en los navegadores: Chrome, Firefox, Edge y Safari; siendo compatible con \acrshort{pwa} en los navegadores que lo soporten.
-\end{itemize}
-
-\subsubsection{Restricciones}
-De implementación: lenguaje JavaScript tanto para el servidor como para el cliente, y Docker para el despliegue. El código ha de ser libre.
-
-De interfaz: uso de archivos \textit{txt} para importar los chats exportados desde la aplicación WhatsApp. 
-
-Legales: RGPD.
-
-
-
-
-
-
-
-\subsection{Consultar estadísticas y visualizaciones de chat grupal con contenido multimedia}
-
-\subsubsection{Nombre del caso de uso} Consultar estadísticas y visualizaciones de chat grupal con contenido multimedia.
-
-\subsubsection{Actores}
-
-Usuario de WhatsApp.
-Navegador con soporte \acrfull{pwa}.
-Aplicación WhatsApp
-Datos conversacionales de WhatsApp.
-
-\subsubsection{Resumen} El usuario de WhatsApp usará un archivo previamente exportado desde la aplicación WhatsApp como archivo de entrada. Podrá hacerlo desde el explorador de archivos del navegador o compartiendo el archivo en formato \textit{txt} desde el menú de compartir de su sistema operativo, si tiene la \acrfull{pwa} instalada. El archivo incluirá los mensajes multimedia del grupo. Una vez el archivo se ha introducido, el usuario puede confirmar la selección y comenzar el análisis del archivo de texto, cálculo de estadísticas y datos para gráficos. Tras el análisis, se mostrarán las diferentes estadísticas y visualizaciones en la ventana del navegador, con las visualizaciones de contenido multimedia correspondientes.
-
-\subsubsection{Secuencia de acciones}
-
-\begin{enumerate}
-	\item El usuario introduce el archivo de entrada, ya sea mediante la selección desde el explorador de archivos del navegador, como compartiendo el archivo mediante la \acrshort{pwa} si estuviese instalada.
-	\item El usuario confirma la selección del archivo de entrada.
-	\item Se realiza el \textit{parseo} del texto, se calculan las estadísticas y se preparan las estructuras de datos para la visualización, mientras el usuario espera en una pantalla de carga. Estas operaciones se realizan en el cliente.
-	\item Se muestran gráficos interactivos, incluyendo las visualizaciones multimedia, así como las estadísticas calculadas previamente.
-\end{enumerate}
-
-\subsection{Actores del sistema}
-\label{subsec:system-actors}
-
-\subsubsection{Usuario de WhatsApp}
-
-Se trata del usuario único en el que se centran nuestros casos de uso. Este es un usuario de WhatsApp, ya que ChatStats es compatible con los archivos de chat exportados por esta aplicación.
-
-\subsubsection{Navegador con soporte \acrfull{pwa}}
-
-Nuestra aplicación web se ejecuta en un navegador, y por tanto, se trata de un actor para nuestro sistema. Además, si el navegador soporta \acrfull{pwa}, la aplicación web puede ser instalada, ofreciendo mayor integración con el sistema operativo.
-
-\subsubsection{Aplicación WhatsApp}
-
-Para exportar y generar los datos conversacionales que ChatStats espera como entrada, es necesario hacer uso de la aplicación de WhatsApp. Desde dicha aplicación, se puede seleccionar si la exportación se debe realizar con archivos multimedia o sin los mismos. Este caso de uso comprende la exportación con contenido multimedia.
-
-\subsubsection{Datos conversacionales de WhatsApp}
-
-Es el fichero de datos que nustro sistema espera como entrada. En este caso de uso, se trata de un fichero de texto plano con todos los datos conversacionales exportados por la aplicación WhatsApp para un chat grupal, incluyendo los archivos multimedia.
-
-\subsection{Especificación suplementaria}
-\label{subsect:suplementary-specification}
-
-\subsubsection{Reglas de dominio}
-
-% Qué eran las reglas de dominio? Qué debería poner aquí?
-
-
-\subsubsection{Requisitos no funcionales}
-
-\begin{itemize}
-	\item \textbf{Interfaces:} leer y analizar archivos de texto plano \textit{txt}. 
-	
-	\item \textbf{Operación:} Interfaz de Usuario para navegador web, smartphone y tablet.
-	
-	\item \textbf{Seguridad:} Los datos no deben ser enviados a ningún servidor externo sin la autorización previa del usuario. Estos datos, además, no deben ser almacenados de manera temporal o permanente en ningún servidor. Todas las conexiones entre cliente y servidor deben estar cifradas con SSL.
-	
-	\item \textbf{Portabilidad:} La aplicación podrá ejecutarse en los navegadores: Chrome, Firefox, Edge y Safari; siendo compatible con \acrshort{pwa} en los navegadores que lo soporten.
-\end{itemize}
-
-\subsubsection{Restricciones}
-De implementación: lenguaje JavaScript tanto para el servidor como para el cliente, y Docker para el despliegue. El código ha de ser libre.
-
-De interfaz: uso de archivos \textit{txt} para importar los chats exportados desde la aplicación WhatsApp. 
-
-Legales: RGPD.

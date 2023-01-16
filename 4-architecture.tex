@@ -99,7 +99,7 @@ Se indican a continuación mensajes de ejemplo para cada tipo de archivo adjunto
 
 \paragraph{Sin contenido multimedia}\mbox{}\\
 
-Para el segundo caso, cada vez que un mensaje sea contenido multimedia, aparecerá \textit{<Media omitted>} (multimedia omitido). Estos pueden ser fotos, vídeos, música, notas de voz o documentos. Se definirán como \textit{undefined} o indefinidos, ignorándose en las visualizaciones y módulos posteriores.
+Para el segundo caso, cada vez que un mensaje sea contenido multimedia, aparecerá \textit{\textless Media omitted \textgreater} (multimedia omitido). Estos pueden ser fotos, vídeos, música, notas de voz o documentos. Se definirán como \textit{undefined} o indefinidos, ignorándose en las visualizaciones y módulos posteriores.
 
 \begin{lstlisting}
 	17/07/2022, 01:33 - Juan Pedro: <Media omitted>
@@ -297,7 +297,7 @@ Hemos elegido virtualización ligera para ejecutar nuestro código en contenedor
 	\item Se contienen las dependencias de terceros en una imagen.
 	\item En caso de vulnerabilidad, solo se expone el contenedor y no el sistema completo.
 	\item Los recursos se ocupan dinámicamente en función a las necesidades, al contrario que con la virtualización completa.
-	\item Permite el despliegue en cualquier sistema operativo compatible con Linux, salvo arquitecturas ARM (que no es típica en servidores).
+	\item Permite el despliegue en cualquier sistema operativo compatible con Linux, salvo arquitecturas ARM (que no es frecuente en servidores).
 \end{itemize}
 
 \subsection{ChatStats React Server}
