@@ -79,11 +79,11 @@
 \contentsline {subsubsection}{\numberline {4.2.2.1}Parseador de mensajes}{24}{subsubsection.140}%
 \contentsline {paragraph}{Telegram}{24}{lstnumber.148}%
 \contentsline {paragraph}{WhatsApp}{24}{lstnumber.148}%
-\contentsline {subsubsection}{\numberline {4.2.2.2}Parser de cadenas de caracteres de tiempo}{25}{subsubsection.151}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Parseador de fecha y hora}{24}{subsubsection.151}%
 \contentsline {subsubsection}{\numberline {4.2.2.3}Parser de archivos multimedia}{25}{subsubsection.152}%
-\contentsline {paragraph}{Con contenido multimedia}{25}{subsubsection.152}%
-\contentsline {paragraph}{Sin contenido multimedia}{26}{lstnumber.157}%
-\contentsline {subsection}{\numberline {4.2.3}Agregadores}{26}{subsection.160}%
+\contentsline {paragraph}{Para contenido multimedia}{25}{subsubsection.152}%
+\contentsline {paragraph}{Sin contenido multimedia}{25}{lstnumber.157}%
+\contentsline {subsection}{\numberline {4.2.3}Agregador}{26}{subsection.160}%
 \contentsline {subsubsection}{\numberline {4.2.3.1}Agregador por contacto}{26}{subsubsection.161}%
 \contentsline {subsubsection}{\numberline {4.2.3.2}Agregador por d\IeC {\'\i }a}{26}{subsubsection.168}%
 \contentsline {subsubsection}{\numberline {4.2.3.3}Agregador por hora}{27}{subsubsection.185}%

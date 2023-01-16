@@ -156,8 +156,6 @@ Es por ello que analizamos ambos casos por separado:
 
 Los grupos de captura que lo componen se describen en detalle en el \autoref{chap:regex}.
 
-En caso de tratarse de un mensaje de texto (no multimedia), el ``\textit{media\_type}'' es \textit{undefined} (indefinido) y ``\textit{text}'' contiene el cuerpo del mensaje.
-
 
 \subsubsection{Parseador de fecha y hora}
 
@@ -169,13 +167,13 @@ La salida de este submódulo se utiliza en la clave \textit{``date''} del objeto
 
 \subsubsection{Parser de archivos multimedia}
 
+Este submódulo se ejecuta únicamente para chats exportados por WhatsApp. El objetivo de este submódulo es escribir el tipo de contenido en la clave \textit{``media\_type''} del objeto mensaje expuesto anteriormente.
+
 Existen dos opciones para exportar un chat: con contenido multimedia o sin él.
 
-\paragraph{Con contenido multimedia}\mbox{}\\
+\paragraph{Para contenido multimedia}\mbox{}\\
 
-En el primer caso, WhatsApp exporta el fichero de texto plano, además de todas las imágenes, vídeos, música, notas de voz o documentos del chat. En caso de iOS, todos los archivos se agrupan en un archivo comprimido en \textit{zip}, mientras que en Android se exportan todos los archivos como individuales, permitiendo al usuario compartirlos con la aplicación deseada (o guardarlos).
-
-En un mensaje con contenido multimedia, observaremos que el cuerpo incluirá el nombre del fichero que se ha exportado con la extensión del formato del mismo. Por ello, categorizamos como \textit{voice\_message}, \textit{video\_file}, \textit{sticker} o \textit{image} en función a la extensión; \textit{.opus}, \textit{.mp4}, \textit{.webp} o \textit{.jpg}, respectivamente.
+En el fichero de texto plano con contenido multimedia, observaremos que el cuerpo incluye el nombre del fichero que se ha exportado con la extensión del formato del mismo. Por ello, categorizamos como \textit{voice\_message}, \textit{video\_file}, \textit{sticker} o \textit{image} en función a la extensión; \textit{.opus}, \textit{.mp4}, \textit{.webp} o \textit{.jpg}, respectivamente. Usamos estos valores puesto que son los que Telegram utiliza para su formato de mensajes.
 
 Se indican a continuación mensajes de ejemplo para cada tipo de archivo adjunto, únicamente para Android:
 
@@ -194,7 +192,7 @@ Para el segundo caso, cada vez que un mensaje sea contenido multimedia, aparecer
 	17/07/2022, 01:33 - Juan Pedro: <Media omitted>
 \end{lstlisting}
 
-\subsection{Agregadores}
+\subsection{Agregador}
 
 Los mensajes se encuentran segregados en una lista, por lo que a continuación, el módulo de agregador se encargará de agregar los mensajes en diferentes grupos. En el código los hemos llamado polarizadores. Se describen los distintos submódulos a continuación:
 
