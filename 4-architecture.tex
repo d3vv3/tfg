@@ -44,6 +44,8 @@ A continuación se presenta la arquitectura que podemos encontrar en un cliente 
 	\item Posibilidad de guardar en \textit{cache} el código del cliente, permitiendo su uso sin conexión a Internet.
 \end{itemize}
 
+Es por ello que ChatStats puede ser instalada en los dispositivos con navegador con soporte \acrshort{pwa}, permitiendo su instalación y ejecución sin acceso a Internet. Para ello, únicamente se debe registrar un \textit{service worker} que guarda el código en el cliente, así como un archivo de manifiesto que recoge un título, descripción e iconos de la aplicación.
+
 Hay que mencionar también que Mozilla no ofrece soporte para \acrshort{pwa} en su navegador Firefox\cite{firefoxNoPWA}, aunque este puede ser habilitado mediante una extensión\cite{firefoxPWAextension}.
 
 \paragraph{Aplicación Web.} Es la última capa, se encuentra nuestra aplicación, cuya arquitectura de procesamiento se explica en la \autoref{chap:architecture:processing}. Explicamos a continuación los componentes lógicos que se encuentran en el cliente:
@@ -543,6 +545,18 @@ Este módulo aplica una expresión regular unicode a todos los mensajes, selecci
 \end{figure}
 
 Se elige calcular y mostrar esta visualización puesto que los emoticonos constituyen en un chat la forma más similar a la expresión no verbal.
+
+\subsection{Exportador}
+
+Este módulo permite al usuario exportar tanto la visualización como exportar las métricas calculadas para su uso posterior.
+
+\subsubsection{Compartir visualizaciones}
+
+Compartir visualizaciones es un submódulo que, mediante el uso de la librería \textit{html2canvas} permite generar una imagen a partir de un objeto del \acrshort{dom}. Una vez generada, se crea un link falso que se pulsa por el usuario para iniciar la descarga del archivo.
+
+\subsubsection{Exportar resultados}
+
+Del mismo modo que el submódulo anterior, este módulo exporta las métricas obtenidas en un fichero \acrshort{json}.
 
 \section{Conclusión}
 

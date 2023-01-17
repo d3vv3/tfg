@@ -74,7 +74,7 @@
 \contentsline {section}{\numberline {4.2}Arquitectura en el cliente}{20}{section.88}%
 \contentsline {paragraph}{Navegador.}{21}{figure.caption.89}%
 \contentsline {paragraph}{Aplicaci\IeC {\'o}n Web.}{21}{figure.caption.89}%
-\contentsline {subparagraph}{Router.}{21}{figure.caption.89}%
+\contentsline {subparagraph}{Router.}{22}{figure.caption.89}%
 \contentsline {subparagraph}{React Virtual DOM}{22}{figure.caption.89}%
 \contentsline {section}{\numberline {4.3}Arquitectura en el servidor}{22}{section.90}%
 \contentsline {paragraph}{ChatStats React Server.}{23}{figure.caption.91}%
@@ -109,33 +109,36 @@
 \contentsline {subsubsection}{\numberline {4.4.4.9}Generador de estructuras de datos por d\IeC {\'\i }a, hora y mes}{37}{subsubsection.253}%
 \contentsline {subsubsection}{\numberline {4.4.4.10}Contador de palabras m\IeC {\'a}s repetidas}{39}{subsubsection.255}%
 \contentsline {subsubsection}{\numberline {4.4.4.11}Contador de emoticonos m\IeC {\'a}s usados}{39}{subsubsection.256}%
-\contentsline {section}{\numberline {4.5}Conclusi\IeC {\'o}n}{40}{section.260}%
-\contentsline {chapter}{\numberline {5}Caso de estudio}{41}{chapter.261}%
-\contentsline {section}{\numberline {5.1}Introducci\IeC {\'o}n}{41}{section.262}%
-\contentsline {section}{\numberline {5.2}Consultar estad\IeC {\'\i }sticas y visualizaciones de chat grupal con contenido multimedia}{41}{section.264}%
-\contentsline {subsection}{\numberline {5.2.1}Paso 1. Acceso a la aplicaci\IeC {\'o}n}{42}{subsection.269}%
-\contentsline {subsection}{\numberline {5.2.2}Paso 2. Selecci\IeC {\'o}n del archivo de datos conversacionales}{42}{subsection.271}%
-\contentsline {subsection}{\numberline {5.2.3}Paso 3. Confirmaci\IeC {\'o}n del archivo seleccionado}{43}{subsection.273}%
-\contentsline {subsection}{\numberline {5.2.4}Paso 4. C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas}{44}{subsection.275}%
-\contentsline {subsection}{\numberline {5.2.5}Paso 5. Visualizaci\IeC {\'o}n de estad\IeC {\'\i }sticas y gr\IeC {\'a}ficos}{45}{subsection.277}%
-\contentsline {chapter}{\numberline {6}Conclusiones y futuras l\IeC {\'\i }neas de trabajo}{47}{chapter.281}%
-\contentsline {section}{\numberline {6.1}Conclusiones}{47}{section.282}%
-\contentsline {section}{\numberline {6.2}Objetivos conseguidos}{47}{section.283}%
-\contentsline {section}{\numberline {6.3}Futuras l\IeC {\'\i }neas de trabajo}{48}{section.284}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Impacto del proyecto}{\es@scroman {i}}{appendix.285}%
-\contentsline {section}{\numberline {A.1}Impacto social}{\es@scroman {i}}{section.286}%
-\contentsline {subsection}{\numberline {A.1.1}Introducci\IeC {\'o}n}{\es@scroman {i}}{subsection.287}%
-\contentsline {subsection}{\numberline {A.1.2}Descripci\IeC {\'o}n de impactos relevantes relacionados con el proyecto}{\es@scroman {i}}{subsection.288}%
-\contentsline {subsection}{\numberline {A.1.3}Conclusiones}{\es@scroman {ii}}{subsection.289}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {B}Presupuesto econ\IeC {\'o}mico}{\es@scroman {iii}}{appendix.290}%
-\contentsline {section}{\numberline {B.1}Costes}{\es@scroman {iii}}{section.291}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {C}C\IeC {\'o}digo}{\es@scroman {v}}{appendix.292}%
-\contentsline {section}{\numberline {C.1}Acceso al c\IeC {\'o}digo fuente}{\es@scroman {v}}{section.293}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {D}Expresiones regulares}{\es@scroman {vii}}{appendix.294}%
-\contentsline {section}{\numberline {D.1}Grupos de captura}{\es@scroman {vii}}{section.295}%
-\contentsline {paragraph}{Grupo de captura 1: fecha}{\es@scroman {vii}}{lstnumber.297}%
-\contentsline {paragraph}{Grupo de captura 2: hora}{\es@scroman {viii}}{lstnumber.299}%
-\contentsline {paragraph}{Grupo de captura 3: contacto}{\es@scroman {viii}}{lstnumber.301}%
-\contentsline {paragraph}{Grupo de captura 4: mensaje}{\es@scroman {viii}}{lstnumber.303}%
-\contentsline {paragraph}{Look ahead o mirada hacia delante}{\es@scroman {viii}}{lstnumber.305}%
-\contentsline {chapter}{Bibliography}{\es@scroman {xi}}{section*.308}%
+\contentsline {subsection}{\numberline {4.4.5}Exportador}{40}{subsection.260}%
+\contentsline {subsubsection}{\numberline {4.4.5.1}Compartir visualizaciones}{40}{subsubsection.261}%
+\contentsline {subsubsection}{\numberline {4.4.5.2}Exportar resultados}{40}{subsubsection.262}%
+\contentsline {section}{\numberline {4.5}Conclusi\IeC {\'o}n}{41}{section.263}%
+\contentsline {chapter}{\numberline {5}Caso de estudio}{43}{chapter.264}%
+\contentsline {section}{\numberline {5.1}Introducci\IeC {\'o}n}{43}{section.265}%
+\contentsline {section}{\numberline {5.2}Consultar estad\IeC {\'\i }sticas y visualizaciones de chat grupal con contenido multimedia}{43}{section.267}%
+\contentsline {subsection}{\numberline {5.2.1}Paso 1. Acceso a la aplicaci\IeC {\'o}n}{44}{subsection.272}%
+\contentsline {subsection}{\numberline {5.2.2}Paso 2. Selecci\IeC {\'o}n del archivo de datos conversacionales}{44}{subsection.274}%
+\contentsline {subsection}{\numberline {5.2.3}Paso 3. Confirmaci\IeC {\'o}n del archivo seleccionado}{45}{subsection.276}%
+\contentsline {subsection}{\numberline {5.2.4}Paso 4. C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas}{46}{subsection.278}%
+\contentsline {subsection}{\numberline {5.2.5}Paso 5. Visualizaci\IeC {\'o}n de estad\IeC {\'\i }sticas y gr\IeC {\'a}ficos}{47}{subsection.280}%
+\contentsline {chapter}{\numberline {6}Conclusiones y futuras l\IeC {\'\i }neas de trabajo}{49}{chapter.284}%
+\contentsline {section}{\numberline {6.1}Conclusiones}{49}{section.285}%
+\contentsline {section}{\numberline {6.2}Objetivos conseguidos}{49}{section.286}%
+\contentsline {section}{\numberline {6.3}Futuras l\IeC {\'\i }neas de trabajo}{50}{section.287}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Impacto del proyecto}{\es@scroman {i}}{appendix.288}%
+\contentsline {section}{\numberline {A.1}Impacto social}{\es@scroman {i}}{section.289}%
+\contentsline {subsection}{\numberline {A.1.1}Introducci\IeC {\'o}n}{\es@scroman {i}}{subsection.290}%
+\contentsline {subsection}{\numberline {A.1.2}Descripci\IeC {\'o}n de impactos relevantes relacionados con el proyecto}{\es@scroman {i}}{subsection.291}%
+\contentsline {subsection}{\numberline {A.1.3}Conclusiones}{\es@scroman {ii}}{subsection.292}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {B}Presupuesto econ\IeC {\'o}mico}{\es@scroman {iii}}{appendix.293}%
+\contentsline {section}{\numberline {B.1}Costes}{\es@scroman {iii}}{section.294}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {C}C\IeC {\'o}digo}{\es@scroman {v}}{appendix.295}%
+\contentsline {section}{\numberline {C.1}Acceso al c\IeC {\'o}digo fuente}{\es@scroman {v}}{section.296}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {D}Expresiones regulares}{\es@scroman {vii}}{appendix.297}%
+\contentsline {section}{\numberline {D.1}Grupos de captura}{\es@scroman {vii}}{section.298}%
+\contentsline {paragraph}{Grupo de captura 1: fecha}{\es@scroman {vii}}{lstnumber.300}%
+\contentsline {paragraph}{Grupo de captura 2: hora}{\es@scroman {viii}}{lstnumber.302}%
+\contentsline {paragraph}{Grupo de captura 3: contacto}{\es@scroman {viii}}{lstnumber.304}%
+\contentsline {paragraph}{Grupo de captura 4: mensaje}{\es@scroman {viii}}{lstnumber.306}%
+\contentsline {paragraph}{Look ahead o mirada hacia delante}{\es@scroman {viii}}{lstnumber.308}%
+\contentsline {chapter}{Bibliography}{\es@scroman {xi}}{section*.311}%
