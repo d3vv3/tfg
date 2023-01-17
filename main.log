@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022 - Flatpak) (preloaded format=pdflatex 2022.11.15)  17 JAN 2023 04:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022 - Flatpak) (preloaded format=pdflatex 2022.11.15)  17 JAN 2023 17:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1317,7 +1317,7 @@ Package spanish Warning: Replacing `OT1/cmr/bx/sc' by
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 144.
+(spanish)                faked small caps on input line 145.
 
 [10])
 \tf@toc=\write9
@@ -1489,7 +1489,7 @@ LaTeX Info: Redefining \% on input line 340.
 
  (./3-requirements.tex
 Cap\'{\i }tulo 3.
-<img/uml.png, id=707, 1100.11pt x 1086.0575pt>
+<img/uml.png, id=711, 1100.11pt x 1086.0575pt>
 File: img/uml.png Graphic file (type png)
 <use img/uml.png>
 Package pdftex.def Info: img/uml.png  used on input line 11.
@@ -1610,7 +1610,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
  (./4-architecture.tex
 Cap\'{\i }tulo 4.
-<img/scenario.png, id=771, 1971.365pt x 774.895pt>
+<img/scenario.png, id=775, 1971.365pt x 774.895pt>
 File: img/scenario.png Graphic file (type png)
 <use img/scenario.png>
 Package pdftex.def Info: img/scenario.png  used on input line 14.
@@ -1624,7 +1624,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<img/client.png, id=776, 726.715pt x 423.5825pt>
+<img/client.png, id=780, 726.715pt x 423.5825pt>
 File: img/client.png Graphic file (type png)
 <use img/client.png>
 Package pdftex.def Info: img/client.png  used on input line 34.
@@ -1647,7 +1647,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [20 <./img/client.png>]
-<img/server.png, id=792, 726.715pt x 503.8825pt>
+<img/server.png, id=796, 726.715pt x 503.8825pt>
 File: img/server.png Graphic file (type png)
 <use img/server.png>
 Package pdftex.def Info: img/server.png  used on input line 71.
@@ -1655,7 +1655,7 @@ Package pdftex.def Info: img/server.png  used on input line 71.
 LaTeX Info: Redefining \. on input line 84.
 LaTeX Info: Redefining \% on input line 84.
  [21 <./img/server.png>]
-<img/architecture_processing.png, id=798, 1931.215pt x 827.09pt>
+<img/architecture_processing.png, id=802, 1931.215pt x 827.09pt>
 File: img/architecture_processing.png Graphic file (type png)
 <use img/architecture_processing.png>
 Package pdftex.def Info: img/architecture_processing.png  used on input line 11
@@ -1809,13 +1809,13 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [30]
-<img/message_count_individual.png, id=956, 867.24pt x 527.9725pt>
+<img/message_count_individual.png, id=960, 867.24pt x 527.9725pt>
 File: img/message_count_individual.png Graphic file (type png)
 <use img/message_count_individual.png>
 Package pdftex.def Info: img/message_count_individual.png  used on input line 3
 92.
 (pdftex.def)             Requested size: 170.71652pt x 103.92499pt.
-<img/message_count.png, id=957, 785.93625pt x 815.045pt>
+<img/message_count.png, id=961, 785.93625pt x 815.045pt>
 File: img/message_count.png Graphic file (type png)
 <use img/message_count.png>
 Package pdftex.def Info: img/message_count.png  used on input line 394.
@@ -1832,24 +1832,24 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [31 <./img/message_count_individual.png> <./img/message_count.png>]
-<img/word_count_individual.png, id=966, 861.2175pt x 517.935pt>
+<img/word_count_individual.png, id=970, 861.2175pt x 517.935pt>
 File: img/word_count_individual.png Graphic file (type png)
 <use img/word_count_individual.png>
 Package pdftex.def Info: img/word_count_individual.png  used on input line 407.
 
 (pdftex.def)             Requested size: 170.71652pt x 102.6684pt.
-<img/word_count.png, id=967, 782.925pt x 804.00375pt>
+<img/word_count.png, id=971, 782.925pt x 804.00375pt>
 File: img/word_count.png Graphic file (type png)
 <use img/word_count.png>
 Package pdftex.def Info: img/word_count.png  used on input line 409.
 (pdftex.def)             Requested size: 170.71652pt x 175.31105pt.
-<img/char_count_individual.png, id=968, 860.21375pt x 516.93124pt>
+<img/char_count_individual.png, id=972, 860.21375pt x 516.93124pt>
 File: img/char_count_individual.png Graphic file (type png)
 <use img/char_count_individual.png>
 Package pdftex.def Info: img/char_count_individual.png  used on input line 420.
 
 (pdftex.def)             Requested size: 170.71652pt x 102.58775pt.
-<img/char_count.png, id=969, 806.01125pt x 819.06pt>
+<img/char_count.png, id=973, 806.01125pt x 819.06pt>
 File: img/char_count.png Graphic file (type png)
 <use img/char_count.png>
 Package pdftex.def Info: img/char_count.png  used on input line 422.
@@ -1869,12 +1869,12 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [32 <./img/word_count_individual.png> <./img/word_count.png>]
-<img/word_avg_individual.png, id=976, 858.20625pt x 543.02875pt>
+<img/word_avg_individual.png, id=980, 858.20625pt x 543.02875pt>
 File: img/word_avg_individual.png Graphic file (type png)
 <use img/word_avg_individual.png>
 Package pdftex.def Info: img/word_avg_individual.png  used on input line 435.
 (pdftex.def)             Requested size: 170.71652pt x 108.01552pt.
-<img/word_avg.png, id=977, 820.06375pt x 817.0525pt>
+<img/word_avg.png, id=981, 820.06375pt x 817.0525pt>
 File: img/word_avg.png Graphic file (type png)
 <use img/word_avg.png>
 Package pdftex.def Info: img/word_avg.png  used on input line 437.
@@ -1892,23 +1892,23 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [33 <./img/char_count_individual.png> <./img/char_count.png> <./img/word_avg_in
 dividual.png> <./img/word_avg.png>]
-<img/char_avg_individual.png, id=986, 858.20625pt x 536.0025pt>
+<img/char_avg_individual.png, id=990, 858.20625pt x 536.0025pt>
 File: img/char_avg_individual.png Graphic file (type png)
 <use img/char_avg_individual.png>
 Package pdftex.def Info: img/char_avg_individual.png  used on input line 448.
 (pdftex.def)             Requested size: 170.71652pt x 106.6179pt.
-<img/char_avg.png, id=987, 811.03pt x 833.1125pt>
+<img/char_avg.png, id=991, 811.03pt x 833.1125pt>
 File: img/char_avg.png Graphic file (type png)
 <use img/char_avg.png>
 Package pdftex.def Info: img/char_avg.png  used on input line 450.
 (pdftex.def)             Requested size: 170.71652pt x 175.36557pt.
-<img/conversations_started_individual.png, id=988, 863.225pt x 541.02126pt>
+<img/conversations_started_individual.png, id=992, 863.225pt x 541.02126pt>
 File: img/conversations_started_individual.png Graphic file (type png)
 <use img/conversations_started_individual.png>
 Package pdftex.def Info: img/conversations_started_individual.png  used on inpu
 t line 461.
 (pdftex.def)             Requested size: 170.71652pt x 106.9888pt.
-<img/conversations_started.png, id=989, 830.10126pt x 832.10875pt>
+<img/conversations_started.png, id=993, 830.10126pt x 832.10875pt>
 File: img/conversations_started.png Graphic file (type png)
 <use img/conversations_started.png>
 Package pdftex.def Info: img/conversations_started.png  used on input line 463.
@@ -1929,13 +1929,13 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [34 <./img/char_avg_individual.png> <./img/char_avg.png>]
-<img/avg_response_time_individual.png, id=996, 859.21pt x 543.02875pt>
+<img/avg_response_time_individual.png, id=1000, 859.21pt x 543.02875pt>
 File: img/avg_response_time_individual.png Graphic file (type png)
 <use img/avg_response_time_individual.png>
 Package pdftex.def Info: img/avg_response_time_individual.png  used on input li
 ne 477.
 (pdftex.def)             Requested size: 170.71652pt x 107.89122pt.
-<img/avg_response_time.png, id=997, 828.09375pt x 831.105pt>
+<img/avg_response_time.png, id=1001, 828.09375pt x 831.105pt>
 File: img/avg_response_time.png Graphic file (type png)
 <use img/avg_response_time.png>
 Package pdftex.def Info: img/avg_response_time.png  used on input line 479.
@@ -1953,13 +1953,13 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [35 <./img/conversations_started_individual.png> <./img/conversations_started.p
 ng> <./img/avg_response_time_individual.png> <./img/avg_response_time.png>]
-<img/media_count_individual.png, id=1007, 1764.5925pt x 1075.01625pt>
+<img/media_count_individual.png, id=1011, 1764.5925pt x 1075.01625pt>
 File: img/media_count_individual.png Graphic file (type png)
 <use img/media_count_individual.png>
 Package pdftex.def Info: img/media_count_individual.png  used on input line 494
 .
 (pdftex.def)             Requested size: 346.89731pt x 211.32507pt.
-<img/media_count.png, id=1008, 1721.43124pt x 1670.24pt>
+<img/media_count.png, id=1012, 1721.43124pt x 1670.24pt>
 File: img/media_count.png Graphic file (type png)
 <use img/media_count.png>
 Package pdftex.def Info: img/media_count.png  used on input line 502.
@@ -1968,7 +1968,7 @@ Package pdftex.def Info: img/media_count.png  used on input line 502.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/time_distributions.png, id=1009, 1698.345pt x 1553.805pt>
+<img/time_distributions.png, id=1013, 1698.345pt x 1553.805pt>
 File: img/time_distributions.png Graphic file (type png)
 <use img/time_distributions.png>
 Package pdftex.def Info: img/time_distributions.png  used on input line 513.
@@ -2000,12 +2000,12 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [37 <./img/media_count.png> <./img/time_distributions.png>]
-<img/word_cloud.png, id=1019, 590.205pt x 637.38126pt>
+<img/word_cloud.png, id=1023, 590.205pt x 637.38126pt>
 File: img/word_cloud.png Graphic file (type png)
 <use img/word_cloud.png>
 Package pdftex.def Info: img/word_cloud.png  used on input line 540.
 (pdftex.def)             Requested size: 170.71652pt x 184.35927pt.
-<img/emoji_cloud.png, id=1020, 607.26875pt x 636.3775pt>
+<img/emoji_cloud.png, id=1024, 607.26875pt x 636.3775pt>
 File: img/emoji_cloud.png Graphic file (type png)
 <use img/emoji_cloud.png>
 Package pdftex.def Info: img/emoji_cloud.png  used on input line 542.
@@ -2061,19 +2061,19 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
  (./5-case-study.tex
 Cap\'{\i }tulo 5.
-<img/study_case/installation_1.jpg, id=1036, 642.4pt x 1284.8pt>
+<img/study_case/installation_1.jpg, id=1040, 642.4pt x 1284.8pt>
 File: img/study_case/installation_1.jpg Graphic file (type jpg)
 <use img/study_case/installation_1.jpg>
 Package pdftex.def Info: img/study_case/installation_1.jpg  used on input line 
 20.
 (pdftex.def)             Requested size: 85.35826pt x 170.7155pt.
-<img/study_case/installation_2.jpg, id=1037, 642.4pt x 1284.8pt>
+<img/study_case/installation_2.jpg, id=1041, 642.4pt x 1284.8pt>
 File: img/study_case/installation_2.jpg Graphic file (type jpg)
 <use img/study_case/installation_2.jpg>
 Package pdftex.def Info: img/study_case/installation_2.jpg  used on input line 
 22.
 (pdftex.def)             Requested size: 85.35826pt x 170.7155pt.
-<img/study_case/installation_3.jpg, id=1038, 642.4pt x 1284.8pt>
+<img/study_case/installation_3.jpg, id=1042, 642.4pt x 1284.8pt>
 File: img/study_case/installation_3.jpg Graphic file (type jpg)
 <use img/study_case/installation_3.jpg>
 Package pdftex.def Info: img/study_case/installation_3.jpg  used on input line 
@@ -2088,17 +2088,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<img/study_case/import_1.jpg, id=1044, 642.4pt x 1284.8pt>
+<img/study_case/import_1.jpg, id=1048, 642.4pt x 1284.8pt>
 File: img/study_case/import_1.jpg Graphic file (type jpg)
 <use img/study_case/import_1.jpg>
 Package pdftex.def Info: img/study_case/import_1.jpg  used on input line 36.
 (pdftex.def)             Requested size: 85.35826pt x 170.7155pt.
-<img/study_case/import_2.jpg, id=1045, 642.4pt x 1284.8pt>
+<img/study_case/import_2.jpg, id=1049, 642.4pt x 1284.8pt>
 File: img/study_case/import_2.jpg Graphic file (type jpg)
 <use img/study_case/import_2.jpg>
 Package pdftex.def Info: img/study_case/import_2.jpg  used on input line 38.
 (pdftex.def)             Requested size: 85.35826pt x 170.7155pt.
-<img/study_case/import_3.jpg, id=1046, 642.4pt x 1284.8pt>
+<img/study_case/import_3.jpg, id=1050, 642.4pt x 1284.8pt>
 File: img/study_case/import_3.jpg Graphic file (type jpg)
 <use img/study_case/import_3.jpg>
 Package pdftex.def Info: img/study_case/import_3.jpg  used on input line 40.
@@ -2117,13 +2117,13 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 [42 <./img/study_case/installation_1.jpg> <./img/study_case/installation_2.jpg>
  <./img/study_case/installation_3.jpg> <./img/study_case/import_1.jpg> <./img/s
 tudy_case/import_2.jpg> <./img/study_case/import_3.jpg>]
-<img/study_case/metrics_calc_1.png, id=1058, 945.66064pt x 1002.55405pt>
+<img/study_case/metrics_calc_1.png, id=1062, 945.66064pt x 1002.55405pt>
 File: img/study_case/metrics_calc_1.png Graphic file (type png)
 <use img/study_case/metrics_calc_1.png>
 Package pdftex.def Info: img/study_case/metrics_calc_1.png  used on input line 
 54.
 (pdftex.def)             Requested size: 202.01474pt x 214.16812pt.
-<img/study_case/metrics_calc_2.png, id=1059, 947.1983pt x 991.27788pt>
+<img/study_case/metrics_calc_2.png, id=1063, 947.1983pt x 991.27788pt>
 File: img/study_case/metrics_calc_2.png Graphic file (type png)
 <use img/study_case/metrics_calc_2.png>
 Package pdftex.def Info: img/study_case/metrics_calc_2.png  used on input line 
@@ -2142,27 +2142,27 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [43 <./img/study_case/metrics_calc_1.png> <./img/study_case/metrics_calc_2.png>
 ]
-<img/study_case/screen_1.png, id=1073, 1727.45375pt x 1823.81375pt>
+<img/study_case/screen_1.png, id=1077, 1727.45375pt x 1823.81375pt>
 File: img/study_case/screen_1.png Graphic file (type png)
 <use img/study_case/screen_1.png>
 Package pdftex.def Info: img/study_case/screen_1.png  used on input line 82.
 (pdftex.def)             Requested size: 199.16928pt x 210.27684pt.
-<img/study_case/screen_2.png, id=1074, 1740.5025pt x 1664.2175pt>
+<img/study_case/screen_2.png, id=1078, 1740.5025pt x 1664.2175pt>
 File: img/study_case/screen_2.png Graphic file (type png)
 <use img/study_case/screen_2.png>
 Package pdftex.def Info: img/study_case/screen_2.png  used on input line 84.
 (pdftex.def)             Requested size: 199.16928pt x 190.42871pt.
-<img/study_case/screen_3.png, id=1075, 1706.375pt x 1613.02625pt>
+<img/study_case/screen_3.png, id=1079, 1706.375pt x 1613.02625pt>
 File: img/study_case/screen_3.png Graphic file (type png)
 <use img/study_case/screen_3.png>
 Package pdftex.def Info: img/study_case/screen_3.png  used on input line 88.
 (pdftex.def)             Requested size: 199.16928pt x 188.26305pt.
-<img/study_case/screen_4.png, id=1076, 1716.4125pt x 1529.715pt>
+<img/study_case/screen_4.png, id=1080, 1716.4125pt x 1529.715pt>
 File: img/study_case/screen_4.png Graphic file (type png)
 <use img/study_case/screen_4.png>
 Package pdftex.def Info: img/study_case/screen_4.png  used on input line 90.
 (pdftex.def)             Requested size: 199.16928pt x 177.48907pt.
-<img/study_case/screen_5.png, id=1077, 1729.46124pt x 767.86874pt>
+<img/study_case/screen_5.png, id=1081, 1729.46124pt x 767.86874pt>
 File: img/study_case/screen_5.png Graphic file (type png)
 <use img/study_case/screen_5.png>
 Package pdftex.def Info: img/study_case/screen_5.png  used on input line 94.
@@ -2174,7 +2174,7 @@ LaTeX Warning: Float too large for page by 9.27739pt on input line 99.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/study_case/screen_6.png, id=1078, 1775.63374pt x 1801.73125pt>
+<img/study_case/screen_6.png, id=1082, 1775.63374pt x 1801.73125pt>
 File: img/study_case/screen_6.png Graphic file (type png)
 <use img/study_case/screen_6.png>
 Package pdftex.def Info: img/study_case/screen_6.png  used on input line 104.
@@ -2219,12 +2219,12 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
 [46 <./img/study_case/screen_6.png>]
-<img/study_case/export_1.jpg, id=1097, 642.4pt x 1284.8pt>
+<img/study_case/export_1.jpg, id=1101, 642.4pt x 1284.8pt>
 File: img/study_case/export_1.jpg Graphic file (type jpg)
 <use img/study_case/export_1.jpg>
 Package pdftex.def Info: img/study_case/export_1.jpg  used on input line 115.
 (pdftex.def)             Requested size: 142.26378pt x 284.5193pt.
-<img/study_case/export_2.jpg, id=1098, 642.4pt x 1284.8pt>
+<img/study_case/export_2.jpg, id=1102, 642.4pt x 1284.8pt>
 File: img/study_case/export_2.jpg Graphic file (type jpg)
 <use img/study_case/export_2.jpg>
 Package pdftex.def Info: img/study_case/export_2.jpg  used on input line 117.
@@ -2365,41 +2365,75 @@ Ap\'{e}ndice C.
 
  (./10-regex.tex
 Ap\'{e}ndice D.
+<img/regex_ios.png, id=1147, 562.27084pt x 132.75128pt>
+File: img/regex_ios.png Graphic file (type png)
+<use img/regex_ios.png>
+Package pdftex.def Info: img/regex_ios.png  used on input line 7.
+(pdftex.def)             Requested size: 346.89731pt x 81.90385pt.
+<img/regex_android.png, id=1148, 1283.79625pt x 371.3875pt>
+File: img/regex_android.png Graphic file (type png)
+<use img/regex_android.png>
+Package pdftex.def Info: img/regex_android.png  used on input line 14.
+(pdftex.def)             Requested size: 346.89731pt x 100.34962pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
+Underfull \vbox (badness 1616) has occurred while \output is active []
 
- []
-
-[6
-
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 23--24
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
-
- []
+ [6
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+
+ <./img/regex_ios.png> <./img/regex_android.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-LaTeX Info: Redefining \. on input line 50.
-LaTeX Info: Redefining \% on input line 50.
-[7])
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+
+Underfull \vbox (badness 1642) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
+ [7]
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+LaTeX Info: Redefining \. on input line 89.
+LaTeX Info: Redefining \% on input line 89.
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.42169pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.42169pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
+
+[8])
 LaTeX Info: Redefining \. on input line 353.
 LaTeX Info: Redefining \% on input line 353.
+ [9]
+LaTeX Info: Redefining \. on input line 356.
+LaTeX Info: Redefining \% on input line 356.
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -2409,7 +2443,11 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.42169pt}.
 
-[8] (./main.bbl
+[10
+
+
+
+] (./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 []\OT1/cmr/m/n/10 Manish Singh.  ``WhatsApp is now de-li-ve-ring roughly 100 bi
 -
@@ -2466,10 +2504,7 @@ Package glossaries Warning: No \printglossary or \printglossaries found.
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-[9
-
-
-
+[11
 
 ] (./main.aux (./0-preamble.aux)
 LaTeX Info: Redefining \. on input line 34.
@@ -2486,16 +2521,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7CE57B4FCE3E091F1C48D243A8A3A6DA;15696.
+(rerunfilecheck)             Checksum: AA6729EF133FEFBE6351798CC94D01E6;15696.
  ) 
 Here is how much of TeX's memory you used:
- 41015 strings out of 478268
- 791906 string characters out of 5847839
- 1222315 words of memory out of 5000000
- 57969 multiletter control sequences out of 15000+600000
+ 41034 strings out of 478268
+ 792307 string characters out of 5847839
+ 1222459 words of memory out of 5000000
+ 57980 multiletter control sequences out of 15000+600000
  483123 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,13n,94p,1128b,2536s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,13n,94p,1128b,2512s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/app/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</app/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmbx10.pfb></app/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmbx12.pfb></app/texlive/texmf-dist/fonts/type1/public/amsf
@@ -2513,10 +2548,10 @@ fonts/type1/public/amsfonts/cm/cmssi10.pfb></app/texlive/texmf-dist/fonts/type1
 onts/cm/cmti10.pfb></app/texlive/texmf-dist/fonts/type1/public/eurosym/feymr10.
 pfb></app/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></app/texlive/t
 exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on main.pdf (79 pages, 3634498 bytes).
+Output written on main.pdf (81 pages, 3763228 bytes).
 PDF statistics:
- 1366 PDF objects out of 1440 (max. 8388607)
- 1186 compressed objects within 12 object streams
- 411 named destinations out of 1000 (max. 500000)
- 975 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1393 PDF objects out of 1440 (max. 8388607)
+ 1207 compressed objects within 13 object streams
+ 417 named destinations out of 1000 (max. 500000)
+ 985 words of extra memory for PDF output out of 10000 (max. 10000000)
 

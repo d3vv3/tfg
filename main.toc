@@ -135,10 +135,11 @@
 \contentsline {chapter}{Ap\'{e}ndice \numberline {C}C\IeC {\'o}digo}{\es@scroman {v}}{appendix.304}%
 \contentsline {section}{\numberline {C.1}Acceso al c\IeC {\'o}digo fuente}{\es@scroman {v}}{section.305}%
 \contentsline {chapter}{Ap\'{e}ndice \numberline {D}Expresiones regulares}{\es@scroman {vi}}{appendix.306}%
-\contentsline {section}{\numberline {D.1}Grupos de captura}{\es@scroman {vi}}{section.307}%
-\contentsline {paragraph}{Grupo de captura 1: fecha}{\es@scroman {vi}}{lstnumber.309}%
-\contentsline {paragraph}{Grupo de captura 2: hora}{\es@scroman {vii}}{lstnumber.311}%
-\contentsline {paragraph}{Grupo de captura 3: contacto}{\es@scroman {vii}}{lstnumber.313}%
-\contentsline {paragraph}{Grupo de captura 4: mensaje}{\es@scroman {vii}}{lstnumber.315}%
-\contentsline {paragraph}{Look ahead o mirada hacia delante}{\es@scroman {vii}}{lstnumber.317}%
-\contentsline {chapter}{Bibliography}{\es@scroman {ix}}{section*.320}%
+\contentsline {section}{\numberline {D.1}Grupos de captura}{\es@scroman {vii}}{section.309}%
+\contentsline {paragraph}{Grupo de captura 1: fecha}{\es@scroman {vii}}{lstnumber.311}%
+\contentsline {paragraph}{Grupo de captura 2: hora}{\es@scroman {vii}}{lstnumber.313}%
+\contentsline {paragraph}{Grupo de captura 3: contacto}{\es@scroman {viii}}{lstnumber.315}%
+\contentsline {paragraph}{Grupo de captura 4: mensaje}{\es@scroman {viii}}{lstnumber.317}%
+\contentsline {paragraph}{Look ahead o mirada hacia delante}{\es@scroman {viii}}{lstnumber.319}%
+\contentsline {paragraph}{Opciones}{\es@scroman {viii}}{lstnumber.321}%
+\contentsline {chapter}{Bibliography}{\es@scroman {xi}}{section*.324}%
