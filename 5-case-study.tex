@@ -4,107 +4,117 @@
 \section{Introducción}
 \label{sec:5:introduction}
 
-\todi{Entiendo que aquí debería centrarme únicamente en un caso de uso, o varios si caben}
+En este capítulo vamos a describir los casos de uso principales de ChatStats. Estas descripciones cubrirán todas las funciones principales, así como una descripción detallada de los pasos a seguir y cómo usar la aplicación.
 
-En este capítulo vamos a describir un caso de uso seleccionado. Esta descripción cubrirá todas las funciones principales del caso de uso, así como una descripción detallada de los pasos a seguir y cómo usar la aplicación.
+A lo largo de los casos de uso, iremos viendo la aplicación en distintos dispositivos y tamaños, pudiendo comprobar cómo la aplicación se adapta a la pantalla de una forma \textit{responsive}.
 
-\section{Consultar estadísticas y visualizaciones de chat grupal con contenido multimedia}
+\section{Instalar aplicación en cliente}
 
-\todi{Meter fotos de chat grupal con última versión}
-\todi{Actualizar capturas a última versión}
-\todi{Meter descripciones}
-\todi{Actualizar nombres de figuras}
+En esta sección se explicará el proceso de instalación de ChatStats en un dispositivo con navegador con soporte para \acrfull{pwa}.
 
+En primer lugar, el usuario accede a la web donde se aloja la aplicación. El navegador sugiere la instalación de la aplicación. El usuario pulsa sobre la sugerencia e instala la aplicación, que estará accesible desde el escritorio del dispositivo. La aplicación puede usarse sin acceso a Internet.
 
-\subsection{Paso 1. Acceso a la aplicación}
-
-\begin{comment}
-	PWA debe ser un actor y no parte del caso de uso, porque realmente unos abriran el navegador y otros instalarán la aplicación.
-		La instalación de ChatStats como PWA es un caso de uso en sí (?).
-\end{comment}
-
-El usuario accede a la aplicación web y encuentra la siguiente interfaz de usuario.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.95\textwidth]{img/study_case/step1.png}
-	\caption{Página principal de la aplicación}
-	\label{fig:chap5:step_1}
+	\subfloat[\centering Acceso a ChatStats]{{\includegraphics[width=3cm]{img/study_case/installation_1.jpg} }}
+	\qquad
+	\subfloat[\centering Instalación]{{\includegraphics[width=3cm]{img/study_case/installation_2.jpg} }}
+	\qquad
+	\subfloat[\centering Colocación en escritorio]{{\includegraphics[width=3cm]{img/study_case/installation_3.jpg} }}
+	\caption{Instalación de la aplicación \acrshort{pwa}}
+	\label{fig:chap5:pwa_installation}
 \end{figure}
 
-En esta pantalla se describe la aplicación, así como una pequeña nota sobre la privacidad del servicio y un enlace al código fuente del mismo.
 
+\section{Importar datos en el sistema}
 
-\subsection{Paso 2. Selección del archivo de datos conversacionales}
-
-El usuario pulsa el botón para seleccionar un chat, lo que le abre el explorador de archivos de su sistema para seleccionar el fichero a utilizar.
+Durante este caso de uso, el usuario puede seleccionar un archivo para importar a ChatStats. El archivo puede ser de texto plano, \textit{zip} o \acrshort{json}. En caso de ser otro tipo de archivo, ChatStats alerta al usuario y elimina la selección.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.95\textwidth]{img/study_case/step2.png}
-	\caption{Selección del fichero de datos conversacionales}
-	\label{fig:chap5:step_2}
+	\subfloat[\centering Selección de fichero]{{\includegraphics[width=3cm]{img/study_case/import_1.jpg} }}
+	\qquad
+	\subfloat[\centering Fichero válido seleccionado]{{\includegraphics[width=3cm]{img/study_case/import_2.jpg} }}
+	\qquad
+	\subfloat[\centering Fichero no válido seleccionado]{{\includegraphics[width=3cm]{img/study_case/import_3.jpg} }}
+	\caption{Importar datos en el sistema}
+	\label{fig:chap5:import}
 \end{figure}
 
 
-\subsection{Paso 3. Confirmación del archivo seleccionado}
+\section{Visualización de chat grupal e individual}
 
-Se muestra al usuario el nombre del archivo que ha seleccionado y se añade un botón para comenzar el análisis de los datos.
-
-Asimismo, el botón para seleccionar un fichero sigue habilitado, permitiendo al usuario cambiar el archivo que ha seleccionado.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.95\textwidth]{img/study_case/step3.png}
-	\caption{Confirmación de la selección}
-	\label{fig:chap5:step_3}
-\end{figure}
-
-
-\subsection{Paso 4. Cálculo de las estadísticas}
+\subsection{Cálculo de las estadísticas}
 
 Durante esta pantalla, el cliente está ejecutando todos los flujos descritos en el \autoref{chap:architecture}. Se muestra una animación de carga para hacer saber al usuario que el cliente está realizando operaciones.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.95\textwidth]{img/study_case/step4.png}
-	\caption{Cálculo de las estadísticas}
-	\label{fig:chap5:step_4}
+	\subfloat[\centering Inicio del cálculo]{{\includegraphics[width=7.1cm]{img/study_case/metrics_calc_1.png} }}
+	\qquad
+	\subfloat[\centering Carga durante el cálculo de métricas]{{\includegraphics[width=7.1cm]{img/study_case/metrics_calc_2.png} }}
+	\caption{Cálculo de métricas}
+	\label{fig:chap5:calc}
 \end{figure}
 
 
-\subsection{Paso 5. Visualización de estadísticas y gráficos}
+\subsection{Visualización de chat grupal e individual}
 
-En esta página se muestran numerosos gráficos, por los que el usuario puede desplazarse mediante la navegación vertical.
+En esta página se muestran numerosos gráficos descritos durante la arquitectura, por los que el usuario puede desplazarse mediante la navegación vertical.
 
-Los primeros gráficos tratan del recuento de mensajes y caracteres totales, así como la media de los mismos por cada mensaje.
+En el primer grupo de gráficos de la \autoref{fig:chap5:viz_grupal} (a) observamos el recuento de mensajes, palabras y caracteres para cada contacto. En este caso, podemos apreciar como los usuarios ``Alejandro'' y ``James'', en azul y morado respectivamente, constituyen casi un tercio de la conversación.
 
-\begin{figure}[H]
+En el grupo de gráficos (b), en la \autoref{fig:chap5:viz_grupal} podemos observar la media de palabras por mensaje, así como la media de caracteres. De ellos podemos concluir, en este ejemplo, que todos los contactos escriben en media mensajes del mismo tamaño. En este grupo se incluye también un gráfico que indica el número de veces que cada contacto ha iniciado la conversación; así como el tiempo medio de respuesta de cada uno. Estos datos pueden ser muy útiles para medir el interés de los contactos por el chat en cuestión, así como qué contacto tiene mayor iniciativa al diálogo. Para nuestro caso de ejemplo, se observa que ``Alejandro'' suele comenzar la conversación, así como que Adriana es muy rápida respondiendo.
+
+Continuando con el grupo de gráficos (c), podemos observar el número de archivos multimedia de cada tipo que ha enviado cada contacto. Aquí vemos que ``Adriana'' manda muchas pegatinas o \textit{stickers}, mientras que ``Jaime'' acostumbra a mandar más audios.
+
+En el grupo de gráficos (d), podemos observar las distribución de los mensajes en los meses, en los días de la semana y en las horas del día. Anotamos que diciembre de 2022 fue el mes más activo del grupo y que los lunes suelen tener mayor actividad (que va decayendo a lo largo de la semana). Cabe comentar que en todos los gráficos anteriores se pueden descartar contactos en la representación. Es por eso que, quedándonos con ``James'' y ``Jaime'', podemos observar que ``James'' suele comenzar a enviar mensajes una hora antes que ``Jaime''.
+
+Finalmente, en el grupo de gráficos (e) podemos observar las palabras clave más frecuentes del chat, así como los emoticonos. Estos nos permiten conocer rápidamente los temas principales de conversación, que son, en este caso: \textit{Google}, \textit{GDSC (Google Developers Student Club)} y \textit{evento}, entre otros. Asimismo, los emoticonos nos permiten conocer las principales reacciones no verbales que tienen lugar en la conversación.
+
+\vspace{8mm}
+
+Para el caso de chats individuales, se elimina la necesidad de la utilización de un gráfico circular y se muestran los números calculados directamente. Los gráficos de barras para las distribuciones en el tiempo no varían. Se muestran algunas diferencias en la \autoref{fig:chap5:viz_individual}.
+
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.95\textwidth]{img/study_case/step5_1.png}
-	\caption{Cálculo de las estadísticas}
-	\label{fig:chap5:step_5_1}
+	\subfloat[\centering Número de mensajes, número de palabras y número de caracteres]{{\includegraphics[width=7cm]{img/study_case/screen_1.png} }}
+	\qquad
+	\subfloat[\centering Media de palabras, media de caracteres, conversaciones iniciadas y tiempo medio de respuesta]{{\includegraphics[width=7cm]{img/study_case/screen_2.png} }}
+	\centering
+	
+	
+	\subfloat[\centering Número de fotos, vídeos, audios y pegatinas]{{\includegraphics[width=7cm]{img/study_case/screen_3.png} }}
+	\qquad
+	\subfloat[\centering Distribución de mensajes en meses, días de la semana y  horas del día]{{\includegraphics[width=7cm]{img/study_case/screen_4.png} }}
+	
+	
+	\qquad
+	\subfloat[\centering Nubes de palabras y emoticonos]{{\includegraphics[width=9cm]{img/study_case/screen_5.png} }}
+	
+	
+	\caption{Visualización de chat grupal}
+	\label{fig:chap5:viz_grupal}
 \end{figure}
 
-Continuando más abajo, se muestra la distribución de los mensajes por contacto para cada mes, así como la distribución de los mensajes en media a lo largo de la semana. Finalmente, también se muestra la distribución de los mensajes en las horas en las que se envían.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.95\textwidth]{img/study_case/step5_2.png}
-	\caption{Cálculo de las estadísticas}
-	\label{fig:chap5:step_5_2}
+	\includegraphics[width=0.8\textwidth]{img/study_case/screen_6.png}
+	\caption{Ejemplo de variación para chat individual}
+	\label{fig:chap5:viz_individual}
 \end{figure}
 
-Al final de la página se introducen dos gráficos más.
+\section{Exportar analíticas}
 
-La nube de palabras muestra las palabras más utilizadas en el chat, teniendo mayor tamaño las palabras más utilizadas.
+Como puede observarse en la \autoref{fig:chap5:export}, se ofrece la opción, al final de la visualización, de exportar una imagen para compartir; así como de exportar las métricas calculadas para su posterior análisis personal.
 
-La nube de emoticonos o, \textit{emojis}, realiza la misma acción con los emoticonos.
-
-
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.95\textwidth]{img/study_case/step5_3.png}
-	\caption{Cálculo de las estadísticas}
-	\label{fig:chap5:step_5_3}
+	\subfloat[\centering Compartir imagen]{{\includegraphics[width=5cm]{img/study_case/export_1.jpg} }}
+	\qquad
+	\subfloat[\centering Descarga del archivo exportado]{{\includegraphics[width=5cm]{img/study_case/export_2.jpg} }}
+	\caption{Exportar analíticas}
+	\label{fig:chap5:export}
 \end{figure}

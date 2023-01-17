@@ -18,15 +18,11 @@ A level-1 auxiliary file: 8-budget.aux
 A level-1 auxiliary file: 9-code.aux
 A level-1 auxiliary file: 10-regex.aux
 The style file: unsrt.bst
-Illegal, another \bibstyle command---line 71 of file main.aux
+Illegal, another \bibstyle command---line 59 of file main.aux
  : \bibstyle
  :          {plain}
 I'm skipping whatever remains of this command
 Database file #1: biblio/ref.bib
-Repeated entry---line 117 of file biblio/ref.bib
- : @misc{GPLv3
- :            ,
-I'm skipping whatever remains of this entry
 You've used 10 entries,
             1791 wiz_defined-function locations,
             524 strings with 5796 characters,
@@ -68,4 +64,4 @@ warning$ -- 0
 while$ -- 9
 width$ -- 12
 write$ -- 111
-(There were 2 error messages)
+(There was 1 error message)
