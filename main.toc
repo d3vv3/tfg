@@ -75,7 +75,7 @@
 \contentsline {paragraph}{Navegador.}{20}{figure.caption.83}%
 \contentsline {paragraph}{Aplicaci\IeC {\'o}n Web.}{21}{figure.caption.83}%
 \contentsline {subparagraph}{React State.}{21}{figure.caption.83}%
-\contentsline {subparagraph}{Router.}{21}{figure.caption.83}%
+\contentsline {subparagraph}{Router.}{22}{figure.caption.83}%
 \contentsline {subparagraph}{React Virtual DOM.}{22}{figure.caption.83}%
 \contentsline {section}{\numberline {4.3}Arquitectura en el servidor}{22}{section.84}%
 \contentsline {paragraph}{ChatStats React Server.}{23}{figure.caption.85}%
@@ -89,7 +89,7 @@
 \contentsline {subparagraph}{Parseador de mensajes}{27}{lstnumber.100}%
 \contentsline {subparagraph}{Parseador de fecha y hora}{27}{lstnumber.100}%
 \contentsline {subparagraph}{Parseador de archivos multimedia}{27}{lstnumber.100}%
-\contentsline {subsection}{\numberline {4.4.2}Agregador}{28}{subsection.108}%
+\contentsline {subsection}{\numberline {4.4.2}Agregaci\IeC {\'o}n de datos}{28}{subsection.108}%
 \contentsline {paragraph}{Agregador por contacto}{28}{subsection.108}%
 \contentsline {paragraph}{Agregador por d\IeC {\'\i }a}{29}{lstnumber.114}%
 \contentsline {paragraph}{Agregador por hora}{29}{lstnumber.130}%
@@ -107,45 +107,44 @@
 \contentsline {paragraph}{Generador de estructuras de datos por d\IeC {\'\i }a, hora y mes}{32}{subsection.161}%
 \contentsline {paragraph}{Contador de palabras m\IeC {\'a}s repetidas}{33}{subsection.161}%
 \contentsline {paragraph}{Contador de emoticonos m\IeC {\'a}s usados}{33}{subsection.161}%
-\contentsline {subsection}{\numberline {4.4.4}Visualizador}{33}{subsection.162}%
-\contentsline {subsection}{\numberline {4.4.5}Exportador}{34}{subsection.178}%
+\contentsline {subsection}{\numberline {4.4.4}Visualizaci\IeC {\'o}n}{33}{subsection.162}%
+\contentsline {subsection}{\numberline {4.4.5}Exportaci\IeC {\'o}n}{34}{subsection.178}%
 \contentsline {subsubsection}{\numberline {4.4.5.1}Descargar visualizaciones}{34}{subsubsection.179}%
 \contentsline {subsubsection}{\numberline {4.4.5.2}Descargar resultados}{35}{subsubsection.180}%
 \contentsline {subsection}{\numberline {4.4.6}Tests unitarios}{35}{subsection.181}%
-\contentsline {chapter}{\numberline {5}Caso de estudio}{39}{chapter.182}%
-\contentsline {section}{\numberline {5.1}Introducci\IeC {\'o}n}{39}{section.183}%
-\contentsline {section}{\numberline {5.2}Instalar aplicaci\IeC {\'o}n en cliente}{39}{section.184}%
-\contentsline {section}{\numberline {5.3}Importar datos en el sistema}{40}{section.189}%
-\contentsline {section}{\numberline {5.4}Visualizaci\IeC {\'o}n de chat grupal e individual}{41}{section.194}%
-\contentsline {subsection}{\numberline {5.4.1}C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas}{41}{subsection.195}%
-\contentsline {subsection}{\numberline {5.4.2}Visualizaci\IeC {\'o}n de chat grupal e individual}{41}{subsection.199}%
-\contentsline {section}{\numberline {5.5}Exportar anal\IeC {\'\i }ticas}{45}{section.207}%
-\contentsline {chapter}{\numberline {6}Conclusiones y futuras l\IeC {\'\i }neas de trabajo}{47}{chapter.211}%
-\contentsline {section}{\numberline {6.1}Conclusiones}{47}{section.212}%
-\contentsline {section}{\numberline {6.2}Objetivos conseguidos}{48}{section.213}%
-\contentsline {paragraph}{Importar datos conversacionales de aplicaci\IeC {\'o}nes de mensajer\IeC {\'\i }a instant\IeC {\'a}nea.}{48}{section.213}%
-\contentsline {paragraph}{Selecci\IeC {\'o}n y c\IeC {\'a}lculo de estad\IeC {\'\i }sticas de conversaciones.}{48}{section.213}%
-\contentsline {paragraph}{Dise\IeC {\~n}o y desarrollo de las visualizaciones.}{48}{section.213}%
-\contentsline {paragraph}{Integraci\IeC {\'o}n multiplataforma.}{49}{section.213}%
-\contentsline {paragraph}{Aplicaci\IeC {\'o}n de t\IeC {\'e}cnicas de ingenier\IeC {\'\i }a de software.}{49}{section.213}%
-\contentsline {section}{\numberline {6.3}Futuras l\IeC {\'\i }neas de trabajo}{49}{section.214}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Impacto del proyecto}{\es@scroman {i}}{appendix.215}%
-\contentsline {section}{\numberline {A.1}Impacto social}{\es@scroman {i}}{section.216}%
-\contentsline {subsection}{\numberline {A.1.1}Introducci\IeC {\'o}n}{\es@scroman {i}}{subsection.217}%
-\contentsline {subsection}{\numberline {A.1.2}Descripci\IeC {\'o}n de impactos relevantes relacionados con el proyecto}{\es@scroman {i}}{subsection.218}%
-\contentsline {subsection}{\numberline {A.1.3}Conclusiones}{\es@scroman {ii}}{subsection.219}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {B}Presupuesto econ\IeC {\'o}mico}{\es@scroman {iii}}{appendix.220}%
-\contentsline {section}{\numberline {B.1}Costes}{\es@scroman {iii}}{section.221}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {C}C\IeC {\'o}digo}{\es@scroman {v}}{appendix.222}%
-\contentsline {section}{\numberline {C.1}Acceso al c\IeC {\'o}digo fuente}{\es@scroman {v}}{section.223}%
-\contentsline {section}{\numberline {C.2}Versi\IeC {\'o}n de entrega}{\es@scroman {v}}{section.224}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {D}Expresiones regulares}{\es@scroman {vii}}{appendix.226}%
-\contentsline {section}{\numberline {D.1}Grupos de captura}{\es@scroman {viii}}{section.229}%
-\contentsline {paragraph}{Grupo de captura 1: fecha}{\es@scroman {viii}}{lstnumber.231}%
-\contentsline {paragraph}{Grupo de captura 2: hora}{\es@scroman {viii}}{lstnumber.233}%
-\contentsline {paragraph}{Grupo de captura 3: contacto}{\es@scroman {ix}}{lstnumber.235}%
-\contentsline {paragraph}{Grupo de captura 4: mensaje}{\es@scroman {ix}}{lstnumber.237}%
-\contentsline {paragraph}{Look ahead o mirada hacia delante}{\es@scroman {ix}}{lstnumber.239}%
-\contentsline {paragraph}{Opciones}{\es@scroman {ix}}{lstnumber.241}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {E}Formato de mensajes exportados por Telegram}{\es@scroman {xi}}{appendix.244}%
-\contentsline {chapter}{Bibliography}{\es@scroman {xiii}}{section*.286}%
+\contentsline {chapter}{\numberline {5}Caso de estudio}{39}{chapter.183}%
+\contentsline {section}{\numberline {5.1}Introducci\IeC {\'o}n}{39}{section.184}%
+\contentsline {section}{\numberline {5.2}Instalar aplicaci\IeC {\'o}n en cliente}{39}{section.185}%
+\contentsline {section}{\numberline {5.3}Importar datos en el sistema}{40}{section.190}%
+\contentsline {section}{\numberline {5.4}Visualizaci\IeC {\'o}n de chat grupal e individual}{41}{section.195}%
+\contentsline {subsection}{\numberline {5.4.1}C\IeC {\'a}lculo de las estad\IeC {\'\i }sticas}{41}{subsection.196}%
+\contentsline {subsection}{\numberline {5.4.2}Visualizaci\IeC {\'o}n de chat grupal e individual}{41}{subsection.200}%
+\contentsline {section}{\numberline {5.5}Exportar anal\IeC {\'\i }ticas}{45}{section.208}%
+\contentsline {chapter}{\numberline {6}Conclusiones y futuras l\IeC {\'\i }neas de trabajo}{47}{chapter.212}%
+\contentsline {section}{\numberline {6.1}Conclusiones}{47}{section.213}%
+\contentsline {section}{\numberline {6.2}Objetivos conseguidos}{48}{section.214}%
+\contentsline {paragraph}{Importar datos conversacionales de aplicaci\IeC {\'o}nes de mensajer\IeC {\'\i }a instant\IeC {\'a}nea.}{48}{section.214}%
+\contentsline {paragraph}{Selecci\IeC {\'o}n y c\IeC {\'a}lculo de estad\IeC {\'\i }sticas de conversaciones.}{48}{section.214}%
+\contentsline {paragraph}{Dise\IeC {\~n}o y desarrollo de las visualizaciones.}{48}{section.214}%
+\contentsline {paragraph}{Integraci\IeC {\'o}n multiplataforma.}{49}{section.214}%
+\contentsline {paragraph}{Aplicaci\IeC {\'o}n de t\IeC {\'e}cnicas de ingenier\IeC {\'\i }a de software.}{49}{section.214}%
+\contentsline {section}{\numberline {6.3}Futuras l\IeC {\'\i }neas de trabajo}{49}{section.215}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Impacto del proyecto}{\es@scroman {i}}{appendix.216}%
+\contentsline {section}{\numberline {A.1}Impacto social}{\es@scroman {i}}{section.217}%
+\contentsline {subsection}{\numberline {A.1.1}Introducci\IeC {\'o}n}{\es@scroman {i}}{subsection.218}%
+\contentsline {subsection}{\numberline {A.1.2}Descripci\IeC {\'o}n de impactos relevantes relacionados con el proyecto}{\es@scroman {i}}{subsection.219}%
+\contentsline {subsection}{\numberline {A.1.3}Conclusiones}{\es@scroman {ii}}{subsection.220}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {B}Presupuesto econ\IeC {\'o}mico}{\es@scroman {iii}}{appendix.221}%
+\contentsline {section}{\numberline {B.1}Costes}{\es@scroman {iii}}{section.222}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {C}C\IeC {\'o}digo}{\es@scroman {v}}{appendix.223}%
+\contentsline {section}{\numberline {C.1}Acceso al c\IeC {\'o}digo fuente}{\es@scroman {v}}{section.224}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {D}Expresiones regulares}{\es@scroman {vii}}{appendix.225}%
+\contentsline {section}{\numberline {D.1}Grupos de captura}{\es@scroman {viii}}{section.228}%
+\contentsline {paragraph}{Grupo de captura 1: fecha}{\es@scroman {viii}}{lstnumber.230}%
+\contentsline {paragraph}{Grupo de captura 2: hora}{\es@scroman {viii}}{lstnumber.232}%
+\contentsline {paragraph}{Grupo de captura 3: contacto}{\es@scroman {ix}}{lstnumber.234}%
+\contentsline {paragraph}{Grupo de captura 4: mensaje}{\es@scroman {ix}}{lstnumber.236}%
+\contentsline {paragraph}{Look ahead o mirada hacia delante}{\es@scroman {ix}}{lstnumber.238}%
+\contentsline {paragraph}{Opciones}{\es@scroman {ix}}{lstnumber.240}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {E}Formato de mensajes exportados por Telegram}{\es@scroman {xi}}{appendix.243}%
+\contentsline {chapter}{Bibliography}{\es@scroman {xiii}}{section*.285}%

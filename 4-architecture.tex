@@ -216,7 +216,7 @@ Si el fichero no incluye estos metadatos, cada vez que un mensaje sea contenido 
 	17/07/2022, 01:33 - Juan Pedro: <Media omitted>
 \end{lstlisting}
 
-\subsection{Agregador}
+\subsection{Agregación de datos}
 
 Los mensajes se encuentran segregados en una lista, por lo que a continuación, el módulo de agregador se encargará de agregar los mensajes en diferentes grupos. En el código los hemos llamado polarizadores. Se describen los distintos submódulos a continuación:
 
@@ -389,7 +389,7 @@ Este módulo aplica una expresión regular unicode a todos los mensajes, selecci
 
 Se elige calcular y mostrar esta visualización puesto que los emoticonos constituyen en un chat la forma más similar a la expresión no verbal.
 
-\subsection{Visualizador}
+\subsection{Visualización}
 
 El módulo visualizador está formado por un conjunto de componentes visuales reutilizables para distintos tipos de estadísticas, independientemente del formato de las mismas. Para ello, se desarrolla la siguiente estructura, común a todos los componentes:
 
@@ -443,7 +443,7 @@ Para los gráficos circulares y de barras, se elige la librería \textit{ChartJS
 Por último, como alternativa a los gráficos de berras, se ha planteado también usar un gráfico de araña o radar, pero dicha opción se descarta al observar el solapamiento que tenía lugar con varios contactos.
 
 
-\subsection{Exportador}
+\subsection{Exportación}
 
 Este módulo permite al usuario exportar tanto la visualización a modo de captura de pantalla, así como la exportación de las métricas calculadas para su uso personal.
 
@@ -479,3 +479,11 @@ Para el desarrollo de los mismos, se utiliza la librería \textit{Jest}, que per
 
 Para generar los distintos datos de entrada se proveen pequeños archivos de chat maquetados para tipo de fichero. Al mismo tiempo, para los datos de entrada a los distintos componentes lógicos que se prueban, se ha utilizado la librería \textit{faker}, que permite la generación de datos maquetados como nombres, fechas, frases, párrafos y otros; lo cual nos da la posibilidad de generar mensajes al vuelo con la estructura de datos deseada.
 
+A continuación se muestra la ejecución de los tests unitarios:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/tests.png}
+	\caption{Ejecución de tests unitarios}
+	\label{fig:chap4:architecture_tests}
+\end{figure}
