@@ -197,7 +197,7 @@ Podemos observar que, en el caso de WhatsApp, ambos mensajes se componen de la f
 
 Este submódulo utiliza la librería \textit{momentjs} para parsear los posibles distintos formatos de fecha que utilizan Telegram y WhatsApp en sus cadenas de caracteres. Además, considera el \textit{locale} del cliente, invirtiendo mes y día para el caso \textit{en\_US}.
 
-\subparagraph{Parser de archivos multimedia} Este componente es escribir el tipo de contenido en la clave \textit{``media\_type''} del objeto mensaje expuesto anteriormente, buscando la extensión del archivo adjunto.
+\subparagraph{Parseador de archivos multimedia} El objetivo de este componente es escribir el tipo de contenido en la clave \textit{``media\_type''} del objeto mensaje expuesto anteriormente, buscando la extensión del archivo adjunto.
 
 Se indican a continuación mensajes de ejemplo para cada tipo de archivo adjunto, únicamente para Android:
 
@@ -236,7 +236,9 @@ El resultado de este submódulo será un objeto \acrshort{json} con una clave po
 
 donde los array de mensajes contienen objetos con la estructura de datos común mencionada en el módulo anterior,  \autoref{chap:architecture_ingesta}.
 
-\subsubsection{Agregador por día}
+Cabe anotar que este submódulo está desarrollado en Rust, haciendo uso de la tecnología \acrfull{wasm}; puesto tras medir los tiempos de ejecución de las distintas funciones, se ha comprobado que este era el mayor. Además, sirve como parámetro de entrada para la mayoría de los agregadores que explicaremos a continuación. Se utiliza la librería \textit{``wasm-pack''} de Rust, que genera automáticamente el paquete JavaScript del que hará uso nuestra aplicación en React. Este paquete, una vez construido, exporta las funciones públicas que estén decoradas para su uso en \acrshort{wasm}. Estas funciones enlazan a un binario que \textit{``wasm-pack''} construye también por nosotros.
+
+\paragraph{Agregador por día}\mbox{}\\
 
 Este agregador toma como entrada la salida del submódulo anterior: los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por día de la semana: de lunes a domingo. Se usará el nombre del día de la semana como clave anidada.
 
@@ -266,7 +268,7 @@ El objetivo de esta estructura de datos es visualizar la distribución de los me
 	Se deja para futuras líneas un gráfico en el que se pueda elegir el año a analizar, o un scroll vertical por años.
 \end{comment}
 
-\subsubsection{Agregador por hora}
+\paragraph{Agregador por hora}\mbox{}\\
 
 Este agregador toma también como entrada los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por hora del día, usando la hora en formato 24 horas como clave anidada de agregación: de 00 a 23 horas.
 
@@ -292,7 +294,7 @@ El resultado son objetos con la siguiente estructura:
 
 El objetivo de esta estructura de datos es visualizar la distribución de los mensajes a lo largo del día, en media.
 
-\subsubsection{Agregador por mes}
+\paragraph{Agregador por mes}\mbox{}\\
 
 Este agregador toma también como entrada los mensajes agregados por contacto. Con ello se procede a agregarlos, además, por MM/YYYY, por lo que deja de tratarse de un agregador acotado: pueden haber tantas claves anidadas como meses se haya hablado.
 
@@ -316,184 +318,130 @@ El resultado son objetos con la siguiente estructura:
 
 El objetivo de esta estructura de datos es visualizar la distribución de los mensajes a lo largo del tiempo, con una agregación mensual.
 
-\subsubsection{Agregador por conversación}
+\paragraph{Agregador por conversación}\mbox{}\\
 
 Este submódulo analiza las diferencias de tiempos entre los mensajes, categorizándolos como inicio de conversación si son el primer mensaje en las últimas 5 horas, o como respuesta si se trata de un intervalo de tiempo menor. Esto nos permitirá calcular cuántas conversaciones ha iniciado cada contacto, así como el tiempo de respuesta medio de cada uno; módulos que se verán más adelante.
 
 Aunque un sesgo temporal no es una solución perfecta, acierta gran parte de las veces sin necesitar gran capacidad de cómputo.
 
 \subsection{Cálculo de métricas}
+\label{chap:architecture_metrics}
 
-Este módulo prepara los datos para ser representados por la librería de visualización elegida: \textit{ChartJS}.  Esta librería ha sido elegida por su alta actividad de contribuciones al proyecto, que es libre y cuenta con 12 mil estrellas en GitHub. Además, permite alta extensibilidad mediante plugins, de los que hacemos uso, por ejemplo, para mostrar las etiquetas de los datos.
+Este módulo prepara analiza y extrae los datos para ser representados por los componentes del módulo de visualización, que sigue a este. No se realizarán mayores detalles en la implementación, puesto que se han utilizado funciones nativas de JavaScript para su implementación, que puede verse en el código del \autoref{chap:code}. 
 
-Cada módulo aquí desarrollado realiza el cálculo de una métrica, cuyo resultado pasa por una función que adapta el contenido a la estructura solicitada por \textit{ChartJS}. \textit{ChartJS} nos permite un único formato de entrada para los datos, permitiéndonos elegir el tipo de gráfico de forma independiente a dichos datos. Esta arquitectura nos permite añadir más módulos posteriormente; realizando el cálculo de la métrica a mostrar y pasándolo por la función que estandariza los datos para \textit{ChartJS}.
+Cabe destacar que, una vez calculadas las métricas, estas pasan al estado local de la aplicación, permitiendo desencadenar acciones en la interfaz de usuario, tales como la representación visual de las métricas por medio del módulo que sigue a este.
 
-Todos los submódulos que utilizan \textit{ChartJS} adaptan el tamaño del gráfico al número de contactos que hay en el grupo de forma \textit{responsive}. También permiten la interacción con el mismo, pudiendo eliminar contactos de la representación haciendo click sobre el nombre de los mismos en la leyenda.
+Se describen a continuación las métricas elegidas, así como el razonamiento de su elección:
 
-Además, también se procesan datos para otras librerías de visualización, como \textit{react-wordcloud}, para las nubes de palabras o \textit{word clouds} y nubes de emoticonos.
+\paragraph{Contador de mensajes}
 
-\subsubsection{Contador de mensajes}
+Este submódulo cuenta el número de mensajes enviado por cada contacto. Se ha optado por calcular esta métrica puesto que puede ayudar a observar diferencias drásticas en la cantidad de mensajes que aporta cada contacto.
 
-Este submódulo cuenta el número de mensajes enviado por cada contacto. Para chats grupales, usa la librería \textit{ChartJS}, mientras que para chat individuales, únicamente se exponen los números de ambas partes directamente.
+\paragraph{Contador de palabras}
 
-\begin{figure}[H]
-	\centering
-	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/message_count_individual.png} }}
-	\qquad
-	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/message_count.png} }}
-	\caption{Contador de mensajes}
-	\label{fig:chap4:message_count}
-\end{figure}
+Este submódulo cuenta las palabras que hay en los mensajes de cada contacto y calcula la suma total de las mismas, obteniendo el número de palabras totales enviadas por cada contacto.
 
-Se ha optado por calcular esta métrica puesto que puede ayudar a observar diferencias drásticas en la cantidad de texto que aporta cada contacto.
-
-\subsubsection{Contador de palabras}
-
-Este submódulo cuenta las palabras que hay en los mensajes de cada contacto y calcula la suma total de las mismas, obteniendo el número de palabras totales enviadas por cada contacto. Para chats grupales, usa la librería \textit{ChartJS}, mientras que para chat individuales, únicamente se exponen los números de ambas partes directamente.
-
-\begin{figure}[H]
-	\centering
-	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/word_count_individual.png} }}
-	\qquad
-	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/word_count.png} }}
-	\caption{Contador de palabras}
-	\label{fig:chap4:word_count}
-\end{figure}
-
-\subsubsection{Contador de caracteres}
+\paragraph{Contador de caracteres}
 
 Este submódulo cuenta los caracteres que hay en los mensajes de cada contacto y calcula la suma total de los mismos, obteniendo el número de caracteres totales enviados por cada contacto. Aunque suele indicar resultados similares al módulo anterior, en algunas ocasiones es distinto, por lo que se ha decidido incluir también.
 
-\begin{figure}[H]
-	\centering
-	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/char_count_individual.png} }}
-	\qquad
-	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/char_count.png} }}
-	\caption{Contador de caracteres}
-	\label{fig:chap4:char_count}
-\end{figure}
-
-De nuevo, para chats grupales, usa la librería \textit{ChartJS}, mientras que para chat individuales, únicamente se exponen los números de ambas partes directamente.
-
-\subsubsection{Media de palabras por mensaje}
+\paragraph{Media de palabras por mensaje}
 
 Este submódulo calcula y muestra el número medio de palabras por mensaje para cada contacto. Esta métrica puede ayudar, junto con el número de mensajes totales, a saber si un contacto tiende a mandar más mensajes con menor número de palabras, o menos mensajes con más palabras.
 
-\begin{figure}[H]
-	\centering
-	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/word_avg_individual.png} }}
-	\qquad
-	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/word_avg.png} }}
-	\caption{Media de palabras por mensaje}
-	\label{fig:chap4:word_avg}
-\end{figure}
 
-\subsubsection{Media de caracteres por mensaje}
+\paragraph{Media de caracteres por mensaje}
 
 Este submódulo calcula y muestra el número medio de caracteres por mensaje para cada contacto. Aunque suele indicar resultados similares al módulo anterior, en algunas ocasiones puede resaltar personas que tienden a usar palabras más largas.
 
-\begin{figure}[H]
-	\centering
-	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/char_avg_individual.png} }}
-	\qquad
-	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/char_avg.png} }}
-	\caption{Media de caracteres por mensaje}
-	\label{fig:chap4:char_avg}
-\end{figure}
 
-\subsubsection{Número de conversaciones iniciadas}
+\paragraph{Número de conversaciones iniciadas}
 
 Este submódulo calcula el número de veces que cada contacto ha iniciado la conversación, con los criterios y datos obtenidos del módulo ``Agregador por conversación''. Se ha decidido calcular esta métrica puesto que es una buena forma de medir la iniciativa de una persona, así como su interés en el grupo o persona individual.
 
-\begin{figure}[H]
-	\centering
-	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/conversations_started_individual.png} }}
-	\qquad
-	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/conversations_started.png} }}
-	\caption{Conversaciones iniciadas por cada contacto}
-	\label{fig:chap4:conversations_started}
-\end{figure}
 
-En este ejemplo, podemos ver cómo Alejandro, el presidente de la asociación, suele tomar la iniciativa y comenzar las conversaciones.
+\paragraph{Velocidad media de respuesta}
+
+Este submódulo calcula la velocidad media de respuesta de cada contacto, con los criterios y datos obtenidos del submódulo ``Agregador por conversación''. Se ha decidido calcular esta métrica puesto que es una buena forma de medir la atención a la aplicación de mensajería instantánea, así como la importancia que le da al grupo.
+
+Se eliminan todos los  mensajes desde que un usuario comienza a responder hasta que termina, para no tenerlos en cuenta en el cálculo del tiempo de respuesta (puesto que se responde a sí mismo a partir del primer mensaje).
 
 
-\subsubsection{Velocidad media de respuesta}
-
-Este submódulo calcula la velocidad media de respuesta de cada contacto, con los criterios y datos obtenidos del módulo ``Agregador por conversación''. Se ha decidido calcular esta métrica puesto que es una buena forma de medir la atención a la aplicación de mensajería instantánea, así como la importancia que le da al grupo.
-
-\begin{figure}[H]
-	\centering
-	\subfloat[\centering Chat individual]{{\includegraphics[width=6cm]{img/avg_response_time_individual.png} }}
-	\qquad
-	\subfloat[\centering Chat grupal]{{\includegraphics[width=6cm]{img/avg_response_time.png} }}
-	\caption{Tiempo medio de respuesta}
-	\label{fig:chap4:avg_response_time}
-\end{figure}
-
-Añadiendo esta figura a la anterior, podemos ver cómo Martín inicia pocas conversaciones y, además, suele tardar bastante en responder. Esto puede sugerir que está menos involucrado en el grupo.
-
-
-\subsubsection{Contador de multimedia}
+\paragraph{Contador de multimedia}
 
 En caso de que existan objetos \acrshort{json} con el campo ``\textit{media\_type}'' distinto de \textit{undefined}, este submódulo cuenta cuántos archivos multimedia de cada tipo ha mandado cada contacto.
 
+\paragraph{Generador de estructuras de datos por día, hora y mes}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{img/media_count_individual.png}
-	\caption{Contador de multimedia para chats individuales}
-	\label{fig:chap4:media_count_individual}
-\end{figure}
+Se elige calcular y mostrar distribuciones en los meses puesto que ayudan a observar la evolución en el tiempo de la cantidad de mensajes intercambiados, así como la distribución en los días de la semana ayuda a ver los días más activos en un periodo de una semana. Por último, la distribución en las 24 horas del día ayuda a analizar las horas pico de conversación, así como las horas de inicio y final del día para cada contacto.
 
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\textwidth]{img/media_count.png}
-	\caption{Contador de multimedia para chats grupales}
-	\label{fig:chap4:media_count}
-\end{figure}
-
-\subsubsection{Generador de estructuras de datos por día, hora y mes}
-
-Para el gráfico de barras con el número de mensajes en el tiempo, \textit{ChartJS} necesita una estructura de datos para mensajes por día, siendo los días la variable independiente y el número de mensajes la variable dependiente.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{img/time_distributions.png}
-	\caption{Distribuciones en el tiempo}
-	\label{fig:chap4:time_distributions}
-\end{figure}
-
-Se elige calcular y mostrar estas distribuciones puesto que ayudan a observar la evolución en el tiempo de la cantidad de mensajes intercambiados, así como los días de la semana más activos. Por ejemplo una pareja que pasa los fines de semana juntos tendrá menos mensajes los fines de semana. Por último, la distribución en las 24 horas del día ayuda a analizar las horas pico de conversación, así como las horas de final e inicio del día para cada contacto.
-
-Para la distribución por horas en el día, se ha planteado también usar un gráfico de araña o radar, pero dicha opción se descartó al observar el solapamiento que tenía lugar con varios contactos.
-
-En la figura podemos observar cómo el contacto Jaime comienza a mandar mensajes a las 9 de la mañana, mientras que James suele comenzar 2 horas antes: a las 7 de la mañana. Esto sugiere que James comienza antes el día, o Jaime no utiliza el móvil hasta las 9 de la mañana.
-
-\subsubsection{Contador de palabras más repetidas}
+\paragraph{Contador de palabras más repetidas}
 
 Este submódulo procesa todas las palabras de los mensajes, elimina las palabras más comunes del español y el inglés, así como otros mensajes que WhatsApp añade, como \textit{Media ommited} o \textit{This message has been deleted}.
 
 Las listas de palabras más comunes del español e inglés se han recopilado de distintas fuentes, combinado y eliminado repeticiones.
 
-A la salida de este módulo, se muestra un diccionario con las palabras más repetidas y el número de veces que aparece cada una; información de la que hará uso la librería \textit{react-wordcloud}. Esta información resulta útil para resaltar los temas principales tratados en el chat.
+Esta información resulta útil para resaltar los temas principales tratados en el chat.
 
-Puede observarse en la \autoref{fig:chap4:word_emoji_cloud}
+\paragraph{Contador de emoticonos más usados}
 
-\subsubsection{Contador de emoticonos más usados}
+Este módulo aplica una expresión regular unicode a todos los mensajes, seleccionando los emoticonos y contando el número de veces que aparecen.
 
-Este módulo aplica una expresión regular unicode a todos los mensajes, seleccionando los emoticonos y contando el número de veces que aparecen. Posteriormente otra nube de palabras hace uso de esta información por medio de la librería \textit{react-wordcloud}.
+Se elige calcular y mostrar esta visualización puesto que los emoticonos constituyen en un chat la forma más similar a la expresión no verbal.
+
+\subsection{Visualizador}
+
+El módulo visualizador está formado por un conjunto de componentes visuales reutilizables para distintos tipos de estadísticas, independientemente del formato de las mismas. Para ello, se desarrolla la siguiente estructura, común a todos los componentes:
 
 \begin{figure}[H]
 	\centering
+	\includegraphics[width=0.5\textwidth]{img/visualizadores.png}
+	\caption{Estructura de un componente de visualización}
+	\label{fig:chap4:visualization}
+\end{figure}
+
+donde el adaptador de métricas a datos representables, asegura que tanto los gráficos circulares como los de barras e individuales, tengan consistencia en los colores utilizados. Además, este adaptador permite eliminar la lógica del cálculo de métricas y del componente de visualización, atomizando, en la medida de lo posible, el código y la arquitectura del proyecto. La estructura de datos que ofrece el módulo a la salida es la siguiente:
+
+\begin{lstlisting}[language=JavaScript]
+	{
+		"labels": ["etiqueta 1", "etiqueta 2", ["valores anidados"]]{
+		"datasets": ["valor 1", "valor 2", ["valores anidados"]],
+		"backgroundColors": ["color 1", "color 2", ["valores anidados"]],
+		"fillColors": ["color 1", "color 2", ["valores anidados"]]
+	}
+\end{lstlisting}
+
+donde los valores anidados permiten introducir múltiples datos para una única etiqueta.
+
+Los componentes esperan un título y una descripción, un set de datos como el mostrado anteriormente y el máximo y mínimo de los datos representados aportados. Con estos últimos datos, en caso de estar presentes, el componente muestra una frase de conclusión sobre el gráfico mostrado.
+
+Con ello, se han desarrollado los siguientes componentes que se muestran en la \autoref{fig:chap4:visualization_examples}.
+
+
+\begin{figure}[h]
+	\centering
+	\subfloat[\centering Gráfico circular]{{\includegraphics[width=6cm]{img/circular_graph.png} }}
+	\qquad
+	\subfloat[\centering Gráfico de barras vertical]{{\includegraphics[width=6cm]{img/bar_graph_1.png} }}
+	\qquad
+	
+	\subfloat[\centering Gráfico de barras horizontal]{{\includegraphics[width=6cm]{img/bar_graph_2.png} }}
+	\qquad
+	\subfloat[\centering Gráfico individual]{{\includegraphics[width=6cm]{img/individual_graph.png} }}
+	\qquad
+	
+	
 	\subfloat[\centering Nube de palabras]{{\includegraphics[width=6cm]{img/word_cloud.png} }}
 	\qquad
 	\subfloat[\centering Nube de emoticonos]{{\includegraphics[width=6cm]{img/emoji_cloud.png} }}
-	\caption{Nube de palabras y emoticonos}
-	\label{fig:chap4:word_emoji_cloud}
+	\caption{Ejemplos de los componentes de visualización}
+	\label{fig:chap4:visualization_examples}
 \end{figure}
 
-Se elige calcular y mostrar esta visualización puesto que los emoticonos constituyen en un chat la forma más similar a la expresión no verbal.
+Para los gráficos circulares y de barras, se elige la librería \textit{ChartJS}, puesto que cuenta con alta actividad de contribuciones al proyecto, es libre y cuenta con 12 mil estrellas en GitHub. Además, permite alta extensibilidad mediante plugins, de los que hacemos uso, por ejemplo, para mostrar las etiquetas de los datos. Los componentes que uan esta librería adaptan el tamaño del gráfico al número de contactos que hay en el grupo de forma \textit{responsive}. También permiten la interacción con el mismo, pudiendo eliminar contactos de la representación haciendo click sobre el nombre de los mismos en la leyenda.
+
+Por último, como alternativa a los gráficos de berras, se ha planteado también usar un gráfico de araña o radar, pero dicha opción se descarta al observar el solapamiento que tenía lugar con varios contactos.
+
 
 \subsection{Exportador}
 
@@ -515,11 +463,19 @@ Del mismo modo que el submódulo anterior, este módulo permite al usuario desca
 
 Para ello, el submódulo recoge todo el contenido alojado en el estado local del cliente y crea un enlace local para la descarga de los datos. Dicho enlace está compuesto por el tipo de contenido (\textit{Content-Type}) \textit{text/json} seguido del contenido del estado local (en \acrshort{json}) volcado a una cadena de caracteres y codificado para \acrshort{uri}s.
 
-\todi{Enlazar el apartado con la lista de métricas que se exportan (más arriba)}
+Pueden verse las métricas que se descargan en la \autoref{chap:architecture_metrics}.
 
 
 
-\section{Conclusión}
+\subsection{Tests unitarios}
 
-Con todo, si en un futuro se quiere extender la arquitectura propuesta a un modelo de cliente-servidor, siempre se puede añadir un tercer contenedor en la última capa de la \autoref{chap:architecture:server} que implemente lógica adicional. Sería también necesaria cierta modificación en el código del cliente para implementar peticiones a este nuevo servicio.
+Los tests unitarios son una parte esencial del proceso de desarrollo de software, ya que ayudan a garantizar que el sistema funciona correctamente y que se cumplen los requisitos funcionales. En nuestro proyecto, hemos desarrollado tests unitarios para asegurarnos de que cada los módulos y submódulos de la aplicación cumplen con lo que se espera de ellos..
+
+Además, los tests unitarios nos ayudan a detectar errores temprano en el proceso de desarrollo, lo que nos permite corregirlos antes de que el sistema sea puesto en producción. También nos permiten validar que la funcionalidad no se ven afectadas cuando se realizan cambios en el código.
+
+En este proyecto, se ha alcanzado una cobertura del 74\% en los tests unitarios, lo que significa que el 74\% del código ha sido cubierto por pruebas. Aunque no se alcanza el 100\% de cobertura, se han desarrollado para los módulos más importantes, como ``Ingesta de datos'', ``Agregadores'' y cálculo de la mayoría de métricas. No se han realizado tests para los componentes de visualización ni el módulo ``Exportador'', puesto que suponen una interacción con el \textit{front-end} y se dejan para futuras líneas de trabajo.
+
+Para el desarrollo de los mismos, se utiliza la librería \textit{Jest}, que permite alta integración con la estructura del proyecto de React, así como asienta las bases para futuras pruebas de componentes visuales que interactúen con los mismos, así como con las rutas de la aplicación.
+
+Para generar los distintos datos de entrada se proveen pequeños archivos de chat maquetados para tipo de fichero. Al mismo tiempo, para los datos de entrada a los distintos componentes lógicos que se prueban, se ha utilizado la librería \textit{faker}, que permite la generación de datos maquetados como nombres, fechas, frases, párrafos y otros; lo cual nos da la posibilidad de generar mensajes al vuelo con la estructura de datos deseada.
 
