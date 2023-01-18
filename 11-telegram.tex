@@ -1,0 +1,47 @@
+\chapter{Formato de mensajes exportados por Telegram}
+\label{chap:telegram_json}
+
+Se expone a continuación un breve ejemplo del formato utilizado por Telegram para la exportación de sus chats, que es el mismo para chats individuales y grupales.
+
+\begin{lstlisting}[language=JavaScript]
+	{
+		"name": "group_or_contact_name",
+		"type": "private_group_or_private_chat",
+		"id": 00000000,
+		"messages": [
+		...
+		{
+			"id": 11111,
+			"type": "message_service",
+			"date": "2019-04-02T20:53:14",
+			"date_unixtime": "1554231194",
+			"from": "Alice",
+			"from_id": "contact_user_id",
+			"text": "actual_body_message",
+			"text_entities": [
+			{
+				"type": "plain_link_or_document",
+				"text": "actual_body_message"
+			}
+			]
+		},
+		{
+			"id": 22222,
+			"type": "message",
+			"date": "2019-05-29T23:46:00",
+			"date_unixtime": "1559166360",
+			"from": "Bob",
+			"from_id": "contact_user_id",
+			"reply_to_message_id": 59386,
+			"file": "stickers/sticker.webp",
+			"thumbnail": "stickers/sticker.webp_thumb.jpg",
+			"media_type": "sticker",
+			"sticker_emoji": "actual_unicode_emoji",
+			"width": 512,
+			"height": 341,
+			"text": "",
+			"text_entities": []
+		}, ...
+		]
+	}
+\end{lstlisting}

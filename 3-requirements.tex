@@ -2,16 +2,23 @@
 \label{chap:use-case}
 
 \section{Introducción}
-\label{sec:introduction}
+\label{chap3:introduction}
 
-El siguiente diagrama UML representa un resumen visual de los casos de uso que se describirán a continuación: 
+Una de las tareas más difíciles en la construcción de un sistema de software es decidir precisamente qué construir. En este capítulo cubriremos la parte del proyecto relacionada con la Ingeniería de Requisitos, aunque únicamente los procesos de captura y análisis de requisitos. Se dejan fuera del capítulo los procesos que continúan; que son: validación, negociación, especificación y gestión. Para ello, hemos optado por una aproximación basada en el modelado organizacional, específicamente la basada en \acrfull{uml}.
 
-\begin{figure}[h]
+La captura de casos de uso en \acrshort{uml} involucra la creación de una representación visual de las interacciones entre los actores y el sistema que se modela. También provee una vista clara y comprensiva de la funcionalidad del sistema, así como ayuda a la identificación de requisitos y limitaciones del sistema en el contexto del dominio. Se expone un diagrama de casos de uso en la \autoref{fig:chap3:uml}.
+
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/uml.png}
 	\caption{Diagrama \acrshort{uml}}
 	\label{fig:chap3:uml}
 \end{figure}
+
+
+Finalmente, se expondrá la especificación suplementaria que se ha detectado, tal como  las reglas de dominio que se imponen al campo de uso de la herramienta, así como los requisitos no funcionales que se esperan de una aplicación web en el siglo XXI y restricciones impuestas por sistemas externos al nuestro.
+
 
 \begin{comment}
 	Debería crear un caso de uso para chats individuales y otro para chats grupales?
@@ -23,9 +30,13 @@ El siguiente diagrama UML representa un resumen visual de los casos de uso que s
 \section{Casos de uso}
 \label{sec:use-cases}
 
+En \acrshort{uml}, los requisitos funcionales se representan como casos de uso. Un caso de uso provee una representación de una funcionalidad específica del sistema y la interacción entre los actores y el sistema. Describen una secuencia de acciones que el usuario o actor deben realizar para conseguir un objetivo o resultado. En esta sección cubriremos los casos de uso expuestos en la figura anterior, así como los actores que aparecen en la misma.
+
 
 \subsection{Actores del sistema}
 \label{subsec:system-actors}
+
+\todi{Si falta espacio, meter esto a párrafos}
 
 Usuario de WhatsApp o Telegram, datos conversacionales, aplicación de WhatsApp, aplicación de Telegram para escritorio y soporte PWA del navegador.
 

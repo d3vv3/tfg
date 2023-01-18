@@ -6,9 +6,13 @@ En este capítulo se exponen las conclusiones extraídas del proyecto, así como
 \section{Conclusiones}
 \label{sec:conclusions}
 
-Académicamente, este proyecto ha desarrollado una doble función: la de proyecto personal y, la de trabajo de fin de grado.
+Este proyecto ha desarrollado una doble función: personalmente, el desarrollo de un primer proyecto para el mundo real, con casos de uso reales; académicamente me ha permitido profundizar en las técnicas y metodologías de desarrollo de software, concluyendo mi trabajo de fin de grado.
 
-La motivación principal del proyecto era desarrollar una aplicación web para ayudar a analizar conversaciones de WhatsApp y Telegram, permitiendo detectar problemas y tomar acciones para mejorar. Personalmente, este proyecto ha servido para mejorar amistades y relaciones de pareja, así como ayudado a comprender mejor el comportamiento de mis grupos de amigos y asociaciones de estudiantes.
+La motivación principal del proyecto era desarrollar una aplicación web para ayudar a analizar conversaciones de WhatsApp y Telegram, permitiendo detectar problemas y tomar acciones para mejorar.
+
+En un primer paso, definimos varios casos de uso para poder definir correctamente nuestro sistema, así como recogimos los requisitos no funcionales del mismo. Con todo lo anterior definido, comenzamos el diseño de la arquitectura del sistema, donde presentamos a grandes rasgos los módulos que la aplicación debía tener. Salvando detalles de implementación, que pueden observarse en el \autoref{chap:code}, hemos encontrado dificultades técnicas como el aprendizaje de Rust para el desarrollo de módulos en \acrfull{wasm}, así como la integración de \acrshort{wasm} con el código en JavaScript. Durante esta fase de desarrollo, hemos implementado buenas prácticas de ingeniería de software, como el control de versiones, la escritura de software modular y reutilizable, y tests. Finalmente, se ha expuesto el caso de uso del sistema completo, comprobando el cumplimiento de los requisitos funcionales y no funcionales.
+
+Personalmente, como usuario de la aplicación, este proyecto ha servido para mejorar amistades y relaciones de pareja, así como ayudado a comprender mejor el comportamiento de mis grupos de amigos y seres queridos.
 
 \begin{comment}
 	
@@ -34,32 +38,36 @@ In general, the developed methods in this Project are built in a way that allows
 \section{Objetivos conseguidos}
 \label{sec:achieved-goals}
 
-Finalmente, hemos logrado alcanzar todos los objetivos propuestos en el \autoref{chap:introduction}:
+Finalmente, hemos logrado alcanzar todos los objetivos propuestos en el \autoref{chap:introduction}. Se exponen a continuación en mayor detalle:
 
-\begin{itemize}
-	
-	\item Importar datos conversacionales de aplicaciónes de mensajería instantánea.
-	\item Selección y cálculo de estadísticas de conversaciones.
-	\item Diseño y desarrollo de las visualizaciones.
-	\item Integración multiplataforma.
-	\item Aplicación de técnicas de ingeniería de software.
-	
-\end{itemize}
+\paragraph{Importar datos conversacionales de aplicaciónes de mensajería instantánea.} Se ha desarrollado un módulo que permite importar datos conversacionales de distintas aplicaciones de mensajería instantánea; particularmente WhatsApp y Telegram, asentando las bases para la inclusión de más aplicaciones dentro del mismo módulo. Además, se pueden importar datos conversacionales de chats grupales e individuales en ambas aplicaciones.
+
+\paragraph{Selección y cálculo de estadísticas de conversaciones.} Se han seleccionado e implementado el cálculo de métricas tales como el número de mensajes enviados por cada contacto, número de palabras y caracterers, así como media de palabras y caracteres por mensaje. También se han incluido métricas del tiempo medio de respuesta de cada contacto y número de conversaciones que ha iniciado; así como distribuciones de los mensajes por meses, días de la semana y horas del día, que permiten ver al usuario la evolución de la conversación en el tiempo y el comportamiento semanal y diario de sus chats. Finalmente se incluyen métricas de las palabras y los emoticonos más utilizados.
+
+\paragraph{Diseño y desarrollo de las visualizaciones.} Se han diseñado y desarrollado visualizaciones interactivas para mostrar las métricas mencionadas en el objetivo anterior mediante un diseño reutilizable. Tales visualizaciones incluyen gráficos circulares, gráficos de barras, nubes de palabras y frases con las estadísticas resaltadas.
+
+\paragraph{Integración multiplataforma.} Hemos considerado una integración absoluta con todos los dispositivos con navegador web, permitiendo el uso en dispositivos móviles, tabletas y ordenadores; permitiendo la instalación como \acrshort{pwa} en los navegadores compatibles. Con esto ofrecemos una sensación de mayor integración con el dispositivo, así como la capacidad de funcionamiento sin conexión a Internet. Todo esto es posible gracias a un diseño responsivo.
+
+\paragraph{Aplicación de técnicas de ingeniería de software.} Durante todo el proyecto se han escrito numerosos tests para comprobar el correcto funcionamiento del código, así como se ha usado un sistema de control de versiones durante la fase de desarrollo. También ha constituido la consulta exhaustiva de la documentación de numerosas librerías de JavaScript, tales como React.
+
+
 
 \section{Futuras líneas de trabajo}
 \label{sec:future-work}
 
+Con vistas a futuro, hemos asentado una base sólida sobre la que construir y escalar este proyecto. Es por ello que, para futuras contribuciones, se plantean las siguientes mejoras que han quedado fuera de cota para este trabajo:
+
 \begin{itemize}
 
-\item Migración de los módulos con mayor carga de trabajo a \acrfull{wasm}, permitiendo obtener un rendimiento mayor y cercano al nativo del cliente que ejecuta la aplicación.
+\item Migración de los módulos con mayor carga de trabajo a \acrfull{wasm}, permitiendo obtener un rendimiento mayor, cercano al nativo del cliente que ejecuta la aplicación.
 
 \item Mayor facilidad para añadir módulos, mediante un sistema de carpetas y plugins.
 
 \item Inclusión de visualizaciones para el análisis de sentimientos y su evolución en el tiempo.
 
-\item Inclusión de mensajes eliminados por cada contacto.
-
 \item Detección de grupos de interacción: qué contactos suelen responder entre ellos.
+
+\item Nuevas métricas: contador de mensajes eliminados por cada contacto.
 
 \item Mejora de la documentación para futuros contribuyentes al proyecto.
 

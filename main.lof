@@ -2,59 +2,59 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama \acrshort {uml}\relax }}{11}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama \acrshort {uml}\relax }}{12}{figure.caption.41}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Escenario de ChatStats\relax }}{19}{figure.caption.86}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Arquitectura en el cliente\relax }}{20}{figure.caption.89}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Arquitectura en el servidor\relax }}{21}{figure.caption.91}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Arquitectura de la aplicaci\IeC {\'o}n\relax }}{23}{figure.caption.93}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Contador de mensajes\relax }}{31}{figure.caption.223}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitectura general\relax }}{20}{figure.caption.82}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Arquitectura en el cliente\relax }}{21}{figure.caption.84}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Arquitectura en el servidor\relax }}{22}{figure.caption.86}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Arquitectura de la aplicaci\IeC {\'o}n\relax }}{24}{figure.caption.88}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Contador de mensajes\relax }}{31}{figure.caption.168}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{31}{subfigure.5.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{31}{subfigure.5.2}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Contador de palabras\relax }}{32}{figure.caption.227}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Contador de palabras\relax }}{32}{figure.caption.172}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{32}{subfigure.6.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{32}{subfigure.6.2}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Contador de caracteres\relax }}{33}{figure.caption.231}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Contador de caracteres\relax }}{33}{figure.caption.176}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{33}{subfigure.7.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{33}{subfigure.7.2}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Media de palabras por mensaje\relax }}{33}{figure.caption.235}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Media de palabras por mensaje\relax }}{33}{figure.caption.180}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{33}{subfigure.8.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{33}{subfigure.8.2}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Media de caracteres por mensaje\relax }}{34}{figure.caption.239}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Media de caracteres por mensaje\relax }}{34}{figure.caption.184}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{34}{subfigure.9.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{34}{subfigure.9.2}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Conversaciones iniciadas por cada contacto\relax }}{35}{figure.caption.243}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Conversaciones iniciadas por cada contacto\relax }}{35}{figure.caption.188}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{35}{subfigure.10.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{35}{subfigure.10.2}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Tiempo medio de respuesta\relax }}{35}{figure.caption.247}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Tiempo medio de respuesta\relax }}{35}{figure.caption.192}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Chat individual}}}{35}{subfigure.11.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Chat grupal}}}{35}{subfigure.11.2}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Contador de multimedia para chats individuales\relax }}{36}{figure.caption.251}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Contador de multimedia para chats grupales\relax }}{37}{figure.caption.252}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Distribuciones en el tiempo\relax }}{37}{figure.caption.254}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Nube de palabras y emoticonos\relax }}{39}{figure.caption.257}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Contador de multimedia para chats individuales\relax }}{36}{figure.caption.196}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Contador de multimedia para chats grupales\relax }}{37}{figure.caption.197}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Distribuciones en el tiempo\relax }}{37}{figure.caption.199}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Nube de palabras y emoticonos\relax }}{39}{figure.caption.202}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Nube de palabras}}}{39}{subfigure.15.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Nube de emoticonos}}}{39}{subfigure.15.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n \acrshort {pwa}\relax }}{42}{figure.caption.267}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n \acrshort {pwa}\relax }}{42}{figure.caption.213}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Acceso a ChatStats}}}{42}{subfigure.1.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Instalaci\IeC {\'o}n}}}{42}{subfigure.1.2}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\centering Colocaci\IeC {\'o}n en escritorio}}}{42}{subfigure.1.3}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Importar datos en el sistema\relax }}{42}{figure.caption.272}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Importar datos en el sistema\relax }}{42}{figure.caption.218}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Selecci\IeC {\'o}n de fichero}}}{42}{subfigure.2.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Fichero v\IeC {\'a}lido seleccionado}}}{42}{subfigure.2.2}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\centering Fichero no v\IeC {\'a}lido seleccionado}}}{42}{subfigure.2.3}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces C\IeC {\'a}lculo de m\IeC {\'e}tricas\relax }}{43}{figure.caption.278}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces C\IeC {\'a}lculo de m\IeC {\'e}tricas\relax }}{43}{figure.caption.224}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Inicio del c\IeC {\'a}lculo}}}{43}{subfigure.3.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Carga durante el c\IeC {\'a}lculo de m\IeC {\'e}tricas}}}{43}{subfigure.3.2}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Visualizaci\IeC {\'o}n de chat grupal\relax }}{45}{figure.caption.282}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Visualizaci\IeC {\'o}n de chat grupal\relax }}{45}{figure.caption.228}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering N\IeC {\'u}mero de mensajes, n\IeC {\'u}mero de palabras y n\IeC {\'u}mero de caracteres}}}{45}{subfigure.4.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Media de palabras, media de caracteres, conversaciones iniciadas y tiempo medio de respuesta}}}{45}{subfigure.4.2}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\centering N\IeC {\'u}mero de fotos, v\IeC {\'\i }deos, audios y pegatinas}}}{45}{subfigure.4.3}%
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\centering Distribuci\IeC {\'o}n de mensajes en meses, d\IeC {\'\i }as de la semana y horas del d\IeC {\'\i }a}}}{45}{subfigure.4.4}%
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {\centering Nubes de palabras y emoticonos}}}{45}{subfigure.4.5}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Ejemplo de variaci\IeC {\'o}n para chat individual\relax }}{46}{figure.caption.288}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Exportar anal\IeC {\'\i }ticas\relax }}{47}{figure.caption.290}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Ejemplo de variaci\IeC {\'o}n para chat individual\relax }}{46}{figure.caption.234}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Exportar anal\IeC {\'\i }ticas\relax }}{47}{figure.caption.236}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Compartir imagen}}}{47}{subfigure.6.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Descarga del archivo exportado}}}{47}{subfigure.6.2}%
 \addvspace {10\p@ }
@@ -62,5 +62,6 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {D.1}{\ignorespaces Grupos de captura iOS en color\relax }}{\es@scroman {vi}}{figure.caption.307}%
-\contentsline {figure}{\numberline {D.2}{\ignorespaces Grupos de captura Android en color\relax }}{\es@scroman {vi}}{figure.caption.308}%
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Grupos de captura iOS en color\relax }}{\es@scroman {vii}}{figure.caption.255}%
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Grupos de captura Android en color\relax }}{\es@scroman {vii}}{figure.caption.256}%
+\addvspace {10\p@ }

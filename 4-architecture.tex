@@ -5,31 +5,31 @@
 \section{Introducción}
 \label{sec:introduction}
 
-En este capítulo trataremos la fase de diseño de este proyecto, así como los detalles de implementación de la arquitectura del mismo. Primero, presentaremos una vista general del proyecto por medio de un escenario. A continuación se mostrará la arquitectura en el cliente, así como la del servidor y los servicios que la componen. Posteriormente, se detallarán los módulos que conforman la aplicación, así como las métricas que se han decidido calcular y sus motivos. Con ello tenemos la intención de facilitar al lector una vista general de la arquitectura del proyecto.
+En este capítulo trataremos la fase de diseño de este proyecto, así como los detalles de implementación de la arquitectura del mismo. Primero, presentaremos una vista general del proyecto por medio de un diagrama. A continuación se detallará la arquitectura en el cliente, así como la del servidor y los servicios que la componen. Posteriormente, se detallarán los módulos que conforman la aplicación, así como las métricas que se han decidido calcular y sus motivos. Con ello tenemos la intención de facilitar al lector una vista general de la arquitectura del proyecto.
 
-Se presenta a continuación el escenario principal de uso de ChatStats:
+Se presenta a continuación una vista general de la arquitectura de ChatStats:
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{img/scenario.png}
-	\caption{Escenario de ChatStats}
-	\label{fig:chap4:architecture_scenario}
+	\includegraphics[width=\textwidth]{img/architecture.png}
+	\caption{Arquitectura general}
+	\label{fig:chap4:architecture_general}
 \end{figure}
 
-\todi{El servidor únicamente sirve la página... ¿Debería meterlo aquí? ¿Cómo?}
 
-Como se puede observar, el usuario debe exportar un chat desde la aplicación de WhatsApp (móvil) o Telegram para escritorio. Son estas las únicas versiones de las aplicaciones que permiten exportar las conversaciones. Con estos datos exportados, el usuario accede a ChatStats desde el navegador, ya sea en un dispositivo móvil o en un ordenador. El servidor le envía el cliente completo, por lo que no intercambia más peticiones en adelante. El usuario puede seleccionar e importar el archivo a la aplicación, que los estandariza, calcula métricas sobre la conversación y ofrece una visualización de los mismos. Finalmente, el usuario puede compartir las visualizaciones, así como exportar los datos calculados para su uso personal.
-
-
-Se desarrolla toda la aplicación en \textit{JavaScript}, puesto que puede ejecutarse en todos los navegadores salvo que lo tengan deshabilitado. Otros lenguajes como \textit{PHP} o Python requieren de un servidor para realizar operaciones y que estos envíen una plantilla rellena con los resultados.
-
+\begin{comment}
+	Como se puede observar, el usuario debe exportar un chat desde la aplicación de WhatsApp (móvil) o Telegram para escritorio. Son estas las únicas versiones de las aplicaciones que permiten exportar las conversaciones. Con estos datos exportados, el usuario accede a ChatStats desde el navegador, ya sea en un dispositivo móvil o en un ordenador. El servidor le envía el cliente completo, por lo que no intercambia más peticiones en adelante. El usuario puede seleccionar e importar el archivo a la aplicación, que los estandariza, calcula métricas sobre la conversación y ofrece una visualización de los mismos. Finalmente, el usuario puede compartir las visualizaciones, así como exportar los datos calculados para su uso personal.
+	
+	
+	Se desarrolla toda la aplicación en \textit{JavaScript}, puesto que puede ejecutarse en todos los navegadores salvo que lo tengan deshabilitado. Otros lenguajes como \textit{PHP} o Python requieren de un servidor para realizar operaciones y que estos envíen una plantilla rellena con los resultados.
+\end{comment}
 
 
 \section{Arquitectura en el cliente}
 
-A continuación se presenta la arquitectura que podemos encontrar en un cliente cualquiera:
+A continuación se presenta la arquitectura que podemos encontrar en un cliente cualquiera. Puede tomarse la \autoref{fig:chap4:architecture_client} para observar las capas que la componen.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{img/client.png}
 	\caption{Arquitectura en el cliente}
@@ -44,18 +44,20 @@ A continuación se presenta la arquitectura que podemos encontrar en un cliente 
 	\item Posibilidad de guardar en \textit{cache} el código del cliente, permitiendo su uso sin conexión a Internet.
 \end{itemize}
 
-Es por ello que ChatStats puede ser instalada en los dispositivos con navegador con soporte \acrshort{pwa}, permitiendo su instalación y ejecución sin acceso a Internet. Para ello, únicamente se debe registrar un \textit{service worker} que guarda el código en el cliente, así como un archivo de manifiesto que recoge un título, descripción e iconos de la aplicación.
+Es por ello que ChatStats puede ser instalada en los dispositivos con un navegador con soporte \acrshort{pwa}, permitiendo su instalación y ejecución sin acceso a Internet. Para ello, ChatStats registra un \textit{service worker} o trabajador de servicio que guarda el código en el cliente, así como un archivo de manifiesto que recoge un título, descripción e iconos de la aplicación.
 
 Hay que mencionar también que Mozilla no ofrece soporte para \acrshort{pwa} en su navegador Firefox\cite{firefoxNoPWA}, aunque este puede ser habilitado mediante una extensión\cite{firefoxPWAextension}.
 
-\paragraph{Aplicación Web.} Es la última capa, se encuentra nuestra aplicación, cuya arquitectura de procesamiento se explica en la \autoref{chap:architecture:processing}. Explicamos a continuación los componentes lógicos que se encuentran en el cliente:
+\paragraph{Aplicación Web.} En esta última capa se encuentra nuestra aplicación, cuya arquitectura de procesamiento se explica en la \autoref{chap:architecture:processing}. Explicamos a continuación los componentes lógicos que se encuentran en el cliente:
 
-\subparagraph{Router.} ChatStats es una aplicación multipágina. Esto quiere decir que cuenta con diferentes rutas web en las que se muestran diferentes páginas. La página principal consolida la ruta `\textit{/}', mientras que `\textit{/graphs}' enruta la página para la visualización de los gráficos.
+\subparagraph{React State.} Se trata de la capa que maneja el estado de nuestra aplicación, en el que se almacenan los resultados de los cálculos, importación de archivos y otros, como se verá en la \autoref{chap:architecture:processing}. Permite además que nuestra aplicación reaccione a los cambios sucedidos en esta capa de estado, pudiendo refrescar componentes que hagan uso de la información almacenada si fuese necesario.
 
-\subparagraph{React Virtual DOM} El DOM virtual es un concepto de programación en el que una representación virtual de la interfaz de usuario (UI) es guardada en memoria y sincronizada con el DOM del navegador. Esto nos permite definir qué queremos en la interfaz de usuario y React conseguirá que el DOM virtual y el DOM del navegador se sincronicen.
+\subparagraph{Router.} ChatStats es una aplicación multipágina. Esto quiere decir que cuenta con diferentes rutas web en las que se muestran diferentes páginas. La página principal consolida la ruta `\textit{/}', mientras que `\textit{/graphs}' enruta la página para la visualización de los gráficos. Usamos el enrutador proporporcionado por React para permitir la navegación por la aplicación, mapeando las rutas a los componentes de React que se deben visualizar en cada una. Estos se explicarán en la \autoref{chap:architecture:processing}.
+
+\subparagraph{React Virtual DOM.} El DOM virtual es un concepto de programación en el que una representación virtual de la interfaz de usuario (UI) es guardada en memoria y sincronizada con el DOM del navegador. Esto nos permite definir qué queremos en la interfaz de usuario y React conseguirá que el DOM virtual y el DOM del navegador se sincronicen.
 
 
-
+Por último, cabe añadir que se han implementado reglas de estilo que tienen en cuenta el tamaño de la pantalla y se adaptan al mismo, permitiendo mantener la usabilidad del cliente en teléfonos, tabletas y ordenadores.
 
 
 
@@ -84,7 +86,7 @@ Hemos elegido virtualización ligera para ejecutar nuestro código en contenedor
 	\item Permite el despliegue en cualquier sistema operativo compatible con Linux, salvo arquitecturas ARM (que no es frecuente en servidores).
 \end{itemize}
 
-\paragraph{ChatStats React Server.} Se trata del servidor de React que sirve el contenido. Tras construir la versión de producción con el código fuente, este contenedor sirve el contenido estático final, que enviará al cliente completamente cuando este solicite la aplicación web. Se ha implementado por medio de un fichero Dockerfile, que parte de una imagen de \textit{NodeJS}, instala las dependencias y sirve el contenido. Con esta secuencia de instrucciones, se ha creado una imagen para uso en contenedores Docker, que puede encontrarse públicamente en el repositorio de imágenes DockerHub.
+\paragraph{ChatStats React Server.} Se trata del servidor de React que sirve el contenido. Tras construir una imagen con la versión de producción a partir del código fuente, este contenedor sirve el contenido estático final, que enviará al cliente completamente cuando este solicite la aplicación web. Se ha implementado por medio de un fichero Dockerfile, que parte de una imagen de \textit{NodeJS}, instala las dependencias y sirve el contenido. Con esta secuencia de instrucciones, se ha creado una imagen para uso en contenedores Docker, que puede encontrarse públicamente en el repositorio de imágenes DockerHub.
 
 \paragraph{Traefik} Se ha decidido usar Traefik como \textit{proxy} inverso, que se sitúa frente al servidor de ChatStats para redirigir las peticiones realizadas a su contenedor correspondiente en el puerto adecuado.
 
@@ -112,9 +114,10 @@ A continuación se muestra la arquitectura de la lógica de negocio en la aplica
 	\label{fig:chap4:architecture_processing}
 \end{figure}
 
-\subsection{Importador}
+\subsection{Ingesta de datos}
+\label{chap:architecture_ingesta}
 
-El módulo importador se encarga de leer el fichero de entrada. Dicho fichero puede estar en tres formatos diferentes:
+El módulo importador se encarga de leer el fichero de entrada exportado desde la aplicación WhatsApp o Telegram y convertirlos a una estructura de datos normalizada para el procesamiento de los módulos posteriores. Dicho fichero puede estar en tres formatos diferentes:
 
 \begin{itemize}
 	\item \textit{txt} si se trata de un chat exportado de WhatsApp en un dispositivo Android.
@@ -124,88 +127,8 @@ El módulo importador se encarga de leer el fichero de entrada. Dicho fichero pu
 
 Aunque Telegram también soporta la exportación de conversaciones en \textit{HTML}, ChatStats no soporta este formato, puesto que está diseñado para la visualización y no para el tratamiento y procesado del mismo.
 
-En caso de exportar el chat con contenido multimedia, ChatStats únicamente espera el fichero de texto plano (ya sea directamente o dentro de un archivo comprimido), puesto que este se encuentran todos los datos necesarios para el análisis del contenido multimedia. Es por ello que todo el contenido multimedia recibido se descarta.
 
-\subsubsection{Entrada}
-
-Este submódulo se encarga de cargar el fichero seleccionado por el usuario, que el navegador ofrece desde una ruta falsa y protegida para que la aplicación no pueda acceder a todos los archivos del dispositivo. En caso de tratarse de un fichero de texto plano, este módulo abre el archivo como una cadena de caracteres. En caso de tratarse de un fichero comprimido, se lo envía al módulo ``Descompresor'' esperando un archivo de texto plano como salida. Por último, en caso de tratarse de cualquier otro tipo de fichero, el módulo alerta al usuario de que el archivo de entrada no es válido.
-
-Este submódulo hace uso de una instancia de \textit{FileReader}; clase que ofrecen los navegadores, permitiendo abrir el fichero como secuencia de caracteres.
-
-\subsubsection{Descompresor (Opcional)}
-
-Este submódulo se encarga de la descompresión de ficheros \textit{zip}, que descomprime bajo petición del módulo anterior. Finalmente, el módulo devuelve un fichero llamado \textit{\_chat.txt}, que, como se ha comentado anteriormente, contiene toda la información necesaria para el análisis (con o sin multimedia).
-
-El descompresor hace uso de la librería \textit{jszip} para la descompresión del fichero. La lógica añadida a esta aplicación nos permite encontrar el fichero de texto plano dentro del fichero comprimido y devolver el mismo al módulo de ``Entrada''.
-
-\subsection{Parseador}
-
-El objetivo de este módulo es estandarizar los datos de entrada con la finalidad de poder utilizar los mismos módulos para cualquier archivo de entrada.
-
-Mientras que Telegram ofrece los datos en formato \acrshort{json}, facilitando así la operabilidad de los mismos; WhatsApp no ofrece una estructura de datos ni consistencia entre distintas versiones de su aplicación.
-
-Se expone a continuación un breve ejemplo del formato utilizado por Telegram:
-
-\begin{lstlisting}[language=JavaScript]
-	{
-		"name": "group_or_contact_name",
-		"type": "private_group_or_private_chat",
-		"id": 00000000,
-		"messages": [
-		...
-		{
-			"id": 11111,
-			"type": "message_service",
-			"date": "2019-04-02T20:53:14",
-			"date_unixtime": "1554231194",
-			"from": "Alice",
-			"from_id": "contact_user_id",
-			"text": "actual_body_message",
-			"text_entities": [
-			{
-				"type": "plain_link_or_document",
-				"text": "actual_body_message"
-			}
-			]
-		},
-		{
-			"id": 22222,
-			"type": "message",
-			"date": "2019-05-29T23:46:00",
-			"date_unixtime": "1559166360",
-			"from": "Bob",
-			"from_id": "contact_user_id",
-			"reply_to_message_id": 59386,
-			"file": "stickers/sticker.webp",
-			"thumbnail": "stickers/sticker.webp_thumb.jpg",
-			"media_type": "sticker",
-			"sticker_emoji": "actual_unicode_emoji",
-			"width": 512,
-			"height": 341,
-			"text": "",
-			"text_entities": []
-		}, ...
-		]
-	}
-\end{lstlisting}
-
-También se muestra un mensaje en el formato de exportación de WhatsApp en los dispositivos Android:
-
-\begin{lstlisting}
-	17/07/2022, 01:28 - Alice: Este es un mensaje de prueba
-\end{lstlisting}
-
-Así como un mensaje exportado desde WhatsApp por un dispositivo iOS:
-
-\begin{lstlisting}
-	[29/12/22, 0:14:55] Bob: Te escribo desde mi iPhone.
-\end{lstlisting}
-
-Podemos observar que, en el caso de WhatsApp, ambos mensajes se componen de la fecha, la hora, el nombre del contacto y el propio cuerpo del mensaje, aunque con distinto formato. Dicha información está disponible también en los mensajes de Telegram.
-
-\subsubsection{Parseador de mensajes}
-
-El objetivo del submódulo es convertir la cadena de caracteres de entrada en mensajes con el siguiente formato \acrshort{json}:
+Mientras que Telegram ofrece los datos de exportación en formato \acrshort{json}, facilitando así la operabilidad de los mismos; WhatsApp no ofrece una estructura de datos ni consistencia entre distintas versiones de su aplicación. Es por ello que, en busca de la reutilización del código y escalabilidad del mismo, este módulo tiene como salida la siguiente estructura de datos:
 
 \begin{lstlisting}[language=JavaScript]
 	{
@@ -217,38 +140,64 @@ El objetivo del submódulo es convertir la cadena de caracteres de entrada en me
 	}
 \end{lstlisting}
 
-Hemos decidido esta estructura ya que se trata de toda la información que podemos obtener de mensajes de WhatsApp. Además, es compatible con la estructura ya propuesta por Telegram. Podemos decir entonces que es un máximo común denominador de la información disponible en ambos casos. Serán estos los objetos que se utilizarán más adelante para calcular las estadísticas y las estructuras de datos de visualización.
+Esta estructura de datos conforma el máximo común divisor de la información que podemos obtener de Telegram y WhatsApp, por lo que es un buen punto de partida.
 
-Es por ello que analizamos ambos casos por separado:
+Además, en una primera instancia, cabe destacar que ChatStats únicamente hace uso de los metadatos del contenido multimedia, tales como formato de archivo, extensión y fecha. Estos datos se incluyen en el fichero que la aplicación espera a la entrada. Esto se detallará más adelante en este mismo módulo.
 
-\paragraph{Telegram} En caso de tratar un fichero en formato \acrshort{json}, utiliza la librería \textit{JSON} nativa para \textit{JavaScript}, parseando todo el contenido del módulo ``Importador'' y eliminando los datos del objeto original que no se van a utilizar. Posteriormente, llama al módulo ``Parseador de fecha y hora'' que se describe más adelante.
 
-\paragraph{WhatsApp} En caso de tratar con un fichero de WhatsApp, se llega a la siguiente expresión regular que nos permite separar las partes del mensaje, tanto para Android como para iOS.
+\paragraph{Entrada}\mbox{}\\
+
+Este submódulo se encarga de cargar el fichero seleccionado por el usuario, que el navegador ofrece desde una ruta virtual y protegida, para que la aplicación no pueda acceder a todos los archivos del dispositivo. En caso de tratarse de un fichero de texto plano, este módulo abre el archivo como una cadena de caracteres. En caso de tratarse de un fichero comprimido, se lo envía al módulo ``Descompresor'' esperando un archivo de texto plano como salida. Por último, en caso de tratarse de cualquier otro tipo de fichero, el módulo alerta al usuario de que el archivo de entrada no es válido.
+
+Este submódulo hace uso de una instancia de \textit{FileReader}; clase que ofrecen los navegadores, permitiendo abrir el fichero como secuencia de caracteres.
+
+\paragraph{Descompresor (Opcional)}\mbox{}\\
+
+Este submódulo se encarga de la descompresión de ficheros \textit{zip}, que descomprime bajo petición del módulo anterior. Finalmente, el módulo devuelve un fichero llamado \textit{\_chat.txt}, que, como se ha comentado anteriormente, contiene toda la información necesaria para el análisis (con o sin multimedia).
+
+El descompresor hace uso de la librería \textit{jszip} para la descompresión del fichero. La lógica añadida a esta aplicación nos permite encontrar el fichero de texto plano dentro del fichero comprimido y devolver el mismo al módulo de ``Procesamiento WhatsApp''.
+
+
+\paragraph{Procesamiento Telegram}\mbox{}\\
+
+El objetivo de este submódulo es transformar el modelo de datos que exporta Telegram a el modelo de datos que utiliza ChatStats para el resto de sus módulos. Un ejemplo del objeto \acrshort{json} exportado por Telegram puede observarse en el \autoref{chap:telegram_json}.
+
+En este caso, el submódulo de ``Entrada'' nos envía una cadena de caracteres en formato \acrshort{json}. Haciendo uso de la librería \textit{JSON} nativa para \textit{JavaScript}, podemos parsear el contenido de la cadena para obtener el objeto \acrshort{json}.
+
+Debido a que Telegram ofrece una estructura que puede utilizarse para chats individuales o grupales, además de ofrecer soporte para mensajes multimedia, ChatStats hereda ciertas claves de dicha estructura. Es por ello que este submódulo elimina todas las claves no necesarias del objeto mensaje original de Telegram, quedándonos únicamente con las siguientes claves:
+
+\begin{itemize}
+	\item \textbf{``from'':} almacena el nombre del contacto. Admite cualquier secuencia de caracteres.
+	\item \textbf{``type'':} almacena el tipo de mensaje. Actualmente su valor es \textit{``message''}, pero se ha considerado útil para futura escalabilidad del proyecto, dando soporte a videollamadas y cambio de nombre de grupo (anuncios), entre otros.
+	\item \textbf{``date'':} almacena la fecha y hora del mensaje.
+	\item \textbf{``media\_type'':} almacena el tipo de contenido multimedia. Puede tomar como valor: \textit{``voice\_message''}, \textit{``video\_file''}, \textit{``sticker''} o \textit{``image''}
+\end{itemize}
+
+\paragraph{Procesamiento WhatsApp}\mbox{}\\
+
+Este submódulo se encarga, al igual que el submódulo anterior, de obtener mensajes con la estructura descrita al principio del módulo, a partir del archivo exportado de WhatsApp.
+
+A continuación se muestra un mensaje exportado desde WhatsApp por un dispositivo Android:
 
 \begin{lstlisting}
-	/\[*(\d{1,2}\/\d{1,2}\/\d{2,4}),\s(\d{1,2}:\d{2}:*\d*)\]*\s(?:-\s)*(.*?):{1}\s(.*?)(?=\s\[*\d{1,2}\/\d{1,2}\/\d{2,4}|$)/gum
+	17/07/2022, 01:28 - Alice: Este es un mensaje de prueba.
 \end{lstlisting}
 
-Los grupos de captura que lo componen se describen en detalle en el \autoref{chap:regex}.
+Así como un mensaje exportado desde WhatsApp por un dispositivo iOS:
 
+\begin{lstlisting}
+	[29/12/22, 0:14:55] Bob: Te escribo desde mi iPhone.
+\end{lstlisting}
 
-\subsubsection{Parseador de fecha y hora}
+Podemos observar que, en el caso de WhatsApp, ambos mensajes se componen de la fecha, la hora, el nombre del contacto y el propio cuerpo del mensaje, aunque con distinto formato.
 
-Este submódulo tiene como entrada la fecha y la hora. Devuelve un objeto de tipo \textit{Date}, nativo de JavaScript. Esto nos permite realizar operaciones de tiempo con facilidad en otros módulos.
+\subparagraph{Parseador de mensajes} Se implementa, como puede verse en el \autoref{chap:regex} un parseador mediante una expresión regular. Dicho parseador encuentra los mensajes en el texto recibido del submódulo de ``Entrada'' y los divide en: fecha y hora, contacto y cuerpo del mensaje. Podemos observar que no encontramos ninguna referencia al contenido multimedia aún, puesto que para ello hay que parsear el cuerpo del mensaje en busca de metadatos. Además, la fecha y la hora son una cadena de caracteres, que transformaremos a continuación.
+
+\subparagraph{Parseador de fecha y hora} Este componente tiene como entrada la fecha y la hora del mensaje obtenido en el paso anterior. Devuelve un objeto de tipo \textit{Date}, nativo de JavaScript. Esto nos permite realizar operaciones de tiempo con facilidad en otros módulos.
 
 Este submódulo utiliza la librería \textit{momentjs} para parsear los posibles distintos formatos de fecha que utilizan Telegram y WhatsApp en sus cadenas de caracteres. Además, considera el \textit{locale} del cliente, invirtiendo mes y día para el caso \textit{en\_US}.
 
-La salida de este submódulo se utiliza en la clave \textit{``date''} del objeto mensaje del submódulo anterior.
-
-\subsubsection{Parser de archivos multimedia}
-
-Este submódulo se ejecuta únicamente para chats exportados por WhatsApp. El objetivo de este submódulo es escribir el tipo de contenido en la clave \textit{``media\_type''} del objeto mensaje expuesto anteriormente.
-
-Existen dos opciones para exportar un chat: con contenido multimedia o sin él.
-
-\paragraph{Para contenido multimedia}\mbox{}\\
-
-En el fichero de texto plano con contenido multimedia, observaremos que el cuerpo incluye el nombre del fichero que se ha exportado con la extensión del formato del mismo. Por ello, categorizamos como \textit{voice\_message}, \textit{video\_file}, \textit{sticker} o \textit{image} en función a la extensión; \textit{.opus}, \textit{.mp4}, \textit{.webp} o \textit{.jpg}, respectivamente. Usamos estos valores puesto que son los que Telegram utiliza para su formato de mensajes.
+\subparagraph{Parser de archivos multimedia} Este componente es escribir el tipo de contenido en la clave \textit{``media\_type''} del objeto mensaje expuesto anteriormente, buscando la extensión del archivo adjunto.
 
 Se indican a continuación mensajes de ejemplo para cada tipo de archivo adjunto, únicamente para Android:
 
@@ -259,9 +208,9 @@ Se indican a continuación mensajes de ejemplo para cada tipo de archivo adjunto
 	24/11/2022, 19:13 - Jaime Conde: STK-20220717-WA0090.webp (file attached)
 \end{lstlisting}
 
-\paragraph{Sin contenido multimedia}\mbox{}\\
+En el fichero de texto plano con contenido multimedia, observaremos que el cuerpo incluye el nombre del fichero que se ha exportado con la extensión del formato del mismo. Por ello, categorizamos como \textit{voice\_message}, \textit{video\_file}, \textit{sticker} o \textit{image} en función a la extensión; \textit{.opus}, \textit{.mp4}, \textit{.webp} o \textit{.jpg}, respectivamente. Usamos estos valores puesto que son los que Telegram utiliza para su formato de mensajes.
 
-Para el segundo caso, cada vez que un mensaje sea contenido multimedia, aparecerá \textit{\textless Media omitted \textgreater} (multimedia omitido). Estos pueden ser fotos, vídeos, música, notas de voz o documentos. Se definirán como \textit{undefined} o indefinidos, ignorándose en las visualizaciones y módulos posteriores.
+Si el fichero no incluye estos metadatos, cada vez que un mensaje sea contenido multimedia, aparecerá \textit{\textless Media omitted \textgreater} (multimedia omitido). Estos pueden ser fotos, vídeos, música, notas de voz o documentos. Se definirán como \textit{undefined} o indefinidos, ignorándose en las visualizaciones y módulos posteriores. Se muestra un ejemplo a continuación:
 
 \begin{lstlisting}
 	17/07/2022, 01:33 - Juan Pedro: <Media omitted>
@@ -271,7 +220,7 @@ Para el segundo caso, cada vez que un mensaje sea contenido multimedia, aparecer
 
 Los mensajes se encuentran segregados en una lista, por lo que a continuación, el módulo de agregador se encargará de agregar los mensajes en diferentes grupos. En el código los hemos llamado polarizadores. Se describen los distintos submódulos a continuación:
 
-\subsubsection{Agregador por contacto}
+\paragraph{Agregador por contacto}\mbox{}\\
 
 \textit{ChatStats} se encarga de calcular las estadísticas de cada contacto para visualizarlas y mostrarlas en comparación con el resto de contactos. Hablamos de numerosos contactos, puesto que es compatible con chats individuales y grupales.
 
@@ -285,7 +234,7 @@ El resultado de este submódulo será un objeto \acrshort{json} con una clave po
 	}
 \end{lstlisting}
 
-donde los array de mensajes contienen objetos definidos en el \textit{Parser de mensajes}.
+donde los array de mensajes contienen objetos con la estructura de datos común mencionada en el módulo anterior,  \autoref{chap:architecture_ingesta}.
 
 \subsubsection{Agregador por día}
 
@@ -373,7 +322,7 @@ Este submódulo analiza las diferencias de tiempos entre los mensajes, categoriz
 
 Aunque un sesgo temporal no es una solución perfecta, acierta gran parte de las veces sin necesitar gran capacidad de cómputo.
 
-\subsection{Visualizador}
+\subsection{Cálculo de métricas}
 
 Este módulo prepara los datos para ser representados por la librería de visualización elegida: \textit{ChartJS}.  Esta librería ha sido elegida por su alta actividad de contribuciones al proyecto, que es libre y cuenta con 12 mil estrellas en GitHub. Además, permite alta extensibilidad mediante plugins, de los que hacemos uso, por ejemplo, para mostrar las etiquetas de los datos.
 
@@ -548,15 +497,27 @@ Se elige calcular y mostrar esta visualización puesto que los emoticonos consti
 
 \subsection{Exportador}
 
-Este módulo permite al usuario exportar tanto la visualización como exportar las métricas calculadas para su uso posterior.
+Este módulo permite al usuario exportar tanto la visualización a modo de captura de pantalla, así como la exportación de las métricas calculadas para su uso personal.
 
-\subsubsection{Compartir visualizaciones}
+\subsubsection{Descargar visualizaciones}
 
-Compartir visualizaciones es un submódulo que, mediante el uso de la librería \textit{html2canvas} permite generar una imagen a partir de un objeto del \acrshort{dom}. Una vez generada, se crea un link falso que se pulsa por el usuario para iniciar la descarga del archivo.
+Descargar visualizaciones es un submódulo que permite al usuario descargar como imagen, en formato \textit{png}, las visualizaciones que se muestran en su pantalla.
 
-\subsubsection{Exportar resultados}
+Como el cliente guarda el estado de las visualizaciones en su \acrshort{dom}, haciendo uso de la librería \textit{html2canvas}, podemos acceder al objeto \textit{body} de la página y obtener una imagen canvas del mismo. Esta imagen no es una captura de pantalla, sino una reconstrucción del objeto \textit{body} del \acrshort{dom}, por lo que puede no ser completamente fiel a la representación que el usuario tiene en su cliente.
 
-Del mismo modo que el submódulo anterior, este módulo exporta las métricas obtenidas en un fichero \acrshort{json}.
+Esta imagen se codifica en base64 y se crea un enlace con tipo de contenido (\textit{Content-Type}) \textit{image/png}  para su descarga local desde el navegador.
+
+No se puede hacer uso de la funcionalidad de imprimir pantalla del navegador, puesto que los gráficos usan la etiqueta \acrshort{html} \textit{canvas}, lo que descuadra los gráficos y hace perder formato y colores.
+
+\subsubsection{Descargar resultados}
+
+Del mismo modo que el submódulo anterior, este módulo permite al usuario descargar una versión exportada de los datos y métricas calculadas en formato \acrshort{json} para su posterior uso personal.
+
+Para ello, el submódulo recoge todo el contenido alojado en el estado local del cliente y crea un enlace local para la descarga de los datos. Dicho enlace está compuesto por el tipo de contenido (\textit{Content-Type}) \textit{text/json} seguido del contenido del estado local (en \acrshort{json}) volcado a una cadena de caracteres y codificado para \acrshort{uri}s.
+
+\todi{Enlazar el apartado con la lista de métricas que se exportan (más arriba)}
+
+
 
 \section{Conclusión}
 
