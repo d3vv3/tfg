@@ -16,13 +16,7 @@ Se presenta a continuación una vista general de la arquitectura de ChatStats:
 	\label{fig:chap4:architecture_general}
 \end{figure}
 
-
-\begin{comment}
-	Como se puede observar, el usuario debe exportar un chat desde la aplicación de WhatsApp (móvil) o Telegram para escritorio. Son estas las únicas versiones de las aplicaciones que permiten exportar las conversaciones. Con estos datos exportados, el usuario accede a ChatStats desde el navegador, ya sea en un dispositivo móvil o en un ordenador. El servidor le envía el cliente completo, por lo que no intercambia más peticiones en adelante. El usuario puede seleccionar e importar el archivo a la aplicación, que los estandariza, calcula métricas sobre la conversación y ofrece una visualización de los mismos. Finalmente, el usuario puede compartir las visualizaciones, así como exportar los datos calculados para su uso personal.
-	
-	
-	Se desarrolla toda la aplicación en \textit{JavaScript}, puesto que puede ejecutarse en todos los navegadores salvo que lo tengan deshabilitado. Otros lenguajes como \textit{PHP} o Python requieren de un servidor para realizar operaciones y que estos envíen una plantilla rellena con los resultados.
-\end{comment}
+En las siguientes secciones se desglosa y detalla la arquitectura de cada componente del sistema.
 
 
 \section{Arquitectura en el cliente}
@@ -114,6 +108,8 @@ A continuación se muestra la arquitectura de la lógica de negocio en la aplica
 	\label{fig:chap4:architecture_processing}
 \end{figure}
 
+Se desarrolla toda la aplicación en \textit{JavaScript}, puesto que puede ejecutarse en todos los navegadores salvo que lo tengan deshabilitado. Otros lenguajes como \textit{PHP} o Python requieren de un servidor para realizar operaciones y que estos envíen una plantilla rellena con los resultados.
+
 \subsection{Ingesta de datos}
 \label{chap:architecture_ingesta}
 
@@ -147,7 +143,7 @@ Además, en una primera instancia, cabe destacar que ChatStats únicamente hace 
 
 \paragraph{Entrada}\mbox{}\\
 
-Este submódulo se encarga de cargar el fichero seleccionado por el usuario, que el navegador ofrece desde una ruta virtual y protegida, para que la aplicación no pueda acceder a todos los archivos del dispositivo. En caso de tratarse de un fichero de texto plano, este módulo abre el archivo como una cadena de caracteres. En caso de tratarse de un fichero comprimido, se lo envía al módulo ``Descompresor'' esperando un archivo de texto plano como salida. Por último, en caso de tratarse de cualquier otro tipo de fichero, el módulo alerta al usuario de que el archivo de entrada no es válido.
+Este submódulo tiene como objetivo cargar el fichero seleccionado por el usuario, que el navegador ofrece desde una ruta virtual y protegida, para que la aplicación no pueda acceder a todos los archivos del dispositivo. En caso de tratarse de un fichero de texto plano, este módulo abre el archivo como una cadena de caracteres. En caso de tratarse de un fichero comprimido, se lo envía al módulo ``Descompresor'' esperando un archivo de texto plano como salida. Por último, en caso de tratarse de cualquier otro tipo de fichero, el módulo alerta al usuario de que el archivo de entrada no es válido.
 
 Este submódulo hace uso de una instancia de \textit{FileReader}; clase que ofrecen los navegadores, permitiendo abrir el fichero como secuencia de caracteres.
 
@@ -155,14 +151,14 @@ Este submódulo hace uso de una instancia de \textit{FileReader}; clase que ofre
 
 Este submódulo se encarga de la descompresión de ficheros \textit{zip}, que descomprime bajo petición del módulo anterior. Finalmente, el módulo devuelve un fichero llamado \textit{\_chat.txt}, que, como se ha comentado anteriormente, contiene toda la información necesaria para el análisis (con o sin multimedia).
 
-El descompresor hace uso de la librería \textit{jszip} para la descompresión del fichero. La lógica añadida a esta aplicación nos permite encontrar el fichero de texto plano dentro del fichero comprimido y devolver el mismo al módulo de ``Procesamiento WhatsApp''.
+El descompresor hace uso de la biblioteca \textit{jszip} para la descompresión del fichero. La lógica añadida a esta aplicación nos permite encontrar el fichero de texto plano dentro del fichero comprimido y devolver el mismo al módulo de ``Procesamiento WhatsApp''.
 
 
 \paragraph{Procesamiento Telegram}\mbox{}\\
 
 El objetivo de este submódulo es transformar el modelo de datos que exporta Telegram a el modelo de datos que utiliza ChatStats para el resto de sus módulos. Un ejemplo del objeto \acrshort{json} exportado por Telegram puede observarse en el \autoref{chap:telegram_json}.
 
-En este caso, el submódulo de ``Entrada'' nos envía una cadena de caracteres en formato \acrshort{json}. Haciendo uso de la librería \textit{JSON} nativa para \textit{JavaScript}, podemos parsear el contenido de la cadena para obtener el objeto \acrshort{json}.
+En este caso, el submódulo de ``Entrada'' nos envía una cadena de caracteres en formato \acrshort{json}. Haciendo uso de la biblioteca \textit{JSON} nativa para \textit{JavaScript}, podemos parsear el contenido de la cadena para obtener el objeto \acrshort{json}.
 
 Debido a que Telegram ofrece una estructura que puede utilizarse para chats individuales o grupales, además de ofrecer soporte para mensajes multimedia, ChatStats hereda ciertas claves de dicha estructura. Es por ello que este submódulo elimina todas las claves no necesarias del objeto mensaje original de Telegram, quedándonos únicamente con las siguientes claves:
 
@@ -218,7 +214,7 @@ Si el fichero no incluye estos metadatos, cada vez que un mensaje sea contenido 
 
 \subsection{Agregación de datos}
 
-Los mensajes se encuentran segregados en una lista, por lo que a continuación, el módulo de agregador se encargará de agregar los mensajes en diferentes grupos. En el código los hemos llamado polarizadores. Se describen los distintos submódulos a continuación:
+Los mensajes se encuentran segregados en una lista, por lo que a continuación, el módulo de agregación se encargará de agregar los mensajes en diferentes grupos. En el código los hemos llamado polarizadores. Se describen los distintos submódulos a continuación:
 
 \paragraph{Agregador por contacto}\mbox{}\\
 
@@ -236,7 +232,7 @@ El resultado de este submódulo será un objeto \acrshort{json} con una clave po
 
 donde los array de mensajes contienen objetos con la estructura de datos común mencionada en el módulo anterior,  \autoref{chap:architecture_ingesta}.
 
-Cabe anotar que este submódulo está desarrollado en Rust, haciendo uso de la tecnología \acrfull{wasm}; puesto tras medir los tiempos de ejecución de las distintas funciones, se ha comprobado que este era el mayor. Además, sirve como parámetro de entrada para la mayoría de los agregadores que explicaremos a continuación. Se utiliza la librería \textit{``wasm-pack''} de Rust, que genera automáticamente el paquete JavaScript del que hará uso nuestra aplicación en React. Este paquete, una vez construido, exporta las funciones públicas que estén decoradas para su uso en \acrshort{wasm}. Estas funciones enlazan a un binario que \textit{``wasm-pack''} construye también por nosotros.
+Cabe anotar que este submódulo está desarrollado en Rust, haciendo uso de la tecnología \acrfull{wasm}; puesto que, tras medir los tiempos de ejecución de las distintas funciones, se ha comprobado que este era el mayor. Además, sirve como parámetro de entrada para la mayoría de los agregadores que explicaremos a continuación. Se utiliza la librería \textit{``wasm-pack''} de Rust, que genera automáticamente el paquete JavaScript del que hará uso nuestra aplicación en React. Este paquete, una vez construido, exporta las funciones públicas que estén decoradas para su uso en \acrshort{wasm}. Estas funciones enlazan a un binario que \textit{``wasm-pack''} construye también por nosotros.
 
 \paragraph{Agregador por día}\mbox{}\\
 
@@ -327,7 +323,7 @@ Aunque un sesgo temporal no es una solución perfecta, acierta gran parte de las
 \subsection{Cálculo de métricas}
 \label{chap:architecture_metrics}
 
-Este módulo prepara analiza y extrae los datos para ser representados por los componentes del módulo de visualización, que sigue a este. No se realizarán mayores detalles en la implementación, puesto que se han utilizado funciones nativas de JavaScript para su implementación, que puede verse en el código del \autoref{chap:code}. 
+Este módulo prepara analiza y extrae los datos para ser representados por los componentes del módulo de visualización, que sigue a este. No se proveen grandes detalles de implementación, puesto que se hace uso de funciones nativas de JavaScript para su implementación, que puede verse en el código del \autoref{chap:code}. 
 
 Cabe destacar que, una vez calculadas las métricas, estas pasan al estado local de la aplicación, permitiendo desencadenar acciones en la interfaz de usuario, tales como la representación visual de las métricas por medio del módulo que sigue a este.
 
@@ -438,26 +434,26 @@ Con ello, se han desarrollado los siguientes componentes que se muestran en la \
 	\label{fig:chap4:visualization_examples}
 \end{figure}
 
-Para los gráficos circulares y de barras, se elige la librería \textit{ChartJS}, puesto que cuenta con alta actividad de contribuciones al proyecto, es libre y cuenta con 12 mil estrellas en GitHub. Además, permite alta extensibilidad mediante plugins, de los que hacemos uso, por ejemplo, para mostrar las etiquetas de los datos. Los componentes que uan esta librería adaptan el tamaño del gráfico al número de contactos que hay en el grupo de forma \textit{responsive}. También permiten la interacción con el mismo, pudiendo eliminar contactos de la representación haciendo click sobre el nombre de los mismos en la leyenda.
+Para los gráficos circulares y de barras, se elige la librería \textit{ChartJS}, puesto que cuenta con alta actividad de contribuciones al proyecto, es libre y cuenta con 12 mil estrellas en GitHub. Además, permite alta extensibilidad mediante plugins, de los que hacemos uso, por ejemplo, para mostrar las etiquetas de los datos. Los componentes que usan esta biblioteca adaptan el tamaño del gráfico al número de contactos que hay en el grupo de forma \textit{responsive}. También permiten la interacción con el mismo, pudiendo eliminar contactos de la representación haciendo click sobre el nombre de los mismos en la leyenda.
 
-Por último, como alternativa a los gráficos de berras, se ha planteado también usar un gráfico de araña o radar, pero dicha opción se descarta al observar el solapamiento que tenía lugar con varios contactos.
+Por último, como alternativa a los gráficos de barras, se ha planteado también usar un gráfico de araña o radar; aunque dicha opción se descartó al observar el solapamiento que tenía lugar con varios contactos.
 
 
 \subsection{Exportación}
 
 Este módulo permite al usuario exportar tanto la visualización a modo de captura de pantalla, así como la exportación de las métricas calculadas para su uso personal.
 
-\subsubsection{Descargar visualizaciones}
+\paragraph{Descargar visualizaciones}\mbox{}\\
 
 Descargar visualizaciones es un submódulo que permite al usuario descargar como imagen, en formato \textit{png}, las visualizaciones que se muestran en su pantalla.
 
-Como el cliente guarda el estado de las visualizaciones en su \acrshort{dom}, haciendo uso de la librería \textit{html2canvas}, podemos acceder al objeto \textit{body} de la página y obtener una imagen canvas del mismo. Esta imagen no es una captura de pantalla, sino una reconstrucción del objeto \textit{body} del \acrshort{dom}, por lo que puede no ser completamente fiel a la representación que el usuario tiene en su cliente.
+Como el cliente guarda el estado de las visualizaciones en su \acrshort{dom}, haciendo uso de la biblioteca \textit{html2canvas}, podemos acceder al objeto \textit{body} de la página y obtener una imagen canvas del mismo. Esta imagen no es una captura de pantalla, sino una reconstrucción del objeto \textit{body} del \acrshort{dom}, por lo que puede no ser completamente fiel a la representación que el usuario tiene en su cliente.
 
 Esta imagen se codifica en base64 y se crea un enlace con tipo de contenido (\textit{Content-Type}) \textit{image/png}  para su descarga local desde el navegador.
 
 No se puede hacer uso de la funcionalidad de imprimir pantalla del navegador, puesto que los gráficos usan la etiqueta \acrshort{html} \textit{canvas}, lo que descuadra los gráficos y hace perder formato y colores.
 
-\subsubsection{Descargar resultados}
+\paragraph{Descargar resultados}\mbox{}\\
 
 Del mismo modo que el submódulo anterior, este módulo permite al usuario descargar una versión exportada de los datos y métricas calculadas en formato \acrshort{json} para su posterior uso personal.
 
@@ -473,11 +469,11 @@ Los tests unitarios son una parte esencial del proceso de desarrollo de software
 
 Además, los tests unitarios nos ayudan a detectar errores temprano en el proceso de desarrollo, lo que nos permite corregirlos antes de que el sistema sea puesto en producción. También nos permiten validar que la funcionalidad no se ven afectadas cuando se realizan cambios en el código.
 
-En este proyecto, se ha alcanzado una cobertura del 74\% en los tests unitarios, lo que significa que el 74\% del código ha sido cubierto por pruebas. Aunque no se alcanza el 100\% de cobertura, se han desarrollado para los módulos más importantes, como ``Ingesta de datos'', ``Agregadores'' y cálculo de la mayoría de métricas. No se han realizado tests para los componentes de visualización ni el módulo ``Exportador'', puesto que suponen una interacción con el \textit{front-end} y se dejan para futuras líneas de trabajo.
+En este proyecto, se ha alcanzado una cobertura del 74\% en los tests unitarios, lo que significa que el 74\% del código ha sido cubierto por pruebas. Aunque no se alcanza el 100\% de cobertura, se han desarrollado para los módulos más importantes, como ``Ingesta de datos'', ``Agregación'' y cálculo de la mayoría de métricas. No se han realizado tests para los componentes de visualización ni el módulo ``Exportador'', puesto que suponen una interacción con el \textit{front-end} y se dejan para futuras líneas de trabajo.
 
 Para el desarrollo de los mismos, se utiliza la librería \textit{Jest}, que permite alta integración con la estructura del proyecto de React, así como asienta las bases para futuras pruebas de componentes visuales que interactúen con los mismos, así como con las rutas de la aplicación.
 
-Para generar los distintos datos de entrada se proveen pequeños archivos de chat maquetados para tipo de fichero. Al mismo tiempo, para los datos de entrada a los distintos componentes lógicos que se prueban, se ha utilizado la librería \textit{faker}, que permite la generación de datos maquetados como nombres, fechas, frases, párrafos y otros; lo cual nos da la posibilidad de generar mensajes al vuelo con la estructura de datos deseada.
+Para generar los distintos datos de entrada se proveen pequeños archivos de chat maquetados para tipo de fichero. Al mismo tiempo, para los datos de entrada a los distintos componentes lógicos que se prueban, se ha utilizado la biblioteca \textit{faker}, que permite la generación de datos maquetados como nombres, fechas, frases, párrafos y otros; lo cual nos da la posibilidad de generar mensajes al vuelo con la estructura de datos deseada.
 
 A continuación se muestra la ejecución de los tests unitarios:
 

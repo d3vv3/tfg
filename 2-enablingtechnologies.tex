@@ -3,7 +3,7 @@
 
 % Javascript, Reactjs, Docker, traefik, WebAssembly, WebApp, Regex, Git, Open Source Software, Linux
 
-En este capítulo exploraremos las tecnologías habilitantes esenciales para el desarrollo e implementación de nuestra aplicación web. Estas tecnologías incluyen los lenguajes de programación, marcos, librerías y herramientas que han sido utilizaadas para construir la aplicación. Las tecnologías habilitadoras juegan un papel crucial en el desarrollo de cualquier aplicación de software, y es esencial elegir el conjunto correcto de tecnologías que se alineen con los objetivos y requisitos del proyecto.
+En este capítulo exploraremos las tecnologías habilitantes esenciales para el desarrollo e implementación de nuestra aplicación web. Estas tecnologías incluyen los lenguajes de programación, marcos, bibliotecas y herramientas que han sido utilizadas para construir la aplicación. Las tecnologías habilitadoras juegan un papel crucial en el desarrollo de cualquier aplicación de software, y es esencial elegir un conjunto correcto de tecnologías que se alineen con los objetivos y requisitos del proyecto.
 
 \section{Tecnologías en el cliente}
 \label{tec_hab:client}
@@ -15,15 +15,15 @@ Para el desarrollo del cliente, se han elegido las siguientes tecnologías:
 
 % https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe
 
-Para el desarrollo del cliente web se ha elegido el framework React. React es una librería para el desarrollo de front-end en JavaScript. Es de código libre y permite construir interfaces de usuario mediante la definición de componentes reutilizables. Es impulsado y mantenido por Meta, así como una gran comunidad de individuos y compañías.
+Para el desarrollo del cliente web se ha elegido el framework React. React es una biblioteca para el desarrollo de \textit{front-end} en JavaScript. Es de código libre y permite construir interfaces de usuario mediante la definición de componentes reutilizables. Es impulsado y mantenido por Meta, así como una gran comunidad de individuos y compañías.
 
-Cuenta con la mayor comunidad de desarrolladores frente a sus competidores: AngularJS, VueJS, NextJS. Esto facilita el desarrollo, con mayor cantidad de librerías disponibles y mayor facilidad para solventar errores debido a la cantidad de usuarios.
+Cuenta con la mayor comunidad de desarrolladores frente a sus competidores: AngularJS, VueJS y NextJS. Esto facilita el desarrollo, con mayor cantidad de bibliotecas disponibles y mayor facilidad para solventar errores debido a la cantidad de usuarios.
 
 React y JSX forman un stack tecnológico que nos permite sustituir completamente el stack conformado por HTML, JavaScript y CSS, ganando modularidad durante el desarrollo.
 
 Para modificar el contenido que se muestra al usuario, cuenta con acceso al \acrshort{dom}, que representa la página web como un árbol de nodos que pueden ser modificados con JavaScript.
 
-\section{Progressive Web App}
+\subsection{Progressive Web App}
 \label{tec_hab:PWA}
 
 El mercado de las aplicaciones está segmentado en función a las distintas tiendas de aplicaciones de cada plataforma. Esto hace que el desarrollo multiplataforma sea complejo. Recientemente han ido surgiendo frameworks como Flutter, aunque la comunidad de desarrollo es todavía pequeña.
@@ -53,7 +53,7 @@ Hemos elegido Rust como lenguaje de desarrollo para los módulos \acrfull{wasm},
 
 Las expresiones regulares son una secuencia de caracteres y operadores especiales que definen y controlan una búsqueda de patrones y filtros en un texto de destino.
 
-Haremos uso de las mismas para segmentar los mensajes recibidos en texto plano, obteniendo así diferentes grupos de texto que conformarán la fecha del mensaje, la hora, el nombre del contacto y el cuerpo del mensaje. Pese a ser conocidos por ser un problema más que una solución, con el correcto uso de la tecnología, puede simplificar mucho el desarrollo. Esto se debe a que podríamos obtener resultados similares mediante el uso de funciones que separen la cadena de caracteres en los lugares adecuados, eliminen caracteres innecesarios y formen los grupos anteriormente descritos, cosa que aumentaría la complejidad del desarrollo y añadiría unidades lógicas a la lógica de negocio.
+Haremos uso de las mismas para segmentar los mensajes recibidos en texto plano, obteniendo así diferentes grupos de texto que conformarán la fecha del mensaje, la hora, el nombre del contacto y el cuerpo del mensaje. Pese a ser conocidos por ser un problema más que una solución, con el correcto uso de la tecnología, se puede simplificar mucho el desarrollo. Esto se debe a que podríamos obtener resultados similares mediante el uso de funciones que separen la cadena de caracteres en los lugares adecuados, eliminen caracteres innecesarios y formen los grupos anteriormente descritos, cosa que aumentaría la complejidad del desarrollo y añadiría unidades lógicas a la lógica de negocio.
 
 
 \section{Tecnologías en el servidor}
